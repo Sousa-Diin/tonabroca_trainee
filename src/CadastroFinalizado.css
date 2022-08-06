@@ -3,6 +3,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
+    /*display: flex;*/
     
     background: #5E2075;
     background-image: url("./background-finalizado.png");
