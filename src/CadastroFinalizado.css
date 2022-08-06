@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: #5E2075;
+    background-image: url("./background-finalizado.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+}
+
+.cadastro-finalizado , p {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.frase{
+  justify-self: center;
+  color: aliceblue;
+  
+}
+
