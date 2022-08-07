@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-login {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-items: center;
+    height: 40em;
+    padding: 5%;
+    
+    background-image: url("../background_login.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    
+}
+
+.slogan {
+    color:#FFFFFF;
+    float: left;
+   /* background: rgba(0,0,0,.2); Teste**/
+    height: 15%;
+    align-items: center;
+    padding: 3%;
+}
+
+.slogan  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+
+    margin: 26% 32% 0 auto;
+}
+
+.container-autenticacao {
+    padding-top: 13%;
+    width: 25%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 1.9%;
+
+    background: rgba(217,217,217,.9);
+    border-radius: 10px;
+    
+   
+}
+ul li {
+    align-content: center;
+    margin: 6%;
+    padding: 4%;
+    text-align: center;
+    color:#FFFFFF;
+    list-style: none;
+
+    border-radius: 7px;   
+    background: #c5530c;
+    
+
+}
+li {
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 54px;
+    text-align: center;
+
+    color: #F5F5F5;
+
+}
+
+.slogan h1 {
+    padding: 5%;
+    margin: 2%;
+    text-align: center;
+    color:#FFFFFF;
+    font-size: 56px;
+    
+
+}

@@ -5,7 +5,9 @@ class CadastroFinalizado extends Component {
     render (){
         return(
             <div className="cadastro-finalizado"> 
-                <p className='frase'>Cadastro Finalizado Com Sucesso!</p>
+                <div className="frase"> 
+                    <p > Cadastro Finalizado Com Sucesso!</p>
+                </div>
             </div>
             
         );

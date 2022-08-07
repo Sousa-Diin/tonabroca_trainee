@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../src/logo_emakers2.png';
+import logo from '../src/pages/logo/logo_emakers2.png';
 
 import './Endereco.css';
 
