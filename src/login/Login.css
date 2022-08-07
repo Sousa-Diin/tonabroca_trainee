@@ -40,8 +40,10 @@
     width: 25%;
     height: 60%;
     margin: 0 auto;
-    padding: 1.9%;
+    
+    padding: 5.9% .9% 0 .9% ;
 
+    text-align: center;
     background: rgba(217,217,217,.9);
     border-radius: 10px;
     
