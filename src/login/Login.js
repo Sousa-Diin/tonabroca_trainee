@@ -6,16 +6,17 @@ class Login extends Component {
         return(
             <div className="container-login">
                 <div className="container-autenticacao">
-                     <h1>Deseja logar como </h1>
+                     <h1>Deseja Logar Como?</h1>
                      <ul>
-                        <li>Cliente</li>
-                        <li>Admin</li>
-                        <li>Funcionario</li>
+                        <li><a href="../src/CriarAcesso.js">Cliente</a></li>
+                        <li>Funcionário </li>
+                        <li>Administrador</li>
+                        
                      </ul>
                 </div>
                 <div className="slogan">
                     <h1>EmakersFood</h1>
-                    <h2>matando sua fome!</h2>
+                    <h2>Matando sua fome!</h2>
                 </div>
             </div>
         );

@@ -73,6 +73,10 @@ li {
 
 }
 
+ul li:hover {
+    background:rgba(255,106,14.4);
+}
+
 .slogan h1 {
     padding: 5%;
     margin: 2%;

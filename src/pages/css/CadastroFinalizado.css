@@ -6,7 +6,7 @@
 .cadastro-finalizado{
 
     width: 100%;
-    min-height: 963px;/*altura em porcentagem não funcionou */
+    min-height: 760px;/*altura em porcentagem não funcionou */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@
     
     background: #5E2075;
     background-size: 45%;
-    background-image: url("../src/background-finalizado.svg");
+    background-image: url("../logo/background-finalizado.png");
     background-repeat: no-repeat;
     background-position: center;  
     
