@@ -1,19 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 .container-login {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
     justify-items: center;
-    height: 40em;
+    height:100vh;
     padding: 5%;
+    margin-top: 0;
     
-    background-image: url("../background_login.png");
+    background-image: url("../../assets/logo/background_login.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 100vw;
     
 }
 
@@ -21,7 +19,7 @@
     color:#FFFFFF;
     float: left;
    /* background: rgba(0,0,0,.2); Teste**/
-    height: 15%;
+    height: 15vh;
     align-items: center;
     padding: 3%;
 }
@@ -37,21 +35,23 @@
 
 .container-autenticacao {
     padding-top: 13%;
-    width: 25%;
-    height: 60%;
+    width: 25vw;
+    height: 70vh;
     margin: 0 auto;
-    
-    padding: 5.9% .9% 0 .9% ;
+    justify-items: center;
+   /* padding: 5.9% .9% 0 .9% ;*/
 
     text-align: center;
     background: rgba(217,217,217,.9);
-    border-radius: 10px;
+    border-radius: 2px;
     
    
 }
 ul li {
+    max-width: 20vw;
+    max-height: 13vh;
     align-content: center;
-    margin: 6%;
+    margin: 4%;
     padding: 4%;
     text-align: center;
     color:#FFFFFF;

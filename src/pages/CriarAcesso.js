@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo/logo_emakers2.png';
+import logo from '../assets/logo/logo_emakers2.png';
 import './css/CriarAcesso.css';
 
 class CriarAcesso extends Component {
@@ -21,15 +21,17 @@ class CriarAcesso extends Component {
           </div>
 
           <div className="form-container">
+          <div className="cria-login">
             <p>Seus Dados Pessoais:</p>
             <input type="text" className="nome"placeholder="*Nome completo:"/>
             <input type="text" className="nascimento" placeholder="*Data de Nascimento:"/>
             <input type="charset" className="sexo" placeholder="*Sexo:"/>
             <input type="text" className="telefone"placeholder="*Telefone:"/>
+            </div>
           </div>
           
           <div id="proximo">
-            <input type="submit" className="proximo" name="proximo"/>
+            <input type="submit" className="proximo" name="proximo" value="Proximo"/>
           </div>
         </div>
       </div>

@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import './Login.css';
+import React from 'react';
 
-class Login extends Component {
-    render(){
+export default function Login (){
+    
         return(
             <div className="container-login">
                 <div className="container-autenticacao">
                      <h1>Deseja Logar Como?</h1>
                      <ul>
-                        <li><a href="../src/CriarAcesso.js">Cliente</a></li>
+                        <li>Cliente</li>
                         <li>Funcionário </li>
                         <li>Administrador</li>
                         
@@ -20,7 +19,6 @@ class Login extends Component {
                 </div>
             </div>
         );
-    }
+   
 }
 
-export default Login;

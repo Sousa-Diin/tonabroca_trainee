@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo/logo_emakers2.png';
+import logo from '../assets/logo/logo_emakers2.png';
 
 import './css/Endereco.css';
 
@@ -27,7 +27,7 @@ class Endereco extends Component {
           </div>
 
           <div id="finalizar">
-            <input type="submit" className="finalizar" name="finalizar"/>
+            <input type="submit" className="finalizar" name="finalizar" value="Finalizar"/>
           </div>
 
         </div>
