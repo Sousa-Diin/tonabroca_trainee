@@ -6,16 +6,16 @@ import '../CadastrarEnd/Endereco.css';
 class Endereco extends Component {
   render() {
     return (
-      <div className="endereco-container">
+      <div className="container-endereco">
         
-        <div className="cabecalho-endereco">
-          <img src={logo} className="logo-endereco" alt="logo" />
-          <h2>EmakersFood</h2>
-        </div>
+        <header>
+          <img src={logo} className="img-login" alt="logo"/>
+          <h2 className="title-logo">EmakersFood</h2>
+        </header>
 
-        <div className="form-endereco">
+        <div className="container-form">
 
-          <div className="dados-pessoais">
+          <div className="container-dados-pessoais">
             <p> Agora Nos Diga Seu Endereco </p>
             <input type="text" className="logradouro"placeholder="*Longradouro:"/>
             <input type="text" className="bairro" placeholder="*Bairro:"/>

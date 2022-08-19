@@ -7,10 +7,10 @@ class CriarAcesso extends Component {
     return (
       <div className="flex-container">
         
-        <div className="cabecalho">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>EmakersFood</h2>
-        </div>
+        <header>
+          <img src={logo} className="img-login" alt="logo"/>
+          <h2 className="title-logo">EmakersFood</h2>
+        </header>
 
         <div className="form-container">
           <div className="cria-login">

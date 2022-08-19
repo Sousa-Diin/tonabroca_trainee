@@ -2,44 +2,50 @@
 .container-login {
     display: flex;
     flex-direction: row-reverse;
-    flex-wrap: nowrap;
     justify-items: center;
+    width: 100vw;
     height:100vh;
-    padding: 5%;
-    margin-top: 0;
-    
+      
     background-image: url("../../assets/logo/background_login.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100vw;
+    background-attachment: fixed;
+    background-size: 100%;
+    
     
 }
 
-.slogan {
+.container-slogan {
+    
     color:#FFFFFF;
     float: left;
    /* background: rgba(0,0,0,.2); Teste**/
-    height: 15vh;
+    height: 13vh;
     align-items: center;
     padding: 3%;
 }
 
-.slogan  {
+.container-slogan  {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     
 
-    margin: 26% 32% 0 auto;
+    margin: 26% 9% 0 auto;
 }
 
 .container-autenticacao {
-    padding-top: 13%;
-    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+   
+   
+    width: 35vw;
     height: 70vh;
     margin: 0 auto;
-    justify-items: center;
-   /* padding: 5.9% .9% 0 .9% ;*/
+    
+   
 
     text-align: center;
     background: rgba(217,217,217,.9);
@@ -47,24 +53,28 @@
     
    
 }
-ul li {
+ul li, link {
+    display: flex;
+    flex-direction: column;
     max-width: 20vw;
     max-height: 13vh;
-    align-content: center;
-    margin: 4%;
-    padding: 4%;
+    
+    margin: 4vh;
+    padding: 3%;
     text-align: center;
     color:#FFFFFF;
     list-style: none;
+    text-decoration: none;
 
     border-radius: 7px;   
     background: #c5530c;
-    
+    justify-items: center;
+    justify-content: center;
 
 }
 li {
     margin: 0 auto;
-    font-weight: 400;
+    font-weight: 40%;
     font-size: 33px;
     line-height: 54px;
     text-align: center;
