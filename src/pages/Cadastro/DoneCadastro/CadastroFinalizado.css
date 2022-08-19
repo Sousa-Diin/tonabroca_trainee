@@ -1,8 +1,4 @@
-*{
-  margin: 0;
-  padding: 0;
- 
-}
+
 .cadastro-finalizado{
 
     width: 100%;
@@ -16,7 +12,7 @@
     
     background: #5E2075;
     background-size: 45%;
-    background-image: url("../../assets/logo/background-finalizado.png");
+    background-image: url("../../../assets/logo/background-finalizado.png");
     background-repeat: no-repeat;
     background-position: center;  
     

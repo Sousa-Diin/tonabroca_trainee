@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../pages/css/CadastroFinalizado.css';
+import '../DoneCadastro/CadastroFinalizado.css'
 
 class CadastroFinalizado extends Component {
     render (){

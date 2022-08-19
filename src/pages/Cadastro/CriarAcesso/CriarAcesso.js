@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo/logo_emakers2.png';
-import './css/CriarAcesso.css';
+import logo from '../../../assets/logo/logo_emakers2.png';
+import '../CriarAcesso/CriarAcesso.css';
 
 class CriarAcesso extends Component {
   render() {

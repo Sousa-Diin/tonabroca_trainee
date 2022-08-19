@@ -7,7 +7,9 @@ class Autenticar extends Component {
         return(
             <div className="container-autenticar">
                 <div className="flex-autenticar">
-                    <h1>Autenticando Sistema...</h1>
+                    <h1>Bem Vindo!</h1>
+                    <input className='email' type="email" placeholder="Email:"/>
+                    <input className='password' type="password" placeholder="Senha:"/>
                 </div>
             </div>
         );

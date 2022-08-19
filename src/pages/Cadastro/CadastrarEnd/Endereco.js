@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo/logo_emakers2.png';
+import logo from '../../../assets/logo/logo_emakers2.png';
 
-import './css/Endereco.css';
+import '../CadastrarEnd/Endereco.css';
 
 class Endereco extends Component {
   render() {
