@@ -14,7 +14,7 @@ export default function CodigoDeConfirmacao(){
         <div className="codigo-main">
             <h4 className="title-codigo">Digite o código enviado</h4>
             <input type="text" name="recuperar-senha"  placeholder=" Código"/>
-            <button><Link to="/codigoConfirmacao">Continuar</Link></button>
+            <button><Link to='/novaSenha'>Continuar</Link></button>
             <p><Link to="/recuperarSenha">Reenviar Código</Link></p>
         </div>
     </div>

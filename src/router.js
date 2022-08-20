@@ -9,6 +9,7 @@ import CadastroFinalizado from './pages/Cadastro/DoneCadastro/CadastroFinalizado
 import Autenticar from "./pages/Autenticar/Autenticar";
 import RecuperarSenha from "./components/RecuperarSenha/RecuperarSenha";
 import CodigoDeConfirmacao from "./components/RecuperarSenha/Codigo/CodigoDeConfirmacao";
+import NovaSenha from "./components/RecuperarSenha/NovaSenha/NovaSenha";
 
 function Router(){
     return(
@@ -22,6 +23,7 @@ function Router(){
                  <Route path='/autenticarCliente' element={<Autenticar/>}/>
                  <Route path='/recuperarSenha' element={<RecuperarSenha/>}/>
                  <Route path= '/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>
+                 <Route path='/novaSenha' element={<NovaSenha/>}/>
                 
             </Routes>
         </BrowserRouter>
