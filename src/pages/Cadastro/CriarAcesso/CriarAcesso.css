@@ -1,122 +1,127 @@
-
-  .form-container{
-    margin: 0 auto;
-  }
-  .flex-container {
-    display: flex;
+*{
+  margin: 0;
+  padding: 0;
+}
+  .container-cadrastro{
+   
     width: 100vw;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
     flex-wrap: wrap;
     text-align: center;
     
-  
     background: #FFFFFF;
   }
-  .cria-login, #proximo {
-    width: 70vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  p{
+  
+    font-family: 'Arial';
+   
+    font-weight: 70%;
+    font-size: 30px;
+    line-height: 54px;
+    color: #000000;
   }
-  .form-container input{
+
+  .container-criar-login {
+    margin: 0 auto;
+    width: 60vw;
+  
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    
+
+  }
+
+  .container-criar-login input{
+  
     background: #d9d9d9d9;
     border: none;
     border-radius: 5px;
-    padding: 10px;
-    justify-content:center;
-    align-items: center;
-    flex-basis: auto;
-    margin: 10px;
+     
+    margin: 1.2%;
+    width: 39vw;
+    height: 9vh;
+  }
+
+  .cria-login, .dados-pessoais {
     width: 40vw;
-    height: 8vh;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: rgba(0, 0, 0, 0.5);
     
-  
-  }
-  
-  /**
-    Usar propriedade que faz com que as Div filhas se ajustam 
-    automaticamente ao tamanho da tela (inputs -> senha , nascimento, sexo e telefone) 
-  */
-  
-  .email, .nome {
-    max-width:40vw;
-  }
-  .senha {
-    flex-direction: row;
-    max-width: 40vw;
-    justify-content:flex-end;
-    ;
-  }
-  
-  .nascimento, .sexo, .telefone {
-    max-width:40vw;
+    
     
   }
-  
+
+
   #proximo {
     display: flex;
-    justify-content: flex-end;
-    margin-left: 170px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 15vw;
+    margin-left: 25vw;
+    
+  }
+ 
+
+  .email {
+    max-width:39vw;
+
+    order:0;
+    
+  }
+  .senha {
+    
+    max-width: 20vw;
+    order: 1;
+  }
+
+  .confirma-senha {
+    max-width:20vw ;
+    order: 2;
+  }
+  
+  .nome {
+
+  }
+  .nascimento, .sexo, .telefone {
+    max-width:20vw;
+    order: 3;
     
   }
   
-  .form-container #proximo .proximo{
+
+  
+  #proximo .proximo{
     width: 15vw;
     height: 34px;
     top: auto;
-    
+    text-decoration: none;
     font-size: 1em;
     line-height: 10%;
     color:#FFFFFF;
     background: #FF6A0E;
-    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+    border: #FF6A0E;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
   }
   
-  .cabecalho {
-
-    display: flex;
-    flex-direction: row;
+  .link-proximo {
+    font-weight: 35vw;
+    font-size: 1.5rem;
+    line-height: 55%;
     align-items: center;
-    
-    width:100vw;
-    background: #5E2075;
-    height: 15vh;
-    padding: 5%;
-    
-    
-  }
-
-  .App-logo {
-   
-    width: 8vw;
-    height: 15vh;
-    margin: 0 auto;
-   
-  }
-  
-  
-  .cabecalho h2{
-    
-    justify-items: flex-start;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 60%;
-    font-size: 64px;
-    line-height: 70px;
-    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    color:#FFFFFF;
   
   }
-  
-  p{
-  
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 54px;
-    color: #000000;
-  }
-  
   

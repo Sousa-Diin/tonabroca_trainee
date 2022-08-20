@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../../../assets/logo/logo_emakers2.png';
+import { Link } from 'react-router-dom';
 
 import '../CadastrarEnd/Endereco.css';
 
@@ -27,8 +28,12 @@ class Endereco extends Component {
           </div>
 
           <div id="finalizar">
-            <input type="submit" className="finalizar" name="finalizar" value="Finalizar"/>
+            <button type="button" className="finalizar" name="finalizar" value="Finalizar">
+            <Link to="/finalizado" className="title-finalizar">Finalizar Cadastro</Link></button>
           </div>
+          <script>
+            
+          </script>
 
         </div>
       </div>

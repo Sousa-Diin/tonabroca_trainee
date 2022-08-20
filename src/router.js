@@ -7,6 +7,8 @@ import CriarAcesso from './pages/Cadastro/CriarAcesso/CriarAcesso';
 import Endereco from './pages/Cadastro/CadastrarEnd/Endereco';
 import CadastroFinalizado from './pages/Cadastro/DoneCadastro/CadastroFinalizado'
 import Autenticar from "./pages/Autenticar/Autenticar";
+import RecuperarSenha from "./components/RecuperarSenha/RecuperarSenha";
+import CodigoDeConfirmacao from "./components/RecuperarSenha/Codigo/CodigoDeConfirmacao";
 
 function Router(){
     return(
@@ -18,6 +20,8 @@ function Router(){
                  <Route path='/logradouro' element={<Endereco/>}/>
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
                  <Route path='/autenticarCliente' element={<Autenticar/>}/>
+                 <Route path='/recuperarSenha' element={<RecuperarSenha/>}/>
+                 <Route path= '/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>
                 
             </Routes>
         </BrowserRouter>

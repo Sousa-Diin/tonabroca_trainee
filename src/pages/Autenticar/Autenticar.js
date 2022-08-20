@@ -16,9 +16,9 @@ class Autenticar extends Component {
                     <h1>Bem Vindo!</h1>
                     <input className='email-login' type="email" placeholder="Email:"/>
                     <input className='password-login' type="password" placeholder="Senha:"/>
-                    <h5><Link to="/Home">Esqueci minha senha</Link></h5>
+                    <h5><Link to="/recuperarSenha">Esqueci minha senha</Link></h5>
                     <input className="entrar-login" type="submit" value="Entrar"/>
-                    <h6><Link to="/obterAcesso">Não tem uma conta? Cadastre-se</Link></h6>
+                    <h5>Não tem uma conta? <Link to="/obterAcesso">Cadastre-se</Link></h5>
                 </div>
             </div>
         );
