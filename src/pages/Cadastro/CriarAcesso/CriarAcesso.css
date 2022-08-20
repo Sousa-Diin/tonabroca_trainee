@@ -6,12 +6,12 @@
    
     width: 100vw;
     height: 100vh;
+    
     flex-direction: column;
     justify-content: center;
     justify-items: center;
     flex-wrap: wrap;
-    text-align: center;
-    
+    text-align: center;    
     background: #FFFFFF;
   }
 
@@ -27,83 +27,83 @@
 
   .container-criar-login {
     margin: 0 auto;
-    width: 60vw;
+    width: 70vw;
   
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     justify-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    gap :10px;
     
 
   }
 
-  .container-criar-login input{
-  
+  .campo-criar-senha {
+    width: 100%;
+    margin: 0 auto;
+    gap: 10px ;
+    flex-wrap: nowrap;
+    
+  }
+
+  .senha, .confirma-senha{
+    margin: 1%;
+    max-width: 28.2vw;
+   
+  }
+
+  .container-criar-login input,.campo-dados-pessoais input{
+    
     background: #d9d9d9d9;
     border: none;
     border-radius: 5px;
-     
-    margin: 1.2%;
-    width: 39vw;
-    height: 9vh;
+    height: 6vh;
   }
 
   .cria-login, .dados-pessoais {
-    width: 40vw;
+    width: 60vw;
     height: 35vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    background: rgba(0, 0, 0, 0.5);
-    
+    /*background: rgba(0, 0, 0, 0.5);TESTE*/
+    justify-content: space-around;
+    align-content: space-around;
     
     
   }
 
-
-  #proximo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 15vw;
-    margin-left: 25vw;
-    
+  .campo-dados-pessoais {
+    flex-wrap: nowrap;
+   
   }
  
 
-  .email {
-    max-width:39vw;
-
-    order:0;
+  .email, .nome {
+    width:58vw;
+   
     
   }
-  .senha {
-    
-    max-width: 20vw;
-    order: 1;
-  }
 
-  .confirma-senha {
-    max-width:20vw ;
-    order: 2;
-  }
   
-  .nome {
+  .nascimento, .sexo, .telefone{
+    width: 22.4vw;
+    margin: 1%;
+  }
+  .sexo {
+    max-width: 8vw;
+  }
 
+  .nascimento 
+  {
+    width: 25vw;
   }
-  .nascimento, .sexo, .telefone {
-    max-width:20vw;
-    order: 3;
-    
-  }
-  
 
   
   #proximo .proximo{
     width: 15vw;
     height: 34px;
-    top: auto;
+    /*top: auto;*/
     text-decoration: none;
     font-size: 1em;
     line-height: 10%;
@@ -123,5 +123,15 @@
     text-decoration: none;
     color:#FFFFFF;
   
+  }
+
+  #proximo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 15vw;
+   
+    margin-left: 43vw;
+    
   }
   

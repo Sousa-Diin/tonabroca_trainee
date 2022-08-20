@@ -6,7 +6,7 @@
 .container-codigo 
 {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow:row wrap;
     justify-content: space-between;
 }
 
@@ -86,7 +86,9 @@ input {
 }
 
 .codigo-main p {
+    flex-flow: row wrap;
     text-align: center;
     color: #000000;
+    font-size: 40px;
     
 }

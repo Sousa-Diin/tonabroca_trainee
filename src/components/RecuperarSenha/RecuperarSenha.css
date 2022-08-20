@@ -90,13 +90,15 @@ input {
     
 }
 
-.recuperar-senha button{
+.recuperar-senha button:hover{
     
     font-size: .9em;
-    color: #FFFFFF;
+    color: #000000;
+    text-decoration: underline;
 }
 
-.recuperar-senha button :hover {
+.recuperar-senha button{
     color: #FFFFFF;
     text-decoration: none;
+    
 }

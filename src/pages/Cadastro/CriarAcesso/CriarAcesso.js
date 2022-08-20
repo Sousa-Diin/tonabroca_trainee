@@ -18,16 +18,22 @@ class CriarAcesso extends Component {
           <div className="cria-login">
             <p className="App-intro">Vamos Criar seu Acesso!</p>
             <input type="email" className="email"placeholder="*Email completo:"/>
-            <input type="password" className="senha"placeholder="*Senha:"/>
-            <input type="password" className="confirma-senha"placeholder="*Confirmar senha:"/>
+            <div className='campo-criar-senha'>
+              <input type="password" className="senha"placeholder="*Senha:"/>
+              <input type="password" className="confirma-senha"placeholder="*Confirmar senha:"/>
+            </div>
+            
           </div>
 
           <div className="dados-pessoais">
             <p>Seus Dados Pessoais:</p>
             <input type="text" className="nome"placeholder="*Nome completo:"/>
-            <input type="text" className="nascimento" placeholder="*Data de Nascimento:"/>
-            <input type="charset" className="sexo" placeholder="*Sexo:"/>
-            <input type="text" className="telefone"placeholder="*Telefone:"/>
+            <div className='campo-dados-pessoais'>
+              <input type="date" className="nascimento" placeholder="*Data de Nascimento:"/>
+              <input type="charset" className="sexo" placeholder="*Sexo:"/>
+              <input type="text" className="telefone"placeholder="*Telefone:"/>
+            </div>
+            
           </div> 
           <div id="proximo">
             <button type="button" className="proximo" name="proximo" value="Proximo">
