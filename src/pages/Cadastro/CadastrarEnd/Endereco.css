@@ -1,11 +1,14 @@
-
+ *{
+  margin: 0;
+  padding: 0;
+ }
   .container-endereco {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-around;
     justify-items: center;
-    
+  
     width: 100vw;
     height: 100vh;
     
@@ -15,36 +18,24 @@
 
   .container-dados-pessoais{
     display: flex;
+    width: 60vw;
     flex-flow: row wrap;
-    justify-content: center;
-  }
-  
-  .container-form{ 
-    width: 50vw;
-    margin: 0 auto;
+    align-content: center;
+    justify-content:space-around;
     
-    justify-content:center;
-    align-items: center;
-  
   }
 
-  .container-form input {
+
+  .container-form input{
     background: #d9d9d9d9;
     border: none;
     border-radius: 5px;
-    padding: 2%;
-    margin: 1.5%;
+    width: 100%;
+    margin: 1%;
     height: 5vh;
-  }
-
-.form-endereco{ 
-    /*background: #FF6A0E; Teste*/
-    width: 50vw;
-    row-gap: 10px;
     
-    align-items: center;
-    margin-top:3%;
-}
+    
+  }
 
 p{
   text-align: center;
@@ -58,38 +49,34 @@ p{
   
 }
 
-.logradouro{
-    width: 41vw;
+.campo-endereco1 , .campo-endereco2{
+  width: 60vw;
+  flex-wrap: wrap;
+  /*background: rgba(0, 0, 0, 0.5); teste*/ 
+  justify-content: center;
+  margin: 1%;
 }
 
-.bairro{
+.logradouro{
+    max-width: 57vw;
+}
+
+.bairro, .cidade, .cep{
     
     max-width: 35vw;
+    flex-shrink: 1.2;
 }
 
 .numero{
-    max-width: 19%;
-    flex-grow: 2;
+   max-width: 21vw;
+   flex-shrink: 1.2;
 }
 
-.complemento{
+.complemento, .estado{
   flex-grow: 3;
-  max-width: 11.5vw;
+  max-width: 21vw;
 }
 
-
-.cidade{
-    
-    max-width: 30vw;
-}
-
-.cep{
-    max-width: 30vw;
-}
-
-.estado{
-    max-width: 8vw;
-}
 
 #finalizar .finalizar{
     width: 20vw;
@@ -112,6 +99,7 @@ p{
   text-align: center;
   text-decoration: none;
   color:#FFFFFF;
+
 
 }
 

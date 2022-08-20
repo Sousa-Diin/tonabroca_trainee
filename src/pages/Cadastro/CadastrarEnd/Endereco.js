@@ -19,12 +19,19 @@ class Endereco extends Component {
           <div className="container-dados-pessoais">
             <p> Agora Nos Diga Seu Endereco </p>
             <input type="text" className="logradouro"placeholder="*Longradouro:"/>
-            <input type="text" className="bairro" placeholder="*Bairro:"/>
-            <input type="text" className="numero" placeholder="*Número:"/>
-            <input type="text" className="complemento"placeholder="*Complemento:"/>
-            <input type="text" className="cidade"placeholder="*Cidade:"/>
-            <input type="text" className="cep" placeholder="*Cep:"/>
-            <input type="text" className="estado" placeholder="*Estado:"/>
+            <div className='campo-endereco1'>
+              <input type="text" className="bairro" placeholder="*Bairro:"/>
+              <input type="text" className="numero" placeholder="*Número:"/>
+            </div>
+            <div className='campo-endereco2'>
+              <input type="text" className="complemento"placeholder="*Complemento:"/>
+              <input type="text" className="cidade"placeholder="*Cidade:"/>
+            </div>
+            <div className='campo-endereco1'>
+              <input type="text" className="cep" placeholder="*Cep:"/>
+              <input type="text" className="estado" placeholder="*Estado:"/>
+            </div>
+            
           </div>
 
           <div id="finalizar">
