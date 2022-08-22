@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 
-import './Autenticar.css';
+import './AuthAdmin.css';
 import logo from '../../assets/logo/logo_emakers2.png';
 import { Link } from 'react-router-dom';
 
-class Autenticar extends Component {
+class AuthAdmin extends Component {
     render(){
         return(
-            <div className="container-autenticar">
+            <div className="container-auth-admin">
                 <header>
                     <img src={logo} className="img-login" alt="logo"/>
                     <h2 className="title-logo">EmakersFood</h2>
                 </header>
                 <div className="flex-autenticar">
-                    <h1>Bem Vindo!</h1>
-                    <input className='email-login' type="email" placeholder="Email:"/>
+                    <h1>Fazer Login Admin</h1>
+                    <input className='email-login' type="email" placeholder="Email ou Matrícula:"/>
                     <input className='password-login' type="password" placeholder="Senha:"/>
                     <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
                     <input className="entrar-login" type="submit" value="Entrar"/>
@@ -26,4 +26,4 @@ class Autenticar extends Component {
 
 }
 
-export default Autenticar;
+export default AuthAdmin;

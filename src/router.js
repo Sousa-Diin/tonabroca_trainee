@@ -10,6 +10,8 @@ import Autenticar from "./pages/Autenticar/Autenticar";
 import RecuperarSenha from "./components/RecuperarSenha/RecuperarSenha";
 import CodigoDeConfirmacao from "./components/RecuperarSenha/Codigo/CodigoDeConfirmacao";
 import NovaSenha from "./components/RecuperarSenha/NovaSenha/NovaSenha";
+import AuthAdmin from "./pages/AuthAdmin/AuthAdmin";
+import AuthFuncionario from "./pages/AuthFunc/AuthFuncionario";
 
 function Router(){
     return(
@@ -22,8 +24,10 @@ function Router(){
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
                  <Route path='/autenticarCliente' element={<Autenticar/>}/>
                  <Route path='/recuperarSenha' element={<RecuperarSenha/>}/>
-                 <Route path= '/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>
+                 <Route path='/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>
                  <Route path='/novaSenha' element={<NovaSenha/>}/>
+                 <Route path='/authAdmin' element={<AuthAdmin/>}/>
+                 <Route path='/authFunc' element={<AuthFuncionario/>}/>
                 
             </Routes>
         </BrowserRouter>

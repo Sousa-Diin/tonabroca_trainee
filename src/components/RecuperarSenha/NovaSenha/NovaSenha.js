@@ -12,11 +12,12 @@ export default function NovaSenha(){
             </header>
 
             <div className="nova-senha-main">
-                <h6>Digite a nova senha</h6>
-                <input type=""password placeholder='Nova senha'/>
-                <input type=""password placeholder='Confirme a senha'/>
+                <h4 className='title-new-password'>Digite a nova senha</h4>
+                <input type="password" placeholder='  Nova senha'/>
+                <input type="password" placeholder='  Confirme a senha'/>
 
-                <button id='confirmar-senha'><Link to="/logar">Confirmar</Link></button>
+                <button id='confirmar-senha'><Link id="link" to="/logar">Confirmar</Link></button>
+
 
             </div>
             

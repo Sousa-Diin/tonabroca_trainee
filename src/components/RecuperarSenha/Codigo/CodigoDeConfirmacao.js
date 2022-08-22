@@ -12,10 +12,10 @@ export default function CodigoDeConfirmacao(){
             <h5>EmakersFood</h5>
         </div>
         <div className="codigo-main">
-            <h4 className="title-codigo">Digite o código enviado</h4>
+            <h4 className='title-new-password'>Digite o código enviado</h4>
             <input type="text" name="recuperar-senha"  placeholder=" Código"/>
-            <button><Link to='/novaSenha'>Continuar</Link></button>
-            <p><Link to="/recuperarSenha">Reenviar Código</Link></p>
+            <button><Link id="link"to='/novaSenha'>Continuar</Link></button>
+            <h7><Link id="codigo"to="/recuperarSenha">Reenviar Código</Link></h7>
         </div>
     </div>
     );

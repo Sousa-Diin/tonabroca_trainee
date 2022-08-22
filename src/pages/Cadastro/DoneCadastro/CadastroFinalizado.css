@@ -20,18 +20,19 @@
 .frase{
   align-items: center;
   align-content: center;
-  width: 45vw;
+  width: 40vw;
   margin: 0 auto;
 }
 .frase p { 
   
   font-style: normal;
   font-weight: bold;
-  font-size: 3.3em;
-  line-height: 20vh;
+  font-size: 3.5em;
+  line-height: 9vh;
   text-align: center;
   color: #FFFFFF;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+  text-justify: inter-word;
   
 }
 

@@ -73,21 +73,21 @@ ul li, link {
     justify-content: center;
     color:#FFFFFF;
 }
-li {
+li, #auth{
 
     margin: 7px auto;
     font-weight: 40%;
     font-size: 33px;
     line-height: 54px;
     text-align: center;
-
+    text-decoration: none;
     color: #F5F5F5;
 
 }
 
  li:hover {
     background:rgba(255,106,14.4);
-    text-decoration: none;
+    
 }
 
 .slogan h1 {
