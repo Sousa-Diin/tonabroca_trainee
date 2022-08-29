@@ -43,3 +43,12 @@
     font-size: 1.3vw;
     
   }
+ 
+  input[type="submit"]:hover
+  {
+    opacity: 1;
+    background:rgba(255,106,14,.8);
+    
+    font-size: 168%;
+    
+  }

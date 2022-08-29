@@ -2,11 +2,12 @@
    
     width: 100vw;
     height: 100vh;
+    
    
     align-items: center;
     background-image: url("../../assets/logo/background-client.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100vw;
     background-attachment: fixed;
 
 }
@@ -24,8 +25,8 @@ header {
 
 img{
     
-    width: 6vw;
-    height: 13vh;
+    width: 116px;
+    height: 116px;
 }
 
 .title-logo {
@@ -68,9 +69,15 @@ img{
 }
 
 .entrar-login {
-    background: rgb(255,106,14);
+    /*background: rgb(255,106,14);*/
+    background: #c5530c;
     order: 0;
     width: 20vw;
+    border-radius: 9px;
+    margin: 0 auto;
+
+    color: #FFFFFF;
+    font-size: 20pt;
     
 }
 

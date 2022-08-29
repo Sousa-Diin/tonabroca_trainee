@@ -1,0 +1,62 @@
+.container-dados-func
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    
+    
+
+}
+
+.container-header, title-busca
+{
+    color: #FFFFFF;
+    gap: 8px;
+
+    font-weight: 150px;
+    font-size: 34px;  
+
+}
+
+.container-dados-busca
+{
+    display: flex;
+    flex-flow: column wrap;
+    width: 50vw;
+    height: 55vh;
+    align-items: center;
+    justify-content:space-around ;
+    margin: 0 auto;
+    /*background-image: url('../../assets/logo/search_func.png');
+    background-position: left;
+    background-repeat: no-repeat;*/
+}
+#dados-funcionario 
+{
+    width: 90%;
+    background: #d9d9d9d9;
+    border: solid 1px black;
+    border-radius: 8px;
+    
+}
+
+#dados-funcionario::placeholder
+{
+    font-weight: 100;
+    padding-left: 4%;
+    color: #000000;
+}
+
+#proximo
+{
+    width: 40%;
+
+    border-radius: 5px;
+    background: rgb(255,106,14);
+    color: #FFFFFF;
+    font-size: 15pt;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.3);
+}
+
+

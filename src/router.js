@@ -12,6 +12,8 @@ import CodigoDeConfirmacao from "./components/RecuperarSenha/Codigo/CodigoDeConf
 import NovaSenha from "./components/RecuperarSenha/NovaSenha/NovaSenha";
 import AuthAdmin from "./pages/AuthAdmin/AuthAdmin";
 import AuthFuncionario from "./pages/AuthFunc/AuthFuncionario";
+import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
+import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 
 function Router(){
     return(
@@ -28,6 +30,8 @@ function Router(){
                  <Route path='/novaSenha' element={<NovaSenha/>}/>
                  <Route path='/authAdmin' element={<AuthAdmin/>}/>
                  <Route path='/authFunc' element={<AuthFuncionario/>}/>
+                 <Route path='/buscarFunc' element={<BuscarFuncionario/>}/>
+                 <Route path='/dadosFunc' element={<funcionarioDAO/>}/>
                 
             </Routes>
         </BrowserRouter>
