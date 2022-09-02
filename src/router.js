@@ -31,7 +31,7 @@ function Router(){
                  <Route path='/authAdmin' element={<AuthAdmin/>}/>
                  <Route path='/authFunc' element={<AuthFuncionario/>}/>
                  <Route path='/buscarFunc' element={<BuscarFuncionario/>}/>
-                 <Route path='/dadosFunc' element={<funcionarioDAO/>}/>
+                 <Route path='/dadosFunc' element={<DadosFuncionario/>}/>
                 
             </Routes>
         </BrowserRouter>

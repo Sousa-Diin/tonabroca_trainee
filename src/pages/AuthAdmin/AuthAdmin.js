@@ -1,10 +1,28 @@
-import React, { Component } from 'react';
-
+import React, { Component} from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 import './AuthAdmin.css';
 import logo from '../../assets/logo/logo_emakers2.png';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 class AuthAdmin extends Component {
+
+    useEffect (() => {
+        api
+        .post("http://tonabroca/authAdmin",{
+            nome : "Wildes",
+            login:"123456"
+        })
+        .then((response) => setUser(response.data))
+        .catch((error) => {
+            console.error("ops! ocorreu um erro" + error);
+        });
+    });
+
+
     render(){
         return(
             <div className="container-auth-admin">

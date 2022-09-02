@@ -73,7 +73,7 @@ ul li, link {
     justify-content: center;
     color:#FFFFFF;
 }
-li, #auth{
+li, .auth{
 
     margin: 7px auto;
     font-weight: 40%;
@@ -95,7 +95,8 @@ li, #auth{
     margin: 2%;
     text-align: center;
     color:#FFFFFF;
-    font-size: 56px;
+    font-size: 56%;
+    font-weight: 30%;
     
 
 }
