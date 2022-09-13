@@ -10,30 +10,6 @@
     justify-content: space-between;
 }
 
-.codigo-header 
-{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: 0 auto;
-    background: #5E2075;
-
-    width: 100vw;
-    height: 16vh;
-
-    /* Usado para desprender a Div child da header*/
-    margin-bottom: 7vh;
-}
-
-.codigo-header h5 {
-    font-weight: 300px;
-    font-size: 54px;
-
-    color:#FFFFFF;
-    padding: 1.5%;
-}
-
 .codigo-main 
 {
     width: 38vw;
@@ -79,15 +55,6 @@ input {
     height: 7vh;
     background :rgba(217,217,217,1);
    
-}
-
-.codigo-main button {
-    
-    width: 20vw;
-    height: 6vh;
-    text-decoration: none;
-    background: #FF6A02;
-    
 }
 
 .codigo-main p {

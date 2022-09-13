@@ -38,33 +38,20 @@
     background: #d9d9d9d9;
     border: solid 1px black;
     border-radius: 8px;
+
+    font-size: large;
+    font-weight: 100;
+    padding-left: 1%;
+    
     
 }
 
 #buscar-funcionario::placeholder
 {
-    font-weight: 100;
-    padding-left: 4%;
+    
     color: #000000;
+    padding: auto 5px;
 }
-
-#pesquisar
-{
-    width: 40%;
-    height: 10%;
-    border-radius: 5px;
-    background: rgb(255,106,14);
-    color: #FFFFFF;
-    font-size: 15pt;
-    box-shadow: 2px 2px 3px rgba(0,0,0,.3);
-}
-.pesquisar
-{
-    width: 40%;
-    border-radius: 5px;
-    background: rgb(255,106,14);
-}
-
 .img-busca
 {
    position: absolute;

@@ -23,20 +23,6 @@
     margin-bottom: 7vh;
 }
 
-.header-recuperacao img{
-    
-    width: 6vw;
-    height: 13vh;
-}
-
-.header-recuperacao title-logo {
-    font-weight: 300px;
-    font-size: 54px;
-
-    color:#FFFFFF;
-    padding: 1.5%;
-}
-
 .recuperar-senha {
     width: 40vw;
     height: 70vh;
@@ -54,51 +40,11 @@
     background-position: center;
 }
 
-.title-recuperecao 
-{
-    font-family: 'Archivo';
-    font-style: normal;
-    font-weight: 400px;
-    font-size: 50px;
-    line-height: 54px;
-    text-align: center;
-    margin: 0 auto;
-    color: #000000;
-}
-.recuperar-senha, input, button{
-    border: none;
-    margin: 0 auto; 
-    text-decoration: none;
-    
-}
-
-
-
 input {
 
     width: 30vw;
     height: 7vh;
     background :rgba(217,217,217,1);
+    padding-left: 3%;
    
-}
-
-.recuperar-senha button {
-    width: 20vw;
-    height: 6vh;
-    text-decoration: none;
-    background: #FF6A02;
-    
-}
-
-.recuperar-senha button:hover{
-    
-    font-size: .9em;
-    color: #000000;
-    text-decoration: underline;
-}
-
-.recuperar-senha button{
-    color: #FFFFFF;
-    text-decoration: none;
-    
 }

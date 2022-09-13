@@ -98,8 +98,14 @@
     width: 25vw;
   }
 
+  input {
+    
+    
+    font-weight: 100;
+    
+  }
   
-  #proximo .proximo{
+  .proximo{
     width: 15vw;
     height: 34px;
     /*top: auto;*/
@@ -124,12 +130,12 @@
   
   }
 
-  #proximo {
+  #prox-tela-criar-cadastro {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 15vw;
-   
+    /*width: 15vw;*/
+    
     margin-left: 43vw;
     
   }

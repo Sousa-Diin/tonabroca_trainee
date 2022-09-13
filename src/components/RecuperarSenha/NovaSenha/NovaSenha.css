@@ -10,30 +10,6 @@
     justify-content: space-between;
 }
 
-.nova-senha-header 
-{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: 0 auto;
-    background: #5E2075;
-
-    width: 100vw;
-    height: 16vh;
-
-    /* Usado para desprender a Div child da header*/
-    margin-bottom: 7vh;
-}
-
-.nova-senha-header h5 {
-    font-weight: 300px;
-    font-size: 54px;
-
-    color:#FFFFFF;
-    padding: 1.5%;
-}
-
 .nova-senha-main 
 {
     width: 40vw;
@@ -61,7 +37,7 @@
     margin: 0 auto;
     color: #000000;
 }
-.nova-senha-main, input, button{
+.nova-senha-main, input{
     border: none;
     margin: 0 auto; 
     text-decoration: none;
@@ -76,14 +52,6 @@
     height: 7vh;
     background :rgba(217,217,217,1);
    
-}
-
-.nova-senha-main button {
-    width: 20vw;
-    height: 6vh;
-    text-decoration: none;
-    background: #FF6A02;
-    
 }
 
 .nova-senha-main h6 {

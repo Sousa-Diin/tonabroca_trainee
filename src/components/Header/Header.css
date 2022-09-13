@@ -1,0 +1,25 @@
+.header-logo-container {
+    width: 100vw;
+    height: 16vh;
+    background: #5E2075;
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+
+.header-logo-img {
+    
+   /**/
+}
+
+.header-logo-title{
+    font-weight: 300px;
+    font-size: 54px;
+
+    color:#FFFFFF;
+    padding: 1.5%;
+   
+}

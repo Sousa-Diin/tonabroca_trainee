@@ -3,9 +3,14 @@ import logo from '../../../assets/logo/logo_emakers2.png';
 import { Link } from 'react-router-dom';
 
 import '../CadastrarEnd/Endereco.css';
+import Button from '../../../components/Button/Button';
 
-class Endereco extends Component {
-  render() {
+const Endereco = () => {
+
+  const handleFinalizaCastroClick = () => {
+    
+  };
+
     return (
       <div className="container-endereco">
         
@@ -35,8 +40,11 @@ class Endereco extends Component {
           </div>
 
           <div id="finalizar">
-            <button type="button" className="finalizar" name="finalizar" value="Finalizar">
-            <Link to="/finalizado" className="title-finalizar">Finalizar Cadastro</Link></button>
+            <Button type="button" 
+            className="finalizar" 
+            name="finalizar"
+            value="Finalizar">
+            <Link to="/finalizado" className='link'>Finalizar Cadastro</Link></Button>
           </div>
           <script>
             
@@ -46,6 +54,6 @@ class Endereco extends Component {
       </div>
     );
   }
-}
+
 
 export default Endereco;

@@ -9,36 +9,9 @@
     background-repeat: no-repeat;
     background-size: 100vw;
     background-attachment: fixed;
-
-}
-header {
-    width: 100vw;
-    height: 16vh;
-    background: #5E2075;
-    display: flex;
-    flex-flow: row nowrap;
-
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 7vh;
-}
-
-img{
     
-    width: 116px;
-    height: 116px;
+
 }
-
-.title-logo {
-    font-weight: 300px;
-    font-size: 54px;
-
-    color:#FFFFFF;
-    padding: 1.5%;
-   
-}
-
-
 
 .flex-autenticar {
     display: flex;

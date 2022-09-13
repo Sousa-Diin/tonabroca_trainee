@@ -18,7 +18,7 @@ class AuthFuncionario extends Component {
                     <input className='password-login' type="password" placeholder="Senha:"/>
                     <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
                     <input className="entrar-login" type="submit" value="Entrar"/>
-                    <h5>Não tem uma conta? <Link id="newpass" to="/obterAcesso">Cadastre-se</Link></h5>
+                    <h5>Não tem uma conta? <Link id="newpass" to="/obterAcesso" className='link'>Cadastre-se</Link></h5>
                 </div>
             </div>
         );

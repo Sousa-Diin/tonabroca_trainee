@@ -1,17 +1,9 @@
-.container-auth-admin {
-   
-    width: 100vw;
-    height: 100vh;
-   
-    align-items: center;
 
-}
-
-.flex-autenticar {
+.auth-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 17vh;
     margin: 0 auto;
     width: 40vw;
@@ -36,20 +28,14 @@
 }
 
 .entrar-login {
-    background: rgb(255,106,14);
+    /*background: rgb(255,106,14);*/
+    background: #c5530c;
     order: 0;
     width: 20vw;
+    border-radius: 9px;
+    margin: 0 auto;
+
+    color: #FFFFFF;
+    font-size: 20pt;
     
-}
-
-#newpass
-{
-    color:#000000;
-    text-decoration: none;
-}
-
-#newpass:hover
-{
-    color:#5E2075;
-    text-decoration: underline;
 }

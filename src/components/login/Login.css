@@ -19,6 +19,7 @@
     
     color:#FFFFFF;
     float: left;
+    width:20vw;
    /* background: rgba(0,0,0,.2); Teste**/
     height: 13vh;
     align-items: center;
@@ -29,7 +30,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    
 
     margin: 26% 9% 0 auto;
 }
@@ -95,8 +95,7 @@ li, .auth{
     margin: 2%;
     text-align: center;
     color:#FFFFFF;
-    font-size: 56%;
-    font-weight: 30%;
-    
+    font-size: 59px;
+    font-weight: 50%;
 
 }

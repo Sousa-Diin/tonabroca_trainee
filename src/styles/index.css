@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); 
 
+  *{
+    margin: 0;
+    padding:0;
+    /*box-sizing: border-box;*/
+  }
   
   html, body{
     display: flex;
@@ -27,16 +32,20 @@
 
   #link
   {
-    color:#FFFFFF;
     text-decoration: none;
-    font-weight: 50%;
-    font-size: 1.6vw;
   }
 
-  #link:hover
-  {
-    text-decoration: dashed;
+  .link {
+    
+    color:#eee;
   }
+
+  .link:hover{
+    color:rgb(255,106,14);
+    text-decoration: none;
+  }
+
+ 
   input::placeholder
   {
     color: rgba(0, 0, 0, 0.3);
@@ -52,3 +61,4 @@
     font-size: 168%;
     
   }
+

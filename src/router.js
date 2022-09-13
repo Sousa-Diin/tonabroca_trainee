@@ -6,7 +6,7 @@ import Login from './components/login/Login';
 import CriarAcesso from './pages/Cadastro/CriarAcesso/CriarAcesso';
 import Endereco from './pages/Cadastro/CadastrarEnd/Endereco';
 import CadastroFinalizado from './pages/Cadastro/DoneCadastro/CadastroFinalizado'
-import Autenticar from "./pages/Autenticar/Autenticar";
+import AuthClient from "./pages/AuthClient/AuthClient";
 import RecuperarSenha from "./components/RecuperarSenha/RecuperarSenha";
 import CodigoDeConfirmacao from "./components/RecuperarSenha/Codigo/CodigoDeConfirmacao";
 import NovaSenha from "./components/RecuperarSenha/NovaSenha/NovaSenha";
@@ -24,7 +24,7 @@ function Router(){
                  <Route path='/obterAcesso' element={<CriarAcesso/>}/>
                  <Route path='/logradouro' element={<Endereco/>}/>
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
-                 <Route path='/autenticarCliente' element={<Autenticar/>}/>
+                 <Route path='/autenticarCliente' element={<AuthClient/>}/>
                  <Route path='/recuperarSenha' element={<RecuperarSenha/>}/>
                  <Route path='/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>
                  <Route path='/novaSenha' element={<NovaSenha/>}/>
