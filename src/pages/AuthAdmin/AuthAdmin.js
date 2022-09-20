@@ -8,29 +8,29 @@ import { Link } from 'react-router-dom';
 
 
 
-class AuthAdmin extends Component {
+class AuthAdmin extends React.Component {
+    state = {
+        login: "",
+        senha: "",
+    };
 
-   /*useEffect (() => {
-        api
-        .post("http://tonabroca/authAdmin",{
-            nome : "Wildes",
-            login:"123456"
-        })
-        .then((response) => setUser(response.data))
-        .catch((error) => {
-            console.error("ops! ocorreu um erro" + error);
-        });
-    });*/
+    constructor(props){
+        super(props);
+    
+    }
 
+    handleChange(event){
+        this.setState({login: event.target.value});
+    }
 
     render(){
         return(
             <div className="container-auth-admin">
                 <Header/>
-                <div className="flex-autenticar">
+                <div className="flex-autenticar" >
                     <h1>Fazer Login Admin</h1>
-                    <input className='email-login' type="email" placeholder="Email ou Matrícula:"/>
-                    <input className='password-login' type="password" placeholder="Senha:"/>
+                    <input className='email-login' value={this.state.value} onChange={this.handleChange}type="email" placeholder="Email ou Matrícula:"/>
+                    <input className='password-login' value={this.state.value}type="password" placeholder="Senha:"/>
                     <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
                     <Button>Entrar</Button>
                     <h5>Não tem uma conta? <Link id="newpass" to="/obterAcesso" className='link'>Cadastre-se</Link></h5>

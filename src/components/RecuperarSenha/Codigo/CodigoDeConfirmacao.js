@@ -13,8 +13,11 @@ export default function CodigoDeConfirmacao(){
         <div className="codigo-main">
             <h4 className='title-new-password'>Digite o código enviado</h4>
             <input type="text" name="recuperar-senha"  placeholder=" Código"/>
-            <Button><Link id="link"to='/novaSenha'>Continuar</Link></Button>
-            <h7><Link id="codigo"to="/recuperarSenha" className='link'>Reenviar Código</Link></h7>
+            <div className="centraliza-button-link">
+            <Button ><Link id="link"to='/novaSenha'>Continuar</Link></Button>
+            <p ><Link id="codigo"to="/recuperarSenha" className="rev-cod-psw-confr" >Reenviar Código</Link></p>
+            </div>
+            
         </div>
     </div>
     );

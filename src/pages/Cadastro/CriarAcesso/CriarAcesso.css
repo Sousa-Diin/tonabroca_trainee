@@ -15,7 +15,7 @@
     background: #FFFFFF;
   }
 
-  p{
+  .App-intro{
   
     font-family: 'Arial';
    
@@ -47,7 +47,7 @@
 
   .senha, .confirma-senha{
     margin: 1%;
-    max-width: 28.2vw;
+    max-width: 26.9vw;
    
   }
 
@@ -60,7 +60,7 @@
   }
 
   .cria-login, .dados-pessoais {
-    width: 60vw;
+    width: 65vw;
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -79,14 +79,14 @@
  
 
   .email, .nome {
-    width:58vw;
+    width:56.9vw;
    
     
   }
 
   
-  .nascimento, .sexo, .telefone{
-    width: 22.4vw;
+  .telefone{
+    width: 20vw;
     margin: 1%;
   }
   .sexo {
@@ -95,7 +95,8 @@
 
   .nascimento 
   {
-    width: 25vw;
+    width: 23.5vw;
+    margin: 1%;
   }
 
   input {

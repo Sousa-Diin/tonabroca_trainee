@@ -32,7 +32,7 @@
     border-radius: 5px;
     width: 100%;
     margin: 1%;
-    height: 5vh;
+    height: 6vh;
     
     
   }
@@ -58,23 +58,23 @@ p{
 }
 
 .logradouro{
-    max-width: 57vw;
+    max-width: 55.7vw;
 }
 
 .bairro, .cidade, .cep{
     
-    max-width: 35vw;
+    max-width: 29.7vw;
     flex-shrink: 1.2;
 }
 
 .numero{
-   max-width: 21vw;
+   max-width: 23vw;
    flex-shrink: 1.2;
 }
 
 .complemento, .estado{
   flex-grow: 3;
-  max-width: 21vw;
+  max-width: 23vw;
 }
 
 

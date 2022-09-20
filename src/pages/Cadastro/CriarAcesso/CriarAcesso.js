@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo/logo_emakers2.png';
+import Header from '../../../components/Header/Header';
+import Button from '../../../components/Button/Button';
 import '../CriarAcesso/CriarAcesso.css';
 
 class CriarAcesso extends Component {
@@ -8,10 +9,7 @@ class CriarAcesso extends Component {
     return (
       <div className="container-cadrastro">
         
-        <header>
-          <img src={logo} className="img-login" alt="logo"/>
-          <h2 className="title-logo">EmakersFood</h2>
-        </header>
+        <Header />
 
         <div className="container-criar-login">
 
@@ -36,8 +34,8 @@ class CriarAcesso extends Component {
             
           </div> 
           <div id="prox-tela-criar-cadastro">
-            <button type="button" className="proximo" name="proximo" value="Proximo">
-            <Link to="/logradouro" className='link'>Próximo</Link></button>
+            <Button type="button" className="proximo" name="proximo" value="Proximo">
+            <Link to="/logradouro" className='link'>Próximo</Link></Button>
         </div>
          
         </div>

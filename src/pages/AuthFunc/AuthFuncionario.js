@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 
 import './AuthFuncionario.css';
-import logo from '../../assets/logo/logo_emakers2.png';
+import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 
 class AuthFuncionario extends Component {
     render(){
         return(
             <div className="container-auth-func">
-                <header>
-                    <img src={logo} className="img-login" alt="logo"/>
-                    <h2 className="title-logo">EmakersFood</h2>
-                </header>
+                <Header/>
                 <div className="flex-autenticar">
                     <h1>Fazer Login</h1>
                     <input className='email-login' type="email" placeholder="Email:"/>
                     <input className='password-login' type="password" placeholder="Senha:"/>
                     <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
-                    <input className="entrar-login" type="submit" value="Entrar"/>
+                    <Button >Entrar</Button>
                     <h5>Não tem uma conta? <Link id="newpass" to="/obterAcesso" className='link'>Cadastre-se</Link></h5>
                 </div>
             </div>

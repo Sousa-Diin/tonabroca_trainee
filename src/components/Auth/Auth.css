@@ -13,29 +13,3 @@
     
     
 }
-
-.flex-autenticar {
-   width: 35vw;
-   padding: 2%;
-}
-.email-login, .password-login, .entrar-login {
-    width: 35vw;
-    height: 7vh;
-    border: none;
-    padding: 2%;
-    margin: 1.5%;
-    background: #d9d9d9d9;
-}
-
-.entrar-login {
-    /*background: rgb(255,106,14);*/
-    background: #c5530c;
-    order: 0;
-    width: 20vw;
-    border-radius: 9px;
-    margin: 0 auto;
-
-    color: #FFFFFF;
-    font-size: 20pt;
-    
-}

@@ -9,13 +9,11 @@ import Button from '../../components/Button/Button';
 
 
 export default class AuthClient extends React.Component {
-    state = {
-        login: "",
-        senha: "",
-    }
+   
     
     handleChangeLogin = event => {
         this.setState({login: event.target.value});
+        
     }
 
     handleChangeSenha = event => {

@@ -1,6 +1,6 @@
 .button {
 	background: #FF6A02;
-	width: 20vw;
+	width: 16vw;
     height: 6vh;
 	padding: 0 10px;
 	border-radius: 5px;
@@ -15,4 +15,5 @@
 .button:hover {
 	background-color: #d2d2d2;
 	color: rgb(255,106,14);
+	border: 2.7px solid rgb(255,106,14);
 }
