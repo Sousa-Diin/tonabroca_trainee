@@ -14,6 +14,7 @@ import AuthAdmin from "./pages/AuthAdmin/AuthAdmin";
 import AuthFuncionario from "./pages/AuthFunc/AuthFuncionario";
 import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
+import Cardapio from "./pages/Pedidos/Cardapio";
 
 function Router(){
     return(
@@ -32,6 +33,7 @@ function Router(){
                  <Route path='/authFunc' element={<AuthFuncionario/>}/>
                  <Route path='/buscarFunc' element={<BuscarFuncionario/>}/>
                  <Route path='/dadosFunc' element={<DadosFuncionario/>}/>
+                 <Route path='/pedidos' element={<Cardapio/>}/>
                 
             </Routes>
         </BrowserRouter>

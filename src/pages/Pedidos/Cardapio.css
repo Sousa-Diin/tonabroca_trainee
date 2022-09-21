@@ -1,0 +1,84 @@
+.ped-cont-prod-main
+{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.cabecalho
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.ped-aba-search-nav
+{
+   /* background-color: rgba(0,0,0,.3); //Teste*/
+    position: absolute;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    width: 20vw;
+    height: 5vh;
+    margin: 3% 1% 1% 77%;
+    padding: 1%;
+    gap:5%;
+}
+
+#input-pedido
+{
+    height: 5vh;
+    margin-top: 2.5%;
+    background-color: #FFFFFF;
+}
+
+.img-ped
+{
+    width: 60%;
+    height: 60%;
+    margin-top: 7%;
+    cursor: pointer;
+}
+
+.img-ped:hover{
+    width: 65%;
+    height: 65%;
+}
+
+.ped-div-anuncios
+{
+    margin-top: -7vh;
+    width: 100%;
+    height: 12vh;
+    background-color: rgba(94,32,117,.5);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+   
+    
+}
+
+.img-anu-ped
+{
+    width: 5vw;
+    height: 7vh;
+    margin-top:1.4%;
+}
+
+.ped-name-store-entrega
+{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.info-ped
+{
+    flex-flow: row nowrap;
+}
