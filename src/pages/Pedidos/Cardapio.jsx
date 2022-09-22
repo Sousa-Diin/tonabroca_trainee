@@ -9,6 +9,8 @@ import img1 from '../../assets/logo/Pedido de Comida/carne.png';
 import img3 from '../../assets/logo/Pedido de Comida/sushi.png';
 import img4 from '../../assets/logo/Pedido de Comida/salada.png';
 import img2 from '../../assets/logo/Pedido de Comida/batatas-fritas.png';
+import ImageAndPhrase from "../../components/ImagePhrase/ImageAndPhrase";
+import Anuncios from "../../components/Anuncios/Anuncios";
 
 class Cardapio extends React.Component {
 
@@ -34,22 +36,15 @@ class Cardapio extends React.Component {
                         <img src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
                     </div>
                 </nav>
-                
-                <div className="ped-div-anuncios">
-                    <img src={img1} alt="img-1" className="img-anu-ped"/>
-                    <img alt="img-2" className="img-anu-ped"/>
-                    <img src={img2} alt="img-3" className="img-anu-ped"/>
-                    <img alt="img-4" className="img-anu-ped"/>
-                    <img src={img3} alt="img-5" className="img-anu-ped"/>
-                    <img alt="img-6" className="img-anu-ped"/>
-                    <img src={img4} alt="img-7" className="img-anu-ped"/>
-                </div>
+                <Anuncios />
                 <div className="ped-name-store-entrega">
                     <img alt="logo-store"/> <h2>Restaurante <br></br>Food e Drinks </h2>
                     <aside className="info-ped"> 
-                        <img/> <span/> 
+                        <img alt="img-moeda"/> <span>Pedido mínimo R$ 0,00</span>
+                        <img alt="img-moto"/> <span></span>
                     </aside>
                 </div>
+                
             </main>
         );
     }

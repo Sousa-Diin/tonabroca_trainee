@@ -1,0 +1,6 @@
+.container-principal-img-phrase
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
