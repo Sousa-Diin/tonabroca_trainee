@@ -3,4 +3,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+
+    width: 100vw;
+    height: 15vh;
 }
