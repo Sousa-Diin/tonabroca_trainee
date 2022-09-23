@@ -5,10 +5,6 @@ import './Cardapio.css'
 import logar from '../../assets/logo/Pedido de Comida/sombra-de-usuario-masculino.png';
 import carrinho from '../../assets/logo/Pedido de Comida/carrinho-de-compras.png';
 
-import img1 from '../../assets/logo/Pedido de Comida/carne.png';
-import img3 from '../../assets/logo/Pedido de Comida/sushi.png';
-import img4 from '../../assets/logo/Pedido de Comida/salada.png';
-import img2 from '../../assets/logo/Pedido de Comida/batatas-fritas.png';
 import ImageAndPhrase from "../../components/ImagePhrase/ImageAndPhrase";
 import Anuncios from "../../components/Anuncios/Anuncios";
 
