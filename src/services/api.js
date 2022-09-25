@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const api = axios.create ({
-    baseURL : "https://api.github.com", //API a ser consumida
+const api = new axios.create ({
+    baseURL : "https://localhost:3333", //API a ser consumida
 
 });
-
+/*
 api.interceptors.request.use(async config => {// intercepta a requisição antes de ser executada
 
     //Token manual para teste
@@ -13,6 +13,6 @@ api.interceptors.request.use(async config => {// intercepta a requisição antes
         api.defaults.headers.authorization =`Bearer${token}`;
     }
     return config
-});
+});*/
 
 export default api;

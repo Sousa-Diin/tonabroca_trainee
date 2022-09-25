@@ -1,0 +1,28 @@
+.cont-prin-prod
+{
+
+    background-color: rgba(255,106,14,1);
+    width:32vw;
+    height:17vh;
+    
+    display: flex;
+    flex-flow: column;
+}
+
+.son-img-info-prod
+{
+
+}
+
+.son-info-prod
+{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.son-desc-prod
+{
+
+}
+

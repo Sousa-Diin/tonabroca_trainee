@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from '../../../assets/logo/logo_emakers2.png';
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,6 @@ import Button from '../../../components/Button/Button';
 
 const Endereco = () => {
 
-  const handleFinalizaCastroClick = () => {
-    
-  };
 
     return (
       <div className="container-endereco">

@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 //import { useEffect, useState } from "react";
 //import axios from "axios";
 import './AuthAdmin.css';
@@ -13,11 +13,6 @@ class AuthAdmin extends React.Component {
         login: "",
         senha: "",
     };
-
-    constructor(props){
-        super(props);
-    
-    }
 
     handleChange(event){
         this.setState({login: event.target.value});

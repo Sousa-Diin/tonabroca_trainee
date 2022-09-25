@@ -127,7 +127,7 @@
 .ped-cont-list-prod
 {
     width:100%;
-    height: 50%;
+    height: 55vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -136,7 +136,7 @@
     align-items: center;
 }
 
-
+/*Teste */
 .produtos
 {
 

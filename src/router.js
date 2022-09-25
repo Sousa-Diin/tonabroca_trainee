@@ -21,7 +21,7 @@ function Router(){
         <BrowserRouter>
             <Routes>
                
-                 <Route path='/logar' element={<Login/>}/>
+                 <Route path='/' element={<Login/>}/>
                  <Route path='/obterAcesso' element={<CriarAcesso/>}/>
                  <Route path='/logradouro' element={<Endereco/>}/>
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
