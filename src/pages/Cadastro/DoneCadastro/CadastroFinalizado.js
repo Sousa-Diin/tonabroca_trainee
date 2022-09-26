@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
-import '../DoneCadastro/CadastroFinalizado.css'
+import React from 'react';
+import Message from '../../../components/Status/Message';
 
-class CadastroFinalizado extends Component {
-    render (){
-        return(
-            <div className="cadastro-finalizado"> 
-                <div className="frase"> 
-                    <p > Cadastro Finalizado Com Sucesso!</p>
-                </div>
-            </div>
-            
-        );
-    }
+export default  CadastroFinalizado  =>{
+
+    return(
+        <Message>Cadastro Finalizado Com Sucesso!</Message>
+    );
 }
 
-
-export default CadastroFinalizado;

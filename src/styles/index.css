@@ -44,13 +44,12 @@
     color:rgb(255,106,14);
     text-decoration: none;
   }
-
  
-  input::placeholder
+  input, input::placeholder
   {
-    color: rgba(0, 0, 0, 0.3);
-    font-size: 1.3vw;
-    
+    color: #000000;
+    font-size: 1.5vw;
+    font-weight: bold;
   }
  
   input[type="submit"]:hover

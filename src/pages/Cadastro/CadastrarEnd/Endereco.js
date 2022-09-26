@@ -3,7 +3,7 @@ import logo from '../../../assets/logo/logo_emakers2.png';
 import { Link } from 'react-router-dom';
 
 import '../CadastrarEnd/Endereco.css';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/Button/Button'; 
 
 const Endereco = () => {
 
@@ -43,10 +43,6 @@ const Endereco = () => {
             value="Finalizar">
             <Link to="/finalizado" className='link'>Finalizar Cadastro</Link></Button>
           </div>
-          <script>
-            
-          </script>
-
         </div>
       </div>
     );

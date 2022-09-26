@@ -27,7 +27,7 @@
 
 .ped-aba-search-nav
 {
-   /* background-color: rgba(0,0,0,.3); //Teste*/
+    /*background-color: rgba(0,0,0,.3); /Teste*/
     position: absolute;
     position: fixed;
     display: flex;
@@ -43,6 +43,7 @@
 
 #input-pedido
 {
+    width: 100%;
     height: 5vh;
     margin-top: 2.5%;
     background-color: #FFFFFF;
@@ -50,15 +51,15 @@
 
 .img-ped
 {
-    width: 60%;
+    width: 15%;
     height: 60%;
     margin-top: 7%;
     cursor: pointer;
 }
 
 .img-ped:hover{
-    width: 65%;
-    height: 65%;
+    
+    height: 61%;
 }
 
 /* Container de informacões do pedido */
@@ -145,3 +146,4 @@
     height:17vh;
     text-align: center;
 }
+

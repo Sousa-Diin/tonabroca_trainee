@@ -1,5 +1,4 @@
-
-.cadastro-finalizado{
+.cont-comp-sts-mess {
 
     width: 100vw;
     height: 100vh;
@@ -8,22 +7,23 @@
     flex-wrap: wrap;
     justify-content: center;      
     
+    
     background: #5E2075;
     background-size: 45%;
-    background-image: url("../../../assets/logo/background-finalizado.png");
+    background-image: url("../../assets/logo/background-finalizado.png");
     background-repeat: no-repeat;
     background-position: center;  
     background-size: 40%;
     
 }
 
-.frase{
+.son-comp-phr {
   align-items: center;
   align-content: center;
   width: 40vw;
   margin: 0 auto;
 }
-.frase p { 
+.son-comp-phr .phrase { 
   
   font-style: normal;
   font-weight: bold;
@@ -35,4 +35,3 @@
   text-justify: inter-word;
   
 }
-

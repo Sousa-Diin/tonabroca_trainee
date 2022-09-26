@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Cabecalho from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 //import api from '../../services/api';
-import Router from '../../router'
 
 
 export default function AuthClient  () {
@@ -20,6 +19,7 @@ export default function AuthClient  () {
         const data = {
             email, password, cargo
         }
+        
         setCargo(newCargo);
        // const response = await api.post("/obterAcesso", data);
         console.log(data);
@@ -27,11 +27,7 @@ export default function AuthClient  () {
         
     };
 
-    const singIn = (auth) =>{ 
-        if(this.email === "wildes.sousa@estudante.ufla.br" && this.password === 12345){
-            return <Router to='/pedidos'/>;
-        }
-    }
+    
 
     return(
         <div className="container-autenticar">

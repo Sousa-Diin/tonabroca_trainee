@@ -15,6 +15,8 @@ import AuthFuncionario from "./pages/AuthFunc/AuthFuncionario";
 import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 import Cardapio from "./pages/Pedidos/Cardapio";
+import Message from "./components/Status/Message";
+/* LINE 29*/
 
 function Router(){
     return(
@@ -25,6 +27,7 @@ function Router(){
                  <Route path='/obterAcesso' element={<CriarAcesso/>}/>
                  <Route path='/logradouro' element={<Endereco/>}/>
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
+                 <Route path='/done' element={<Message/>}/>
                  <Route path='/autenticarCliente' element={<AuthClient/>}/>
                  <Route path='/recuperarSenha' element={<RecuperarSenha/>}/>
                  <Route path='/codigoConfirmacao' element={<CodigoDeConfirmacao/>}/>

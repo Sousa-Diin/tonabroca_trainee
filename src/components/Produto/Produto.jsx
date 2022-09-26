@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const Produto = ({produto}) => {
+    
     return(
         <main className='cont-prin-prod'>
             <header className='son-img-info-prod'>

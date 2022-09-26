@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 
 class AuthFuncionario extends Component {
+    
     render(){
+        
         return(
             <div className="container-auth-func">
                 <Header/>
