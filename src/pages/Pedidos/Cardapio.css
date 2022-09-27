@@ -163,17 +163,7 @@
     height:16.9vh;
 }
 
-.show 
-{
-    display: flex !important;
-}
-
-.hide 
-{
-    display: none !important;
-}
-
-.cont-abs-add-pro
+.cont-abs-add-pro-show /*DISPLAY ESCONDINDO 01*/
 {
     display: flex;
     flex-flow: row nowrap;
@@ -264,6 +254,12 @@
     cursor: pointer;
 }
 
+    .cont-abs-add-pro-hide
+    {
+        display: none;
+
+    }
+
 /*Lista Produtos*/
 .container-picture
 {
@@ -299,8 +295,35 @@
 
 .container-descricao
 {
-    width: 100%;
+    width: 95%;
     display: flex;
     margin: 1%;
     justify-content: space-between;
 }
+
+.sidebar-active /*DISPLAY ESCONDINDO 02*/
+{
+    background-color: rgba(217,217,217,.3);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25vw;
+    height: 70vh;
+    margin-left: 74%;
+    margin-top: -3%;
+}
+    .sidebar
+    {
+        display: none;
+    }
+
+/*.show 
+{
+    display: none !important;
+}
+
+.hide 
+{
+    display: none !important;
+}*/
