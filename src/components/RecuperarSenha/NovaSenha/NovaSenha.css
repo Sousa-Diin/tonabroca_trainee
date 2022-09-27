@@ -8,6 +8,7 @@
     display: flex;
     flex-flow:row wrap;
     justify-content: space-between;
+    
 }
 
 .nova-senha-main 
@@ -15,6 +16,7 @@
     width: 40vw;
     height: 70vh;
     justify-content: space-between;
+   
 
     margin: 10vh auto;
     display: flex;
@@ -60,5 +62,12 @@
     text-align: center;
     color: #000000;
     font-size: 40px;
+    
+}
+
+.new-pass-ajus
+{
+    height: 5%;
+    margin: 0 auto;
     
 }

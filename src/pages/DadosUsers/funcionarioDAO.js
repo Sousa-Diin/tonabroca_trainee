@@ -10,7 +10,7 @@ export default function funcionarioDAO(){
             <div className="container-dados-busca">
                
                     <h2 className="title-busca">Funcionário</h2>
-                    <input type="text" id="dados-funcionario" placeholder="Nome completo do funcionário pesquisado"/>
+                    <input type="text" id="dados-funcionario" placeholder="Nome completo do funcionário pesquisado" readOnly/>
              
                 
                 <div className="option-func-dao">

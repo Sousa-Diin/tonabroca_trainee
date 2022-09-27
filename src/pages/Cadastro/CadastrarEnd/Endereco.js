@@ -37,11 +37,7 @@ const Endereco = () => {
           </div>
 
           <div id="finalizar">
-            <Button type="button" 
-            className="finalizar" 
-            name="finalizar"
-            value="Finalizar">
-            <Link to="/finalizado" className='link'>Finalizar Cadastro</Link></Button>
+          <Link to="/finalizado" ><Button > Finalizar Cadastro </Button></Link>
           </div>
         </div>
       </div>

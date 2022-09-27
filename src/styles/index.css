@@ -35,20 +35,11 @@
     text-decoration: none;
   }
 
-  .link {
-    
-    color:#eee;
-  }
-
-  .link:hover{
-    color:rgb(255,106,14);
-    text-decoration: none;
-  }
  
   input, input::placeholder
   {
-    color: #000000;
-    font-size: 1.5vw;
+    color: #171515;
+    font-size: 1.3vw;
     font-weight: bold;
   }
  

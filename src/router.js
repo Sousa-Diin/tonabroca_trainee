@@ -16,6 +16,7 @@ import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 import Cardapio from "./pages/Pedidos/Cardapio";
 import Message from "./components/Status/Message";
+import AddProduto from "./pages/Pedidos/Carrinho/AddProduto";
 /* LINE 29*/
 
 function Router(){
@@ -37,6 +38,7 @@ function Router(){
                  <Route path='/buscarFunc' element={<BuscarFuncionario/>}/>
                  <Route path='/dadosFunc' element={<DadosFuncionario/>}/>
                  <Route path='/pedidos' element={<Cardapio/>}/>
+                 <Route path='/addProduto' element={<AddProduto/>}/>
                 
             </Routes>
         </BrowserRouter>

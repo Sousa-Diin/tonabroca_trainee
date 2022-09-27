@@ -39,7 +39,7 @@ export default function AuthClient  () {
                 <input className='email-login' name="login" value={email} onChange={(e) =>setEmail(e.target.value)} type="email" placeholder="Email:"/>
                 <input className='password-login' name="senha" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Senha:"/>
                 <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
-                <Button >Entrar</Button>
+                <Link to='/pedidos'><Button >Entrar</Button></Link>
                 <h5>Não tem uma conta? <Link id="newpass" name="cadastrar" to="/obterAcesso" className='link'>
                 Cadastre-se</Link></h5>
             </form>

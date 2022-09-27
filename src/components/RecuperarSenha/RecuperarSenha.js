@@ -13,7 +13,7 @@ export default function RecuperarSenha(){
             <div className="recuperar-senha">
                 <h4 className='title-new-password'>Recuperação de senha</h4>
                 <input type="text" name="recuperar-senha"  placeholder=" Email"/>
-                <Button><Link id="link"to="/codigoConfirmacao">Enviar Código</Link></Button>
+                <Link id="link"to="/codigoConfirmacao"><Button>Enviar Código</Button></Link>
             </div>
         </main>
     );

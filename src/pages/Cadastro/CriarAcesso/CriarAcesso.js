@@ -34,8 +34,7 @@ class CriarAcesso extends Component {
             
           </div> 
           <div id="prox-tela-criar-cadastro">
-            <Button type="button" className="proximo" name="proximo" value="Proximo">
-            <Link to="/logradouro" className='link'>Próximo</Link></Button>
+          <Link to="/logradouro" ><Button > Próximo </Button></Link>
         </div>
          
         </div>

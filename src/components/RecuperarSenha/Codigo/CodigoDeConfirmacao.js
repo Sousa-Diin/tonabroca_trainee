@@ -14,7 +14,7 @@ export default function CodigoDeConfirmacao(){
             <h4 className='title-new-password'>Digite o código enviado</h4>
             <input type="text" name="recuperar-senha"  placeholder=" Código"/>
             <div className="centraliza-button-link">
-            <Button ><Link id="link"to='/novaSenha'>Continuar</Link></Button>
+            <Link id="link"to='/novaSenha'><Button >Continuar</Button></Link>
             <p ><Link id="codigo"to="/recuperarSenha" className="rev-cod-psw-confr" >Reenviar Código</Link></p>
             </div>
             
