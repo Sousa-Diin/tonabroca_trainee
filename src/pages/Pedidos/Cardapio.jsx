@@ -28,7 +28,11 @@ function Cardapio () {
 
     
     const showSidebar = () => setSidebar(!sidebar);
-    const showAddProduto = () => setAddProdutoCar(!addProdutoCar);
+
+    const showAddProduto = () => {
+        setQtdProduto(0);
+        setAddProdutoCar(!addProdutoCar);
+    }
     
 
     const handleIncrementaQtd = () => {
@@ -40,6 +44,12 @@ function Cardapio () {
         var decrementa = qtdProduto - 1;
         if (qtdProduto > 0){
             setQtdProduto(decrementa);
+        }
+    }
+
+    const capturaItem = event => {
+        if(event.id === ListaProdutos.length){
+            alert(event.id);
         }
     }
        
@@ -55,8 +65,11 @@ function Cardapio () {
                                                         
                         </div>
                     </nav>
-                    <aside className={sidebar ? "sidebar-active" : "sidebar"}>
+                    <aside className={sidebar ? "sidebar active" : "sidebar"}>
                         <p>Sidebar</p>
+                        <div className="sidebar-item-row">
+                            <div className="nav-button"></div><Button >Editar</Button> <div className="nav-button"></div><Button>Remover</Button><div className="nav-button"></div>
+                        </div>
                     </aside>
                     <Anuncios />
                     <div className="ped-name-store-entrega">
@@ -85,7 +98,7 @@ function Cardapio () {
                                 <picture className="container-picture">
                                     <img  alt="foto de comida" className="container-img" key={key} src={val.image}/>
                                     <aside className="container-aside">
-                                        <h3 key={key}>{val.title}</h3>
+                                        <h3 key={key.id}>{val.title}</h3>
                                         <span className="price" key={key}>R$ {val.price}</span>
                                     </aside>
                                 </picture>

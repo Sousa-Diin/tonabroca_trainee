@@ -33,5 +33,13 @@
   color: #FFFFFF;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
   text-justify: inter-word;
+  transition: all ease .8s;
   
 }
+    .son-comp-phr .phrase:hover
+    {
+      font-size: 4.1em;
+      color: #fff;
+      text-shadow: 5px 4px 4px rgba(0, 0, 0, .8);
+      cursor: pointer;
+    }

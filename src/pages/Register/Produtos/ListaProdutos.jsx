@@ -9,6 +9,7 @@ let img5 = img1, img6 = img4, img7= img6, img8 = img2, img9 = img3
 
 export  const ListaProdutos = [
     {
+        id: 2,
         image: img1,
         title: "Prato 2",
         price: 17.90,
@@ -16,6 +17,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 3,
         image: img2,
         title: "Prato 3",
         price: 29.25,
@@ -23,6 +25,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 4,
         image: img3,
         title: "Prato 4",
         price: 31.45,
@@ -30,6 +33,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 5,
         image: img4,
         title: "Prato 5",
         price: 15.95,
@@ -37,6 +41,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 9,
         image: img5,
         title: "Prato 9",
         price: 24.85,
@@ -44,6 +49,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 10,
         image: img6,
         title: "Prato 10",
         price: 10.25,
@@ -51,6 +57,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 11,
         image: img7,
         title: "Prato 11",
         price: 17.10,
@@ -58,6 +65,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 13,
         image: img8,
         title: "Prato 13",
         price: 29.50,
@@ -65,6 +73,7 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 15,
         image: img9,
         title: "Prato 15",
         price: 29.35,
