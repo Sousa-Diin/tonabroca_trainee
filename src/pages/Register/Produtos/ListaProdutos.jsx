@@ -10,16 +10,16 @@ let img5 = img1, img6 = img4, img7= img6, img8 = img2, img9 = img3
 export  const ListaProdutos = [
     {
         image: img1,
-        title: "Prato 1",
+        title: "Prato 2",
         price: 17.90,
-        describe: "arroz,feijão, bife e batata frita",
+        describe: " arroz,feijão, bife e batata frita",
     
     },
     {
         image: img2,
         title: "Prato 3",
         price: 29.25,
-        describe: "arroz,feijão, bife e batata frita",
+        describe: " arroz,feijão, bife e batata frita",
     
     },
     {

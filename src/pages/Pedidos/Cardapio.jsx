@@ -104,7 +104,7 @@ class Cardapio extends React.Component {
                         return(
                             <div className="produtos">
                                 <picture className="container-picture">
-                                    <img className="container-img" key={key} src={val.image}/>
+                                    <img alt="foto de comida" className="container-img" key={key} src={val.image}/>
                                     <aside className="container-aside">
                                         <h3 key={key}>{val.title}</h3>
                                         <span className="price" key={key}>R$ {val.price}</span>
