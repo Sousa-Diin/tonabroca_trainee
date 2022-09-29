@@ -13,12 +13,14 @@ export default function AuthClient  () {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [cargo, setCargo] = useState("");
+    //const [redirect, setRedirect] = useState(false);
 
     const handleGravaUser = async (e) => {
         e.preventDefault();
         const data = {
             email, password, cargo
         }
+
         
         setCargo(newCargo);
        // const response = await api.post("/obterAcesso", data);
@@ -27,24 +29,23 @@ export default function AuthClient  () {
         
     };
 
-    
 
-    return(
-        <div className="container-autenticar">
-            <Cabecalho/>
-                
-            <form className="flex-autenticar" onSubmit={handleGravaUser}>
-                <h1>Bem Vindo!</h1>
-                
-                <input className='email-login' name="login" value={email} onChange={(e) =>setEmail(e.target.value)} type="email" placeholder="Email:"/>
-                <input className='password-login' name="senha" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Senha:"/>
-                <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
-                <Link to='/pedidos'><Button >Entrar</Button></Link>
-                <h5>Não tem uma conta? <Link id="newpass" name="cadastrar" to="/obterAcesso" className='link'>
-                Cadastre-se</Link></h5>
-            </form>
-        </div>
-    );
-    
+        return(
+            
+            <div className="container-autenticar">
+                <Cabecalho/>
+                    
+                <form className="flex-autenticar" onSubmit={handleGravaUser}>
+                    <h1>Bem Vindo!</h1>
+                    
+                    <input className='email-login' name="login" value={email} onChange={(e) =>setEmail(e.target.value)} type="email" placeholder="Email:"/>
+                    <input className='password-login' name="senha" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Senha:"/>
+                    <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
+                    <Link to="/pedidos"><Button name="button-default">Entrar</Button></Link>
+                    <h5>Não tem uma conta? <Link id="newpass" name="cadastrar" to="/obterAcesso" className='link'>
+                    Cadastre-se</Link></h5>
+                </form>
+            </div>
+        );
 }
 

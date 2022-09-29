@@ -15,7 +15,7 @@ export default function NovaSenha(){
                 <input type="password" placeholder='  Confirme a senha'/>
 
                 <div className='new-pass-ajus'>
-                    <Link id="link" to="/"><Button >Confirmar</Button></Link>
+                    <Link id="link" to="/"><Button name="button-default">Confirmar</Button></Link>
                 </div>
 
             </div>

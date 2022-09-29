@@ -14,24 +14,34 @@ import logo_loja from '../../assets/logo/Pedido de Comida/loja-11.png';
 import Button from '../../components/Button/Button';
 import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
+import ViewPrice from "../../components/Prices/ViewPrice";
 
 
 function Cardapio () {
 
    const [sidebar, setSidebar] = useState(false);
    const [addProdutoCar, setAddProdutoCar] = useState(false);
-   const [entrega] = useState(6);
-   //const [price] = useState(0.0);
+   const [entrega] = useState(6.9);
    const [horas] = useState(0);
    const [min] = useState(0);
-   const [qtdProduto, setQtdProduto] = useState(1);
+   const [qtdProduto, setQtdProduto] = useState();
+   //const [qtdPedido, setQtdPedido] = useState(0);
+   let total ;
 
-    
+   const [titlePedido] = useState ("title-produto");
+   const [imagaPedido] = useState (p1);
+   const [describePedido] = useState ("alguma descricão");
+   const [pricePedido, setPricePedido] = useState (0);
+
+    const produtos = ListaProdutos; 
+
     const showSidebar = () => setSidebar(!sidebar);
 
-    const showAddProduto = () => {
-        setQtdProduto(0);
+    const showAddProduto = (produto) => {
+        setQtdProduto(0); // se tirar da erro (NaN)
         setAddProdutoCar(!addProdutoCar);
+        setPricePedido(produto.price);
+       
     }
     
 
@@ -47,11 +57,16 @@ function Cardapio () {
         }
     }
 
-    const capturaItem = event => {
-        if(event.id === ListaProdutos.length){
-            alert(event.id);
-        }
+    function calcularSubtotal (price) {
+        
+        total = qtdProduto * price;
+        return total;
     }
+
+    function calcularTotal (){
+        return total + entrega;
+    }
+
        
         return (
             <main className="ped-cont-prod-main">
@@ -62,15 +77,32 @@ function Cardapio () {
                             <input id="input-pedido" type="text"/>
                             <img  src={logar} className="img-ped" alt="imade-login" />
                             <img onClick={showSidebar} src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
-                                                        
+                                <span onClick={showSidebar} className="qtd-ped">{qtdProduto}</span>                            
                         </div>
                     </nav>
+
                     <aside className={sidebar ? "sidebar active" : "sidebar"}>
-                        <p>Sidebar</p>
-                        <div className="sidebar-item-row">
-                            <div className="nav-button"></div><Button >Editar</Button> <div className="nav-button"></div><Button>Remover</Button><div className="nav-button"></div>
-                        </div>
+                        <section className="sep-pag-ped">
+                            <p>Seu pedido</p>
+                            <ViewPrice value={'R$ ' + {pricePedido}} name="black" type="numero">{qtdProduto} x Prato 1</ViewPrice>
+                            <div className="sidebar-item-row">
+                                <div className="nav-button"></div><Button name="button-default">Editar</Button> <div className="nav-button"></div><Button name="button-default">Remover</Button><div className="nav-button"></div>
+                            
+                            </div>
+
+                            <section>
+                                <ViewPrice value={'R$ ' + calcularSubtotal(35.23)} name="black" type="text">Subtotal</ViewPrice>
+                                <ViewPrice value={'R$ ' + entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
+                                <ViewPrice value={'R$ ' + calcularTotal()} name="red" type="text">Total</ViewPrice>
+                            </section>
+
+                        </section>
+                        
+                        <footer className="sidebar-item-row">
+                        <Button name="button-sidebar" onClick={() => showSidebar(false)}>Continuar <br/> Comprando</Button> <Button name="button-sidebar2">Finalizar<br/>Pedido</Button>
+                        </footer>
                     </aside>
+
                     <Anuncios />
                     <div className="ped-name-store-entrega">
                         <aside className="aside-logo-store">
@@ -92,17 +124,17 @@ function Cardapio () {
                 
                 <div className="ped-cont-list-prod">  
                 
-                    {ListaProdutos.map((val,key) => {
+                    {produtos.map((produto) => {
                         return(
-                            <div onClick={showAddProduto} className="produtos">
+                            <div onClick={(produto) => showAddProduto()} className="produtos">
                                 <picture className="container-picture">
-                                    <img  alt="foto de comida" className="container-img" key={key} src={val.image}/>
+                                    <img  alt="foto de comida" className="container-img" src={produto.image}/>
                                     <aside className="container-aside">
-                                        <h3 key={key.id}>{val.title}</h3>
-                                        <span className="price" key={key}>R$ {val.price}</span>
+                                        <h3 id="titleProduto"  >{produto.title}</h3>
+                                        <span className="price" >R$ {produto.price}</span>
                                     </aside>
                                 </picture>
-                                <span className="container-descricao" key={key}>{val.describe}</span>
+                                <span className="container-descricao" >{produto.describe}</span>
                             </div>
                          );
                     })}                              
@@ -110,21 +142,20 @@ function Cardapio () {
                     
                     
                     <div className={addProdutoCar ? 'cont-abs-add-pro-show' : 'cont-abs-add-pro-hide'} >
-                            <img className="cont-ped-add-prod-img" src={p1} alt="imagem-produto" />
+                            <img className="cont-ped-add-prod-img" src={imagaPedido} alt="imagem-produto" />
                             <aside className="cont-ped-info">
                                 <div className="cont-ped-desc">
-                                    <h4>Prato 2</h4>
+                                    <h4>{titlePedido}</h4>
                                     <button onClick={() => setAddProdutoCar(false)} className="cont-img-btn-fech"><img src={fechar} alt="img-logout" className="cont-img-btn-fech"/></button>
                                 </div>
-                                <span>Descricão:</span>
-
+                                <span>Descricão: {describePedido}</span>
                                 <div className="cont-son-control-ped" >
                                     <div className="cont-son-qtd-ped">
                                         <button id="less-qtd" onClick={handleDecrementaQtd}> - </button>
                                         <input id="tot-qtd" value={qtdProduto}  readOnly/>
                                         <button id="more-qtd" onClick={handleIncrementaQtd}> + </button>
                                     </div>
-                                    <Button>Adicionar</Button>
+                                    <Button name="button-default">Adicionar</Button>
                                 </div>
                                     
                             </aside>

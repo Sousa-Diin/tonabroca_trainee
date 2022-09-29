@@ -1,4 +1,5 @@
-.button {
+/*/////////////Tipos de botões////////////////*/
+.button-default {
 	background: #FF6A02;
 	width: 16vw;
     height: 6vh;
@@ -12,8 +13,50 @@
 	transition: all 0.6s ease;
 }
 
-.button:hover {
+.button-default:hover {
 	background-color: #d2d2d2;
 	color: rgb(255,106,14);
 	border: 2.7px solid rgb(255,106,14);
+}
+
+/*//////////////////////////////////////////*/
+.button-sidebar {
+	background: #446BCE;
+	width: 11vw;
+    height: 7vh;
+	padding: 0 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #eee;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	transition: all 0.6s ease;
+}
+
+.button-sidebar:hover {
+	background-color: #d2d2d2;
+	color: rgb(68,107,206);
+	border: 2.7px solid rgb(68,107,206);
+}
+
+/*//////////////////////////////////////////*/
+.button-sidebar2 {
+	background: #FF390E;
+	width: 10vw;
+    height: 7vh;
+	padding: 0 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #eee;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	transition: all 0.6s ease;
+}
+
+.button-sidebar2:hover {
+	background-color: #d2d2d2;
+	color: rgb(255,57,14);
+	border: 2.7px solid rgb(255,57,14);
 }

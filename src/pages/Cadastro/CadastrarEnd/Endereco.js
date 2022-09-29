@@ -37,7 +37,7 @@ const Endereco = () => {
           </div>
 
           <div id="finalizar">
-          <Link to="/finalizado" ><Button > Finalizar Cadastro </Button></Link>
+          <Link to="/finalizado" ><Button name="button-default"> Finalizar Cadastro </Button></Link>
           </div>
         </div>
       </div>

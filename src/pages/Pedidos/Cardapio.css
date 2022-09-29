@@ -57,6 +57,10 @@
     margin-top: 7%;
     cursor: pointer;
 }
+    .qtd-ped { 
+        width: 14%; height: 56%; margin-left: -14%; margin-top: 6.3%;
+        text-align: center; color: #fff; cursor: pointer;
+    }
 
 .img-ped:hover{
     
@@ -304,13 +308,13 @@
 
 .sidebar.active  /*DISPLAY ESCONDINDO 02*/
 {
-    background-color: rgba(217,217,217,.7);
+    background-color: rgba(217,217,217,1);
     position: absolute;
     display: flex;
     flex-direction: column;
-    /*justify-content: flex-start;*/
+    justify-content: space-between;
     width: 25vw;
-    height: 70vh;
+    height: 74vh;
     margin-left: 74%;
     margin-top: -3%;
     transition: 850ms;
@@ -330,4 +334,7 @@
     flex-flow: row nowrap;
     justify-content: space-around;
 }
+    .sep-pag-ped, .sidebar-item-row {margin:1% 0 3% 0;}
     .nav-button{ width: 50%; }/* usado para deixar os botões menores*/
+
+    

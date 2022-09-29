@@ -1,0 +1,22 @@
+.black, .red
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 2%;
+    width: 100%;
+    font-weight: bold;
+}
+  
+   
+
+    .view-title-span-black, .view-title-span-red { width: 10vw; }
+
+    .view-price-input-red, .view-price-input-black { width: 6vw; }
+
+        
+
+.red, .view-price-input-red { color: red; font-weight: bold; }
+.black, .view-price-input-black { color: black; font-weight: bold; }

@@ -29,7 +29,7 @@ export default function funcionarioDAO(){
                
                 </div>
                 <div className="btn-busca"> 
-                    <Button >Proximo</Button>
+                    <Button name="button-default">Proximo</Button>
                 </div>
                 
             </div>
