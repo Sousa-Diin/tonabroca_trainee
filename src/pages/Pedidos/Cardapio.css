@@ -141,6 +141,7 @@
     align-items: center;
     margin-top: 3%;
     align-items: center;
+    
 }
 
 /*Teste */
@@ -314,9 +315,9 @@
     flex-direction: column;
     justify-content: space-between;
     width: 25vw;
-    height: 74vh;
-    margin-left: 74%;
-    margin-top: -3%;
+    height: 84vh;
+    margin-left: 75%;
+    margin-top: -3.3%;
     transition: 850ms;
     position: fixed;
     
@@ -337,4 +338,59 @@
     .sep-pag-ped, .sidebar-item-row {margin:1% 0 3% 0;}
     .nav-button{ width: 50%; }/* usado para deixar os botões menores*/
 
+    .sidebar-menu
+    {
+        width:20vw ;
+        height: 84%;
+        top: 15%;
+        margin: .4% 0 0 80%;
+
+        
+        background-color: rgba(94,32,117,1);
+    
+        position: absolute;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    
+    }
+    
+        .coluna-menu
+        {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            padding-top: 6%;
+            width: 85%;
+            height: 10%;
+            justify-content: space-between;
+            /*background-color: aliceblue;*/
+            transition: 650ms;
+        }
+        .list-menu
+        {
+            width: 63%;
+            height: 40%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: start;
+
+            font-size: 1.3rem;
+            font-weight: bolder;
+            background-color: rgba(94,32,117,1);
+            color: black;
+            
+        }
+
+        .icons-menu
+        {
+            width: 15%;
+            
+        }
+    
+            .esconder
+            {
+                display: none;
+                transition: 450ms;
+            }
     

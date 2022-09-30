@@ -4,33 +4,20 @@
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    
-    
+    margin: 0 auto;
 
 }
 
-.container-header, title-busca
-{
-    color: #FFFFFF;
-    gap: 8px;
-
-    font-weight: 150px;
-    font-size: 34px;  
-
-}
 
 .container-campo-busca
 {
     display: flex;
-    flex-flow: column wrap;
-    width: 50vw;
-    height: 55vh;
+    flex-flow: column nowrap;
+    width: 50%;
+    height: 15%;
     align-items: center;
-    justify-content:space-around ;
+    justify-content: space-between;
     margin: 0 auto;
-    /*background-image: url('../../assets/logo/search_func.png');
-    background-position: left;
-    background-repeat: no-repeat;*/
 }
 #buscar-funcionario 
 {
@@ -54,18 +41,18 @@
 }
 .img-busca
 {
-   position: absolute;
-   margin-top: 55vh;
-   margin-left: 21vw;
-   
-   
+    width: 50%;
+    height: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../../assets/logo/search_func.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 30%;
 
 }
 
-.img-busca img 
-{
-    width:47%;
-    height: 47%;
-   
-
-}

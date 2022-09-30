@@ -1,6 +1,5 @@
 import React from "react";
 import Header from '.././../components/Header/Header';
-import img from '../../assets/logo/search_func.png';
 import '../BuscarFunc/BuscarFuncionario.css';
 import { Link } from "react-router-dom";
 
@@ -12,11 +11,12 @@ export default function BuscarFuncionario(){
             <Header />
             <div className="container-campo-busca">
                 <h2 className="title-busca">Buscar Funcionário</h2>
-                <input type="text" id="buscar-funcionario" placeholder="Digite o nome ou matrícula do Funcionário"/>
-                <Button name="button-default"><Link to="/dadosFunc" className="pesquisar">Pesquisar</Link></Button>
-                
+                <input type="text" id="buscar-funcionario" placeholder="Digite o nome ou matrícula do Funcionário"/>   
             </div>
-            <aside className="img-busca"> <img src={img} alt="lupa de pesquisa"/></aside>
+
+            <aside className="img-busca">
+                <Link to="/dadosFunc" className="pesquisar"><Button name="button-default">  pesquisar</Button></Link>
+            </aside>
         </div>
     );
 }

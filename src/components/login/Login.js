@@ -9,10 +9,9 @@ export default function Login (){
                 <div className="container-autenticacao">
                      <h1>Deseja Logar Como?</h1>
                      <ul>
-                        <li><Link id="cliente" className="auth" name="cliente" to="/autenticarCliente">Cliente</Link></li>
-                        <li><Link id="funcionario" className="auth" name="funcionario" to="/authFunc">Funcionário</Link></li>
-                        <li><Link id="admin" className="auth" name="administrador" to="/authAdmin">Administrador</Link></li>
-                        
+                        <li className='list-login'><Link id="cliente" className="auth" name="cliente" to="/autenticarCliente">Cliente</Link></li>
+                        <li className='list-login'><Link id="funcionario" className="auth" name="funcionario" to="/authFunc">Funcionário</Link></li>
+                        <li className='list-login'><Link id="admin" className="auth" name="administrador" to="/authAdmin">Administrador</Link></li> 
                      </ul>
                 </div>
                 <div className="container-slogan">

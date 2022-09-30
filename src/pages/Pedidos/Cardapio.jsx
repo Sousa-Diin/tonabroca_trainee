@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import './Cardapio.css'
+import './Cardapio.css';
 
 import Header from '../../components/Header/Header';
 import Anuncios from "../../components/Anuncios/Anuncios";
@@ -15,17 +15,18 @@ import Button from '../../components/Button/Button';
 import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
 import ViewPrice from "../../components/Prices/ViewPrice";
+import {Menu} from "../../components/Menu/Menu";
 
 
 function Cardapio () {
 
    const [sidebar, setSidebar] = useState(false);
+   const [menu, setMenu] = useState(false);
    const [addProdutoCar, setAddProdutoCar] = useState(false);
    const [entrega] = useState(6.9);
    const [horas] = useState(0);
    const [min] = useState(0);
    const [qtdProduto, setQtdProduto] = useState();
-   //const [qtdPedido, setQtdPedido] = useState(0);
    let total ;
 
    const [titlePedido] = useState ("title-produto");
@@ -35,8 +36,15 @@ function Cardapio () {
 
     const produtos = ListaProdutos; 
 
-    const showSidebar = () => setSidebar(!sidebar);
+    const showSidebar = () => {
+        setMenu(false);
+        setSidebar(!sidebar);
+    }
 
+    const showMenu = () => {
+        setSidebar(false);
+        setMenu(!menu);
+    }
     const showAddProduto = (produto) => {
         setQtdProduto(0); // se tirar da erro (NaN)
         setAddProdutoCar(!addProdutoCar);
@@ -75,8 +83,8 @@ function Cardapio () {
                         <Header className="logo-emakers"/>
                         <div className="ped-aba-search-nav">
                             <input id="input-pedido" type="text"/>
-                            <img  src={logar} className="img-ped" alt="imade-login" />
-                            <img onClick={showSidebar} src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
+                            <img onClick={ showMenu } src={logar} className="img-ped" alt="imade-menu" />
+                            <img onClick={ showSidebar } src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
                                 <span onClick={showSidebar} className="qtd-ped">{qtdProduto}</span>                            
                         </div>
                     </nav>
@@ -99,9 +107,20 @@ function Cardapio () {
                         </section>
                         
                         <footer className="sidebar-item-row">
-                        <Button name="button-sidebar" onClick={() => showSidebar(false)}>Continuar <br/> Comprando</Button> <Button name="button-sidebar2">Finalizar<br/>Pedido</Button>
+                        <Button onClick={() => showSidebar(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button name="button-sidebar2" >Finalizar<br/>Pedido</Button>
                         </footer>
                     </aside>
+                    
+                    <div className={menu ? "sidebar-menu" : "esconder"}>       
+                        {Menu.map((menu) => {
+                            return(
+                                <ul className='coluna-menu'>
+                                    <img className="icons-menu" src={menu.icon } alt="icon-menu"/>
+                                    <li onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
+                                </ul>
+                            );
+                        })}
+                    </div>
 
                     <Anuncios />
                     <div className="ped-name-store-entrega">
@@ -126,7 +145,7 @@ function Cardapio () {
                 
                     {produtos.map((produto) => {
                         return(
-                            <div onClick={(produto) => showAddProduto()} className="produtos">
+                            <div onClick={() => showAddProduto()} className="produtos">
                                 <picture className="container-picture">
                                     <img  alt="foto de comida" className="container-img" src={produto.image}/>
                                     <aside className="container-aside">

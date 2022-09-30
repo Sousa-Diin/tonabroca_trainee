@@ -73,7 +73,7 @@ ul li, link {
     justify-content: center;
     color:#FFFFFF;
 }
-li, .auth{
+.list-login, .auth{
 
     margin: 7px auto;
     font-weight: 40%;
@@ -85,7 +85,7 @@ li, .auth{
 
 }
 
- li:hover {
+.list-login:hover {
     background:rgba(255,106,14.4);
     
 }

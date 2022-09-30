@@ -68,7 +68,7 @@ export  const ListaProdutos = [
         id: 13,
         image: img8,
         title: "Prato 13",
-        price: 29.50,
+        price: 99.50,
         describe: "arroz,feijão, bife e batata frita",
     
     },
