@@ -16,9 +16,13 @@ import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
 import ViewPrice from "../../components/Prices/ViewPrice";
 import {Menu} from "../../components/Menu/Menu";
+import Users from "../Register/Users/Users";
 
 
 function Cardapio () {
+
+   const usuario = Users;
+   let cliente;
 
    const [sidebar, setSidebar] = useState(false);
    const [menu, setMenu] = useState(false);
@@ -75,6 +79,15 @@ function Cardapio () {
         return total + entrega;
     }
 
+    function buscarUserLogado (){
+        {usuario.map((user) =>{
+                return (
+                    cliente = user.name
+                );           
+        })}
+        return cliente;
+    }
+
        
         return (
             <main className="ped-cont-prod-main">
@@ -111,12 +124,14 @@ function Cardapio () {
                         </footer>
                     </aside>
                     
-                    <div className={menu ? "sidebar-menu" : "esconder"}>       
+                    <div className={menu ? "sidebar-menu" : "esconder"}>  
+                        <h3 className="name-client">Óla  {buscarUserLogado()}</h3>  
                         {Menu.map((menu) => {
                             return(
                                 <ul className='coluna-menu'>
-                                    <img className="icons-menu" src={menu.icon } alt="icon-menu"/>
-                                    <li onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
+                                    
+                                    <img  className="icons-menu" src={menu.icon } alt="icon-menu"/>
+                                    <li  onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
                                 </ul>
                             );
                         })}

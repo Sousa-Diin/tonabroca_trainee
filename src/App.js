@@ -2,6 +2,7 @@
 //import { useEffect, useState } from "react";
 //import api from "./services/api";
 import React from "react";
+import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import Router from "./router";
 
 export default function App(){
@@ -19,7 +20,7 @@ export default function App(){
 */
     return (
         <div>
-           <Router/>  
+           <Router/>
         </div>
     );
 }

@@ -315,7 +315,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 25vw;
-    height: 84vh;
+    height: 83.7vh;
     margin-left: 75%;
     margin-top: -3.3%;
     transition: 850ms;
@@ -336,17 +336,17 @@
     justify-content: space-around;
 }
     .sep-pag-ped, .sidebar-item-row {margin:1% 0 3% 0;}
-    .nav-button{ width: 50%; }/* usado para deixar os botões menores*/
+    .nav-button{ width: 47%; }/* usado para deixar os botões menores*/
 
     .sidebar-menu
     {
-        width:20vw ;
-        height: 84%;
+        width:24vw ;
+        height: 83.8%;
         top: 15%;
-        margin: .4% 0 0 80%;
+        margin: .3% 0 0 76%;
 
         
-        background-color: rgba(94,32,117,1);
+        background-color: rgba(94,32,117,.95);
     
         position: absolute;
         display: flex;
@@ -362,29 +362,32 @@
             justify-content: center;
             padding-top: 6%;
             width: 85%;
-            height: 10%;
+            height: 9.3%;
             justify-content: space-between;
+            align-items: center;
             /*background-color: aliceblue;*/
             transition: 650ms;
         }
         .list-menu
         {
             width: 63%;
-            height: 40%;
+            height: 36%;
             display: flex;
             flex-flow: row nowrap;
             justify-content: start;
+            align-items: center;
 
-            font-size: 1.3rem;
-            font-weight: bolder;
-            background-color: rgba(94,32,117,1);
-            color: black;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: rgba(94,32,117,.1);
+            color: rgba(0,0,0,.7);
             
         }
 
         .icons-menu
         {
-            width: 15%;
+            width: 14%;
+            height: 55%;
             
         }
     
