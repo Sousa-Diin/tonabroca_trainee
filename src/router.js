@@ -19,7 +19,7 @@ import Message from "./components/Status/Message";
 import AddProduto from "./pages/Pedidos/Carrinho/AddProduto";
 /* LINE 29*/
 
-function Router(){
+function Router(props){
     return(
         <BrowserRouter>
             <Routes>

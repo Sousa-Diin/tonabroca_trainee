@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 
 //import {IconName} from "react-icons/hi";
 import icon1 from '../../assets/logo/pedido.png';
@@ -18,41 +18,58 @@ let pedido = icon1,
     data = icon6,
     logout = icon5;
 
-export const Menu = [
-    {
-        icon: pedido,
-        title: "Pedidos",
-        link: '/pedidos',
-    },
-    {
-        icon: cupom,
-        title: "Cupons",
-        link: '/cupons',
-    },
-    {
-        icon: pagamentos,
-        title: "Pagamentos",
-        link: '/pagamentos',
-    },
-    {
-        icon: data,
-        title: "Meus Dados",
-        link: '/dadosFunc',
-    },
-    {
-        icon: adress,
-        title: "Endereco",
-        link: '/logradouro',
-    },
-    {
-        icon: chat,
-        title: "Chats",
-        link: '/chat',
-    },
-    {
-        icon: logout,
-        title: "Sair",
-        link: '/',
-    },
-    
-];
+export default function Menu (){
+    const listaMenu = [
+        {
+            icon: pedido,
+            title: "Pedidos",
+            link: '/pedidos',
+        },
+        {
+            icon: cupom,
+            title: "Cupons",
+            link: '/cupons',
+        },
+        {
+            icon: pagamentos,
+            title: "Pagamentos",
+            link: '/pagamentos',
+        },
+        {
+            icon: data,
+            title: "Meus Dados",
+            link: '/dadosFunc',
+        },
+        {
+            icon: adress,
+            title: "Endereco",
+            link: '/logradouro',
+        },
+        {
+            icon: chat,
+            title: "Chats",
+            link: '/chat',
+        },
+        {
+            icon: logout,
+            title: "Sair",
+            link: '/',
+        },
+        
+    ];
+    (
+
+        <div className={ true ? "sidebar-menu" : "esconder"}>  
+        <h3 className="name-client">Óla  usuario </h3>  
+        {listaMenu.map((menu) => {
+            return(
+                <ul className='coluna-menu'>
+                    
+                    <img  className="icons-menu" src={menu.icon } alt="icon-menu"/>
+                    <li  onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
+                </ul>
+            );
+        })}
+    </div>
+    );
+}

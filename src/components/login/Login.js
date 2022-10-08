@@ -1,24 +1,93 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
+import AuthAdmin from '../../pages/AuthAdmin/AuthAdmin';
+import AuthClient from '../../pages/AuthClient/AuthClient';
+import AuthFuncionario from '../../pages/AuthFunc/AuthFuncionario';
 import '../login/Login.css';
+import { AuthContext } from '../Providers/auth';
 
 export default function Login (){
+
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { user } = React.useContext(AuthContext);
+    console.log(user)
+
+    const [change, setChange] = useState(true);
+
+    const [viewC, setViewC] = useState(false);
+    const [viewF, setViewF] = useState(false);
+    const [viewA, setViewA] = useState(false);
+
+    const handleClickCe = () => {
+        
+        setChange(!change);
+        setViewC(!viewC);
+       // setUser({typeUser:'client'});
+        
+    }
+
+    const handleClickFu = () => {
+        
+        setChange(!change);
+        setViewF(!viewF);
+       // setUser({typeUser:'coWork'});
+    }
+
+    const handleClickAd = () => {
+        
+        setChange(!change);
+        setViewA(!viewA);
+       // setUser({typeUser:'admin'});
+    }
     
         return(
-            <div className="container-login">
-                <div className="container-autenticacao">
-                     <h1>Deseja Logar Como?</h1>
-                     <ul>
-                        <li className='list-login'><Link id="cliente" className="auth" name="cliente" to="/autenticarCliente">Cliente</Link></li>
-                        <li className='list-login'><Link id="funcionario" className="auth" name="funcionario" to="/authFunc">Funcionário</Link></li>
-                        <li className='list-login'><Link id="admin" className="auth" name="administrador" to="/authAdmin">Administrador</Link></li> 
-                     </ul>
+            <section>
+                <div className={change ? "container-login" : "escondeLogin"}>
+                    <div className="container-autenticacao">
+                        
+                        <h1>Deseja Logar Como?</h1>
+                        <ul>
+                            <li onClick={handleClickCe} className='list-login' id="cliente" name="cliente">Cliente</li>
+                            <li onClick={handleClickFu} className='list-login'>Funcionário</li>
+                            <li onClick={handleClickAd} className='list-login'>Administrador</li> 
+                        </ul>
+                    </div>
+
+                    <div className="container-slogan">
+                        <h1>EmakersFood</h1>
+                        <h2>Matando sua fome!</h2>
+                    </div>
                 </div>
-                <div className="container-slogan">
-                    <h1>EmakersFood</h1>
-                    <h2>Matando sua fome!</h2>
-                </div>
-            </div>
+
+                <section className={ viewC ? 'showViewC' : 'hideViewC' }>
+                    <AuthClient
+                        show={viewC} 
+                        email={email} password={password} 
+                        setEmail={setEmail} setPassword={setPassword}
+                    />
+                </section>
+
+                <section className={ viewF ? 'showViewF' : 'hideViewF' }>
+                    <AuthFuncionario  
+                        showF={viewF}
+                        email={email} password={password} 
+                        setEmail={setEmail} setPassword={setPassword} 
+                    />
+                </section>   
+
+                <section className={ viewA ? 'showViewA' : 'hideViewA' }>
+                    <AuthAdmin 
+                        showA={viewA}
+                        email={email} password={password} 
+                        setEmail={setEmail} setPassword={setPassword}
+                    /> 
+                </section>
+                
+            </section>
+           
         );
    
 }

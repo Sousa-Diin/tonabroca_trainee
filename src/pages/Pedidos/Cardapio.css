@@ -3,10 +3,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    flex-basis: auto;
     
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
 }
 
@@ -15,7 +15,6 @@
     width: 100%;
     height: 27vh;
     flex-direction: column;
-    
     
 }
 
@@ -74,6 +73,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     margin:1%;
+    
 
 }
 
@@ -86,7 +86,7 @@
     align-items: center;
     width: 20vw;
     height: 10vh;
-
+    flex-shrink: 0;
 }
 
 
@@ -98,7 +98,7 @@
     width: 30vw;
     height: 10vh;
     
-    
+    flex-shrink: 1;
 
 }
 
@@ -133,11 +133,11 @@
 
 .ped-cont-list-prod
 {
-    width:100%;
-    height: 55vh;
+    width:100vw;
+    height: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 3%;
     align-items: center;
@@ -149,14 +149,15 @@
 {
 
     background-color: rgba(255,106,14,1);
-    width:32vw;
+    width:32%;
     height:17vh;
     text-align: center;
-
+    margin: 3% .1% -2.3% .1%;
     display: flex;
     flex-flow: column nowrap;
     align-items:center ;
     transition: all ease .7s;
+    
     
     color: #fff;
 }
@@ -165,7 +166,7 @@
 {
     cursor: pointer;
     background-color: rgba(255,106,14,.6);
-    width:31.9vw;
+    width:32.6vw;
     height:16.9vh;
 }
 

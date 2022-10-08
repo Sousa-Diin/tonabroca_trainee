@@ -10,7 +10,7 @@ export default class Anuncios extends Component {
 
     render(){
         let img5 ,img6, img7 = img3;
-        const imagens = [img1,img2,img3,img4,img5,img6,img7];
+        const imagens = [img1,img2,img3,img4,img5,img6, img1,img7];
         
         return(
             <Fragment>

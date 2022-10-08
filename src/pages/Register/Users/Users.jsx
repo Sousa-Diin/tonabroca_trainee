@@ -1,16 +1,45 @@
-//import React from 'react'
+import React, { useState } from 'react'
 
-const Users = [ 
+export default function Users(props) {
 
-    {
-        name: "Wildes Sousa",
-        cpf: "7771",
-        email: "teste@tonabroca.br",
-        password: "123",
-        typeUser: "cliente",
-    }
+    const User = [ 
 
-];
+        {
+            name: "Wildes Sousa",
+            cpf: "7771",
+            email: "teste@tonabroca.br",
+            password: "123",
+            typeUser: "cliente",
+        },
+        {
+            name: "Diego Sousa",
+            cpf: "7771",
+            email: "teste@elibraria.br",
+            password: "123",
+            typeUser: "cliente",
+        },
+    
+    ];
 
 
-export default Users
+
+    const [newName, setNewName] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+    const [newType, setNewType] = useState("");
+
+    
+
+  return (
+    <div>
+      {User.map((user)=>{
+        return(
+            <div>
+                <p>{user.email}</p>
+                <p>{user.name}</p>
+            </div>
+        );
+      })}
+    </div>
+  );
+}

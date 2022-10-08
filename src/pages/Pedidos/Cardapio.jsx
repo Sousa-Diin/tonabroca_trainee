@@ -1,6 +1,7 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import './Cardapio.css';
 
+import api from "../../services/api";
 import Header from '../../components/Header/Header';
 import Anuncios from "../../components/Anuncios/Anuncios";
 import { ListaProdutos } from "../Register/Produtos/ListaProdutos";
@@ -15,14 +16,15 @@ import Button from '../../components/Button/Button';
 import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
 import ViewPrice from "../../components/Prices/ViewPrice";
-import {Menu} from "../../components/Menu/Menu";
-import Users from "../Register/Users/Users";
+import { AuthContext } from "../../components/Providers/auth";
+//import Menu from "../../components/Menu/Menu";
+//import Users from "../Register/Users/Users";
 
 
 function Cardapio () {
 
-   const usuario = Users;
-   let cliente;
+   const { user } = React.useContext(AuthContext);
+   console.log({user});
 
    const [sidebar, setSidebar] = useState(false);
    const [menu, setMenu] = useState(false);
@@ -33,12 +35,31 @@ function Cardapio () {
    const [qtdProduto, setQtdProduto] = useState();
    let total ;
 
+   const [apiProdutos, setApiProdutos] = useState(
+        {"titlePedido": "",
+         "imagaPedido": "",
+         "describePedido": "",
+         "pricePedido": 0.0,
+        }
+    )
+
    const [titlePedido] = useState ("title-produto");
    const [imagaPedido] = useState (p1);
    const [describePedido] = useState ("alguma descricão");
    const [pricePedido, setPricePedido] = useState (0);
 
     const produtos = ListaProdutos; 
+
+    useEffect(()=> {
+        api
+        .get("createUser")
+        .then(({data})=>{
+          setApiProdutos(data);
+          console.log(apiProdutos);
+        })
+    
+        //eslint-disable-next-line-react-hooks/exhaustive-deps
+    }, []);
 
     const showSidebar = () => {
         setMenu(false);
@@ -79,14 +100,14 @@ function Cardapio () {
         return total + entrega;
     }
 
-    function buscarUserLogado (){
-        {usuario.map((user) =>{
-                return (
-                    cliente = user.name
-                );           
-        })}
-        return cliente;
-    }
+  /*  function buscarUserLogado (){
+        {Users.map((user) =>{
+            return (
+                user.name
+            );           
+    })}
+       
+    }*/
 
        
         return (
@@ -104,7 +125,7 @@ function Cardapio () {
 
                     <aside className={sidebar ? "sidebar active" : "sidebar"}>
                         <section className="sep-pag-ped">
-                            <p>Seu pedido</p>
+                            <h3>Óla {' '+ user.email +' ' } seu pedido em Loja : </h3>
                             <ViewPrice value={'R$ ' + {pricePedido}} name="black" type="numero">{qtdProduto} x Prato 1</ViewPrice>
                             <div className="sidebar-item-row">
                                 <div className="nav-button"></div><Button name="button-default">Editar</Button> <div className="nav-button"></div><Button name="button-default">Remover</Button><div className="nav-button"></div>
@@ -124,18 +145,6 @@ function Cardapio () {
                         </footer>
                     </aside>
                     
-                    <div className={menu ? "sidebar-menu" : "esconder"}>  
-                        <h3 className="name-client">Óla  {buscarUserLogado()}</h3>  
-                        {Menu.map((menu) => {
-                            return(
-                                <ul className='coluna-menu'>
-                                    
-                                    <img  className="icons-menu" src={menu.icon } alt="icon-menu"/>
-                                    <li  onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
-                                </ul>
-                            );
-                        })}
-                    </div>
 
                     <Anuncios />
                     <div className="ped-name-store-entrega">
@@ -158,20 +167,19 @@ function Cardapio () {
                 
                 <div className="ped-cont-list-prod">  
                 
-                    {produtos.map((produto) => {
-                        return(
-                            <div onClick={() => showAddProduto()} className="produtos">
-                                <picture className="container-picture">
-                                    <img  alt="foto de comida" className="container-img" src={produto.image}/>
-                                    <aside className="container-aside">
-                                        <h3 id="titleProduto"  >{produto.title}</h3>
-                                        <span className="price" >R$ {produto.price}</span>
-                                    </aside>
-                                </picture>
-                                <span className="container-descricao" >{produto.describe}</span>
-                            </div>
-                         );
-                    })}                              
+                    {produtos.map((produto) => (
+                        <div onClick={() => showAddProduto()} className="produtos">
+                            <picture className="container-picture">
+                                <img  alt="foto de comida" className="container-img" src={produto.image}/>
+                                <aside className="container-aside">
+                                <h3 id="titleProduto"  >{produto.title}</h3>
+                                    <span className="price" >R$ {produto.price}</span>
+                                </aside>
+                            </picture>
+                            <span className="container-descricao" >{produto.describe}</span>
+                        </div>
+                        ))
+                    }                            
               
                     
                     

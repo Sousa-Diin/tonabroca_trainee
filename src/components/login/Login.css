@@ -99,3 +99,13 @@ ul li, link {
     font-weight: 50%;
 
 }
+
+.escondeLogin { display: none; }
+
+    .showViewC { display: flex; }
+    .showViewF { display: flex; }
+    .showViewA { display: flex; }
+
+    .hideViewC { display: none; }
+    .hideViewF { display: none; }
+    .hideViewA { display: none; }
