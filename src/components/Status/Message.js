@@ -1,12 +1,12 @@
 import React from 'react';
 import '../Status/Message.css';
 
-const Message = ({children}) => {
+const Message = ({children, onClick, name}) => {
 
         return(
-            <div className="cont-comp-sts-mess"> 
+            <div className={ name ? "cont-comp-sts-mess" : " none"}> 
                 <div className="son-comp-phr"> 
-                    <p className='phrase'>
+                    <p onClick={onClick} className='phrase'>
                         {children}
                     </p>
                 </div>

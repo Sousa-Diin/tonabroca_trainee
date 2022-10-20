@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './AuthFuncionario.css';
 import Header from '../../components/Header/Header';
@@ -7,15 +8,20 @@ import Button from '../../components/Button/Button';
 import { AuthContext } from '../../components/Providers/auth';
 
 export default function AuthFuncionario (props) {
-    const { user } = React.useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    const { user, logado, setLogado } = React.useContext(AuthContext);
     console.log({user});
 
     const [permissao, setPermissao] = useState(false);
 
     const signIn = (e) => {
-        if(props.email === 'func@teste' & '2121' === props.password /*& user.typeUser === 'coWork'*/){
+        if(props.email === 'func@teste' & '2121' === props.password & user.typeUser === 'coWork'){
             e.preventDefault();
-            window.location.pathname = '/dadosFunc';
+            setLogado(!logado);
+            //window.location.pathname = '/dadosFunc';
+            navigate("/dadosFunc");
                
         }else{
             window.alert('Acesso negado!');

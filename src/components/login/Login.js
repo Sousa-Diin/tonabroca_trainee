@@ -8,13 +8,14 @@ import { AuthContext } from '../Providers/auth';
 
 export default function Login (){
 
+    const { user, authenticated } = React.useContext(AuthContext);
+    console.log(user)
+
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { user } = React.useContext(AuthContext);
-    console.log(user)
-
+    
     const [change, setChange] = useState(true);
 
     const [viewC, setViewC] = useState(false);
@@ -26,6 +27,7 @@ export default function Login (){
         setChange(!change);
         setViewC(!viewC);
        // setUser({typeUser:'client'});
+       
         
     }
 
@@ -67,6 +69,8 @@ export default function Login (){
                         show={viewC} 
                         email={email} password={password} 
                         setEmail={setEmail} setPassword={setPassword}
+                        authenticated={authenticated}
+                        
                     />
                 </section>
 

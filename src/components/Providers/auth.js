@@ -1,44 +1,97 @@
 import React, { useState } from 'react'
 import api from '../../services/api'
+//import produto from './product'
 
 export const AuthContext = React.createContext({})
 
 export const AuthProvider = (props)=> {
 
+
     const [user, setUser]  = useState(
         {
-        name:'',
-        email: '',
-        password:'',
-        typeUser:'client',
-        fullname:"",
-        nasc:"",
-        sexo:"",
-        tell:"99988-2134",
-        lougradouro:"",
-        bairro:'',
-        numero:'', 
-        cep:'', 
-        cidade:'',
-        estado:'',
-        complemento:'',
+            id: '',
+            name:'emakers',
+            email: '',
+            password:'3131',
+            typeUser:'client',
+            fullname:"",
+            nasc:"",
+            sexo:"",
+            tell:"99988-2134",
+            lougradouro:"",
+            bairro:'',
+            numero:'', 
+            cep:'', 
+            cidade:'',
+            estado:'',
+            complemento:'',
 
         },
-        
+        {
+            name:'',
+            email: '',
+            password:'',
+            typeUser:'coWork',
+            fullname:"",
+            nasc:"",
+            sexo:"",
+            tell:"99988-2134",
+            lougradouro:"",
+            bairro:'',
+            numero:'', 
+            cep:'', 
+            cidade:'',
+            estado:'',
+            complemento:'',
+        },
+        {
+            name:'emakers',
+            email: '',
+            password:'',
+            typeUser:'admin',
+            fullname:"",
+            nasc:"",
+            sexo:"",
+            tell:"99988-2134",
+            lougradouro:"",
+            bairro:'',
+            numero:'', 
+            cep:'', 
+            cidade:'',
+            estado:'',
+            complemento:'',
+        },
     )
 
-    /*const listUser =()=>{
-        user.map( (key, value)=>(
-            {key}= value.email {value.email}
-        ))
+    function handleFilterUser(e){
+        const userFiltered = user.filter ((usuario) =>{
+            return usuario.name
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase());
+        });
+        return userFiltered;
+    }
+
+    
+
+    const handleGravaUser = ()=> {
+         api.post('/register/client','ClientController.store', ...user);
+
+    }
+
+
+    const [logado, setLogado] = useState(false)
+
+    /*const login = () =>{
+
     }*/
 
-    const handleGravaUser=()=> {
-         api.post('/register/client','ClientController.store', ...user);
+    const logout = ()=>{
+        console.log("logout");
     }
 
     return(
-        <AuthContext.Provider value={{user, setUser, handleGravaUser}}>
+        <AuthContext.Provider value={{ logado, setLogado, logout, user, setUser,handleFilterUser, handleGravaUser}}>
 
             {props.children}
 

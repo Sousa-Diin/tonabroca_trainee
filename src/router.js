@@ -1,7 +1,6 @@
 
 import React from "react";
-import { BrowserRouter,Route, Routes } from "react-router-dom";
-//import {Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter,Route, Routes, Navigate } from "react-router-dom";
 import Login from './components/login/Login';
 import CriarAcesso from './pages/Cadastro/CriarAcesso/CriarAcesso';
 import Endereco from './pages/Cadastro/CadastrarEnd/Endereco';
@@ -17,15 +16,43 @@ import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 import Cardapio from "./pages/Pedidos/Cardapio";
 import Message from "./components/Status/Message";
 import AddProduto from "./pages/Pedidos/Carrinho/AddProduto";
+import { AuthContext } from "./components/Providers/auth";
 /* LINE 29*/
 
-function Router(props){
+function Router(){
+    const ClientRoute = ({children}) => {
+        const { logado, user } = React.useContext(AuthContext)
+        if(!logado & user.typeUser ==='client'){
+            return <Navigate to="/" />
+        }
+
+        return children;
+    };
+
+    const CoWorkRoute = ({children}) => {
+        const { logado, user } = React.useContext(AuthContext)
+        if(!logado & user.typeUser ==='coWoker'){
+            return <Navigate to="/" />
+        }
+
+        return children;
+    };
+
+    const AdminRoute = ({children}) => {
+        const { logado, user } = React.useContext(AuthContext)
+        if(!logado & user.typeUser ==='admin'){
+            return <Navigate to="/" />
+        }
+
+        return children;
+    };
+
     return(
         <BrowserRouter>
             <Routes>
                
                  <Route path='/' element={<Login/>}/>
-                 <Route path='/obterAcesso' element={<CriarAcesso/>}/>
+                 <Route exact path='/obterAcesso' element={<CriarAcesso/>}/>
                  <Route path='/logradouro' element={<Endereco/>}/>
                  <Route path='/finalizado' element={<CadastroFinalizado/>}/>
                  <Route path='/done' element={<Message/>}/>
@@ -35,9 +62,21 @@ function Router(props){
                  <Route path='/novaSenha' element={<NovaSenha/>}/>
                  <Route path='/authAdmin' element={<AuthAdmin/>}/>
                  <Route path='/authFunc' element={<AuthFuncionario/>}/>
-                 <Route path='/buscarFunc' element={<BuscarFuncionario/>}/>
-                 <Route path='/dadosFunc' element={<DadosFuncionario/>}/>
-                 <Route path='/pedidos' element={<Cardapio/>}/>
+                 <Route path='/buscarFunc' element={
+                    <AdminRoute>
+                        <BuscarFuncionario/>
+                    </AdminRoute>}/>
+
+                 <Route path='/dadosFunc' element={
+                 <CoWorkRoute>
+                    <DadosFuncionario/>
+                 </CoWorkRoute>}/>
+
+                 <Route exact path='/pedidos' element={
+                 <ClientRoute>
+                    <Cardapio/>
+                 </ClientRoute>}/>
+
                  <Route path='/addProduto' element={<AddProduto/>}/>
                 
             </Routes>

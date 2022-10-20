@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Message from '../../../components/Status/Message';
 
-export default  CadastroFinalizado  =>{
+export default  function CadastroFinalizado (){
 
     return(
-        <Link to='/' ><button ><Message>Cadastro Finalizado Com Sucesso!</Message></button></Link>
+        <Message name={true} onClick={() => {window.location.pathname = '/'}}>Cadastro Finalizado Com Sucesso!</Message>
     );
 }
 
