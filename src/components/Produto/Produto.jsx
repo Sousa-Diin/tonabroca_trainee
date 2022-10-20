@@ -1,9 +1,11 @@
 import React from 'react';
+import  produto  from '../../pages/Register/Produtos/ListaProdutos'
 
-export const Produto = ({produto}) => {
+export default function Produto (){
     
     return(
         <main className='cont-prin-prod'>
+            
             <header className='son-img-info-prod'>
                 <img src={produto.image} alt="image-product"/>
                 <div className='son-info-prod'>

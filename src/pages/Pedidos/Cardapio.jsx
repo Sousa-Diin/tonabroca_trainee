@@ -17,7 +17,7 @@ import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
 import ViewPrice from "../../components/Prices/ViewPrice";
 import { AuthContext } from "../../components/Providers/auth";
-//import Menu from "../../components/Menu/Menu";
+import {Menu} from "../../components/Menu/Menu";
 //import Users from "../Register/Users/Users";
 
 
@@ -123,9 +123,22 @@ function Cardapio () {
                         </div>
                     </nav>
 
+                    <div className={menu ? "sidebar-menu" : "esconder"} >
+                        <h3 className="name-client">Óla {user.name} </h3>  
+                        {Menu.map((menu) => {
+                            return(
+                                <ul className='coluna-menu'>
+                                    
+                                    <img  className="icons-menu" src={menu.icon } alt="icon-menu"/>
+                                    <li  onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
+                                </ul>
+                            );
+                        })}
+                    </div>
+
                     <aside className={sidebar ? "sidebar active" : "sidebar"}>
                         <section className="sep-pag-ped">
-                            <h3>Óla {' '+ user.email +' ' } seu pedido em Loja : </h3>
+                            <h3> Óla { user.name  } seu pedido em Loja : </h3>
                             <ViewPrice value={'R$ ' + {pricePedido}} name="black" type="numero">{qtdProduto} x Prato 1</ViewPrice>
                             <div className="sidebar-item-row">
                                 <div className="nav-button"></div><Button name="button-default">Editar</Button> <div className="nav-button"></div><Button name="button-default">Remover</Button><div className="nav-button"></div>
@@ -145,7 +158,6 @@ function Cardapio () {
                         </footer>
                     </aside>
                     
-
                     <Anuncios />
                     <div className="ped-name-store-entrega">
                         <aside className="aside-logo-store">

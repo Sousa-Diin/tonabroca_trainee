@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 
 //import {IconName} from "react-icons/hi";
 import icon1 from '../../assets/logo/pedido.png';
@@ -17,9 +17,9 @@ let pedido = icon1,
     adress = icon7,
     data = icon6,
     logout = icon5;
+ 
 
-export default function Menu (){
-    const listaMenu = [
+    export const Menu = [
         {
             icon: pedido,
             title: "Pedidos",
@@ -57,9 +57,9 @@ export default function Menu (){
         },
         
     ];
-    (
+ /*   (
 
-        <div className={ true ? "sidebar-menu" : "esconder"}>  
+        <div className={ props.menu ? "sidebar-menu" : "esconder"}>  
         <h3 className="name-client">Óla  usuario </h3>  
         {listaMenu.map((menu) => {
             return(
@@ -72,4 +72,4 @@ export default function Menu (){
         })}
     </div>
     );
-}
+}*/
