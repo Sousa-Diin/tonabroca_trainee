@@ -1,21 +1,17 @@
 import React from 'react';
-import  produto  from '../../pages/Register/Produtos/ListaProdutos'
+//import '../Produto/Produto.css'
 
-export default function Produto (){
-    
+export default function Produto ({produto}, {showAddProduto}){
     return(
-        <main className='cont-prin-prod'>
-            
-            <header className='son-img-info-prod'>
-                <img src={produto.image} alt="image-product"/>
-                <div className='son-info-prod'>
-                    <h3>{produto.useState.title}</h3>
-                    <p>R$ {produto.price}</p>
-                </div>
-            </header>
-            <footer className='son-desc-prod'>
-                <span>Descricão: {produto.describe}</span>
-            </footer>
-        </main>
+           <div onClick={() => showAddProduto()} className="produtos">
+                <picture className="container-picture">
+                    <img  alt="foto de comida" className="container-img" src={produto.image}/>
+                    <aside className="container-aside">
+                        <h3 id="titleProduto"  >{produto.title}</h3>
+                            <span className="price" >R$ {produto.price}</span>
+                    </aside>
+                </picture>
+                <span className="container-descricao" >{produto.describe}</span>
+            </div>
     );
 }

@@ -2,22 +2,18 @@ import React,{ useEffect, useState } from "react";
 import './Cardapio.css';
 
 import api from "../../services/api";
-import Header from '../../components/Header/Header';
+import Sidebar from "../../components/Header/HeaderNav";
 import Anuncios from "../../components/Anuncios/Anuncios";
 import { ListaProdutos } from "../Register/Produtos/ListaProdutos";
-import logar from '../../assets/logo/Pedido de Comida/sombra-de-usuario-masculino.png';
-import carrinho from '../../assets/logo/Pedido de Comida/carrinho-de-compras.png';
 import icon_1 from '../../assets/logo/Pedido de Comida/dinheiro.png';
 import icon_2 from '../../assets/logo/Pedido de Comida/entrega-rapida.png';
 import logo_loja from '../../assets/logo/Pedido de Comida/loja-11.png';
+import Produto from "../../components/Produto/Produto";
 
-
-import Button from '../../components/Button/Button';
 import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
-import ViewPrice from "../../components/Prices/ViewPrice";
 import { AuthContext } from "../../components/Providers/auth";
-import {Menu} from "../../components/Menu/Menu";
+//import ViewAddProduto from "../../components/Produto/ViewAddProduto";
 //import Users from "../Register/Users/Users";
 
 
@@ -26,14 +22,11 @@ function Cardapio () {
    const { user } = React.useContext(AuthContext);
    console.log({user});
 
-   const [sidebar, setSidebar] = useState(false);
-   const [menu, setMenu] = useState(false);
    const [addProdutoCar, setAddProdutoCar] = useState(false);
    const [entrega] = useState(6.9);
    const [horas] = useState(0);
    const [min] = useState(0);
-   const [qtdProduto, setQtdProduto] = useState();
-   let total ;
+   const [qtdProduto, setQtdProduto] = useState(0);
 
    const [apiProdutos, setApiProdutos] = useState(
         {"titlePedido": "",
@@ -61,15 +54,6 @@ function Cardapio () {
         //eslint-disable-next-line-react-hooks/exhaustive-deps
     }, []);
 
-    const showSidebar = () => {
-        setMenu(false);
-        setSidebar(!sidebar);
-    }
-
-    const showMenu = () => {
-        setSidebar(false);
-        setMenu(!menu);
-    }
     const showAddProduto = (produto) => {
         setQtdProduto(0); // se tirar da erro (NaN)
         setAddProdutoCar(!addProdutoCar);
@@ -90,76 +74,12 @@ function Cardapio () {
         }
     }
 
-    function calcularSubtotal (price) {
-        
-        total = qtdProduto * price;
-        return total;
-    }
-
-    function calcularTotal (){
-        return total + entrega;
-    }
-
-  /*  function buscarUserLogado (){
-        {Users.map((user) =>{
-            return (
-                user.name
-            );           
-    })}
-       
-    }*/
-
-       
         return (
             <main className="ped-cont-prod-main">
                 <div className="ped-cont-nav-cab-div">
-                    <nav className="cabecalho">
-                        <Header className="logo-emakers"/>
-                        <div className="ped-aba-search-nav">
-                            <input id="input-pedido" type="text"/>
-                            <img onClick={ showMenu } src={logar} className="img-ped" alt="imade-menu" />
-                            <img onClick={ showSidebar } src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
-                                <span onClick={showSidebar} className="qtd-ped">{qtdProduto}</span>                            
-                        </div>
-                    </nav>
-
-                    <div className={menu ? "sidebar-menu" : "esconder"} >
-                        <h3 className="name-client">Óla {user.name} </h3>  
-                        {Menu.map((menu) => {
-                            return(
-                                <ul className='coluna-menu'>
-                                    
-                                    <img  className="icons-menu" src={menu.icon } alt="icon-menu"/>
-                                    <li  onClick={() => {window.location.pathname = menu.link}} className='list-menu'>{menu.title}</li>
-                                </ul>
-                            );
-                        })}
-                    </div>
-
-                    <aside className={sidebar ? "sidebar active" : "sidebar"}>
-                        <section className="sep-pag-ped">
-                            <h3> Óla { user.name  } seu pedido em Loja : </h3>
-                            <ViewPrice value={'R$ ' + {pricePedido}} name="black" type="numero">{qtdProduto} x Prato 1</ViewPrice>
-                            <div className="sidebar-item-row">
-                                <div className="nav-button"></div><Button name="button-default">Editar</Button> <div className="nav-button"></div><Button name="button-default">Remover</Button><div className="nav-button"></div>
-                            
-                            </div>
-
-                            <section>
-                                <ViewPrice value={'R$ ' + calcularSubtotal(35.23)} name="black" type="text">Subtotal</ViewPrice>
-                                <ViewPrice value={'R$ ' + entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
-                                <ViewPrice value={'R$ ' + calcularTotal()} name="red" type="text">Total</ViewPrice>
-                            </section>
-
-                        </section>
-                        
-                        <footer className="sidebar-item-row">
-                        <Button onClick={() => showSidebar(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button name="button-sidebar2" >Finalizar<br/>Pedido</Button>
-                        </footer>
-                    </aside>
-                    
-                    <Anuncios />
-                    <div className="ped-name-store-entrega">
+                <Sidebar />
+                <Anuncios />
+                <div className="ped-name-store-entrega">
                         <aside className="aside-logo-store">
                             <img className="logo-loja" src={logo_loja} alt="logo-store"/> 
                             <h2>Restaurante <br/> Food e Drinks </h2>
@@ -176,49 +96,26 @@ function Cardapio () {
                         </div>
                     </div>
                 </div>
-                
+               
                 <div className="ped-cont-list-prod">  
-                
                     {produtos.map((produto) => (
-                        <div onClick={() => showAddProduto()} className="produtos">
-                            <picture className="container-picture">
-                                <img  alt="foto de comida" className="container-img" src={produto.image}/>
-                                <aside className="container-aside">
-                                <h3 id="titleProduto"  >{produto.title}</h3>
-                                    <span className="price" >R$ {produto.price}</span>
-                                </aside>
-                            </picture>
-                            <span className="container-descricao" >{produto.describe}</span>
-                        </div>
+                        <Produto produto={produto} showAddProduto={showAddProduto}/>
+                        
                         ))
-                    }                            
-              
-                    
-                    
-                    <div className={addProdutoCar ? 'cont-abs-add-pro-show' : 'cont-abs-add-pro-hide'} >
-                            <img className="cont-ped-add-prod-img" src={imagaPedido} alt="imagem-produto" />
-                            <aside className="cont-ped-info">
-                                <div className="cont-ped-desc">
-                                    <h4>{titlePedido}</h4>
-                                    <button onClick={() => setAddProdutoCar(false)} className="cont-img-btn-fech"><img src={fechar} alt="img-logout" className="cont-img-btn-fech"/></button>
-                                </div>
-                                <span>Descricão: {describePedido}</span>
-                                <div className="cont-son-control-ped" >
-                                    <div className="cont-son-qtd-ped">
-                                        <button id="less-qtd" onClick={handleDecrementaQtd}> - </button>
-                                        <input id="tot-qtd" value={qtdProduto}  readOnly/>
-                                        <button id="more-qtd" onClick={handleIncrementaQtd}> + </button>
-                                    </div>
-                                    <Button name="button-default">Adicionar</Button>
-                                </div>
-                                    
-                            </aside>
-                                
-                        </div>
-                    
-                </div>
-
-              
+                    }                         
+                </div>             
+                <aViewAddProduto 
+                    fechar={fechar}
+                    qtdProduto={qtdProduto}
+                    addProdutoCar={addProdutoCar}
+                    imagaPedido={imagaPedido}
+                    setAddProdutoCar={setAddProdutoCar}
+                    titlePedido={titlePedido}
+                    pricePedido={pricePedido}
+                    describePedido={describePedido}
+                    handleDecrementaQtd={handleDecrementaQtd}
+                    handleIncrementaQtd={handleIncrementaQtd}
+                /> 
                 
                 
             </main>

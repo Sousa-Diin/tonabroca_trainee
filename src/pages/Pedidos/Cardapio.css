@@ -17,56 +17,9 @@
     flex-direction: column;
     
 }
-
-.cabecalho
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.ped-aba-search-nav
-{
-    /*background-color: rgba(0,0,0,.3); /Teste*/
-    position: absolute;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    width: 20vw;
-    height: 5vh;
-    margin: 3% 1% 1% 77%;
-    padding: 1%;
-    gap:5%;
-}
-
-#input-pedido
-{
-    width: 100%;
-    height: 5vh;
-    margin-top: 2.5%;
-    background-color: #FFFFFF;
-}
-
-.img-ped
-{
-    width: 15%;
-    height: 60%;
-    margin-top: 7%;
-    cursor: pointer;
-}
-    .qtd-ped { 
-        width: 14%; height: 56%; margin-left: -14%; margin-top: 6.3%;
-        text-align: center; color: #fff; cursor: pointer;
-    }
-
-.img-ped:hover{
-    
-    height: 61%;
-}
-
-/* Container de informacões do pedido */
+/*
+ Container de informacões do pedido 
+ */
 .ped-name-store-entrega
 {
     display: flex;
@@ -149,7 +102,7 @@
 {
 
     background-color: rgba(255,106,14,1);
-    width:32%;
+    width:31%;
     height:17vh;
     text-align: center;
     margin: 3% .1% -2.3% .1%;
@@ -175,7 +128,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    position: absolute;
+    /*position: absolute;*/
 
 
     width:40vw;

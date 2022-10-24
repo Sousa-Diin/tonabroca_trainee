@@ -8,6 +8,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 7vh;
+
+    
 }
 
 .header-logo-img {
@@ -22,4 +24,57 @@
     color:#FFFFFF;
     padding: 1.5%;
    
+}
+/*  ESTILOS DO HEADER DE PEDIDOS*/
+
+
+.cabecalho
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+    .main { width: 100%;}
+
+.ped-aba-search-nav
+{
+  /* background-color: rgba(219, 140, 140, 0.3);  */
+    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    width: 20%;
+    height: 5vh;
+    margin-top: 3%;
+    left: 13.6%;
+    padding: 1%;
+    gap:5%;
+}
+
+#input-pedido
+{
+    width: 40%;
+    height: 5vh;
+    margin-top: 2.5%;
+    background-color: #FFFFFF;
+}
+
+.img-ped
+{
+    width: 15%;
+    height: 60%;
+    margin-top: 7%;
+    cursor: pointer;
+}
+    .qtd-ped { 
+        width: 14%; height: 56%; margin-left: -13%; margin-top: 6.3%;
+        text-align: center; color: #fff; cursor: pointer;
+    }
+
+.img-ped:hover{
+    
+    height: 61%;
 }
