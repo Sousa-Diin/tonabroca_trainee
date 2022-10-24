@@ -66,7 +66,6 @@ function Sidebar() {
             <div style={{
               display:'flex',
               flexDirection: 'row',
-              left:'5%',
               width:'50%',
               justifyContent:'flex-end'}}>
               <img src={logo} className="header-logo-img" alt="logo"/>

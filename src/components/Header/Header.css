@@ -56,7 +56,7 @@
 
 #input-pedido
 {
-    width: 40%;
+    width: 43%;
     height: 5vh;
     margin-top: 2.5%;
     background-color: #FFFFFF;
@@ -70,7 +70,7 @@
     cursor: pointer;
 }
     .qtd-ped { 
-        width: 14%; height: 56%; margin-left: -13%; margin-top: 6.3%;
+        width: 14%; height: 56%; margin-left: -18%; margin-top: 6.3%;
         text-align: center; color: #fff; cursor: pointer;
     }
 

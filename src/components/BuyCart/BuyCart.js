@@ -20,6 +20,7 @@ const product = React.useContext(AuthContext);
                       <ViewPrice value={'R$ ' + props.entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
                       <ViewPrice value={'R$ ' + props.calcularTotal()} name="red" type="text">Total</ViewPrice>
                   </section>
+                  <pre>{JSON.stringify(product.cart,null,3)}</pre>
 
           </section>
                         

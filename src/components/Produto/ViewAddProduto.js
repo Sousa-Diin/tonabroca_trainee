@@ -26,7 +26,7 @@ export default function ViewAddProduto(props) {
             <div className="cont-son-control-ped" >
                 <div className="cont-son-qtd-ped">
                     <button id="less-qtd" onClick={props.handleDecrementaQtd}> - </button>
-                    <input id="tot-qtd" value={props.qtdProduto}  readOnly/>
+                    <input id="tot-qtd" value={props.cart.qtd}  readOnly/>
                     <button id="more-qtd" onClick={props.handleIncrementaQtd}> + </button>
                 </div>
                 <Button onClick={add} name="button-default">Adicionar</Button>

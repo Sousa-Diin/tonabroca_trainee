@@ -13,13 +13,13 @@ import Produto from "../../components/Produto/Produto";
 import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
 import { AuthContext } from "../../components/Providers/auth";
-//import ViewAddProduto from "../../components/Produto/ViewAddProduto";
+import ViewAddProduto from "../../components/Produto/ViewAddProduto";
 //import Users from "../Register/Users/Users";
 
 
 function Cardapio () {
 
-   const { user } = React.useContext(AuthContext);
+   const { user, cart, setCart } = React.useContext(AuthContext);
    console.log({user});
 
    const [addProdutoCar, setAddProdutoCar] = useState(false);
@@ -63,14 +63,14 @@ function Cardapio () {
     
 
     const handleIncrementaQtd = () => {
-        let incrementa = qtdProduto + 1;
-        setQtdProduto(incrementa);
+        let incrementa = cart.qtd + 1;
+        setCart({qtd:incrementa});
     }
 
     const handleDecrementaQtd = () =>{
-        var decrementa = qtdProduto - 1;
-        if (qtdProduto > 0){
-            setQtdProduto(decrementa);
+        var decrementa = cart.qtd - 1;
+        if (cart.qtd > 0){
+            {setCart({qtd:decrementa})};
         }
     }
 
@@ -104,7 +104,7 @@ function Cardapio () {
                         ))
                     }                         
                 </div>             
-                <aViewAddProduto 
+                <ViewAddProduto 
                     fechar={fechar}
                     qtdProduto={qtdProduto}
                     addProdutoCar={addProdutoCar}
@@ -115,6 +115,8 @@ function Cardapio () {
                     describePedido={describePedido}
                     handleDecrementaQtd={handleDecrementaQtd}
                     handleIncrementaQtd={handleIncrementaQtd}
+                    cart={cart}
+                    setCart={setCart}
                 /> 
                 
                 

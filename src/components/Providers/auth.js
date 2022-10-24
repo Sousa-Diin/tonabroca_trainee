@@ -86,11 +86,8 @@ export const AuthProvider = (props)=> {
 
     }*/
 
-    const [cart, setCart] = useState({
-        desc:'prato 002',
-        price:36.7,
-        qtd:1,
-    });
+    const [cart, setCart] = useState({});
+    
 
     const addCart = product => {
         setCart(old => ({
@@ -107,7 +104,8 @@ export const AuthProvider = (props)=> {
         <AuthContext.Provider value={{ 
             logado, setLogado, logout,
              user, setUser,handleFilterUser, 
-             handleGravaUser, cart, addCart}}
+             handleGravaUser, cart, addCart, 
+             setCart}}
         >
 
             {props.children}
