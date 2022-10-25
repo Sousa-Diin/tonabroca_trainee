@@ -70,7 +70,8 @@ function Cardapio () {
     const handleDecrementaQtd = () =>{
         var decrementa = cart.qtd - 1;
         if (cart.qtd > 0){
-            {setCart({qtd:decrementa})};
+            setCart({qtd:decrementa});
+            setQtdProduto(decrementa);
         }
     }
 

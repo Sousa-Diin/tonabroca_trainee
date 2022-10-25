@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from '../Button/Button'
 import '../../components/Produto/Produto.css'
-import { AuthContext } from '../Providers/auth'
+import { useCart } from '../Providers/auth'
 
 export default function ViewAddProduto(props) {
 
-    const cart = useContext(AuthContext);
+    const cart = useCart();
 
     const add =()=>{
         cart.addCart({

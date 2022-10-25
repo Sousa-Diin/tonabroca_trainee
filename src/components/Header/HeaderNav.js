@@ -6,7 +6,7 @@ import carrinho from '../../assets/logo/Pedido de Comida/carrinho-de-compras.png
 import logo from '../../assets/logo/logo_emakers2.png';
 import Menu from '../Menu/Menu';
 import BuyCart from '../BuyCart/BuyCart';
-//import { AuthContext } from '../Providers/auth';
+import { useCart } from '../Providers/auth';
 
 function Sidebar() {
 
@@ -57,7 +57,9 @@ function Sidebar() {
       return total + entrega;
   }
 
-  //const product = useContext(AuthContext);
+  const product = useCart();
+
+  const itemsCount = Object.keys(product.cart).length
 
   return (
     <main>
@@ -75,7 +77,7 @@ function Sidebar() {
               <input id="input-pedido" type="text"/>
               <img onClick={ showMenu } src={logar} className="img-ped" alt="imade-menu" />
               <img onClick={ showCart } src={carrinho} className="img-ped" alt="imade-carrinho-de-compra"/>
-                  <span onClick={showCart} className="qtd-ped">{qtdProduto}</span>                            
+                  <span onClick={showCart} className="qtd-ped">{itemsCount > 0 && <span>{itemsCount}</span>}</span>                            
             </div>
       </header>
         

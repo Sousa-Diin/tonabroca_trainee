@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import '../Produto/Produto.css'
-import { AuthContext } from '../Providers/auth';
+import { useCart } from '../Providers/auth';
 
 export default function Produto ({produto}, {showAddProduto}){
 
-    const cart = useContext(AuthContext);
+    const cart = useCart();
     const add = produto => () => {
         cart.addCart(produto);
     }

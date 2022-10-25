@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import api from '../../services/api'
 //import produto from './product'
 
@@ -90,11 +90,22 @@ export const AuthProvider = (props)=> {
     
 
     const addCart = product => {
-        setCart(old => ({
-            ...old,
-            [product.id] : product
-        }))
+        setCart((old) => {
+            let qtd = 0;
+            if(old[product.id]){
+                qtd = old[product.id].qtd;
+            }
+            return{
+                ...old,
+                [product.id] : {
+                    qtd : qtd + 1,
+                    product,
+                },
+                
+            }
+        })
     }
+
 
     const logout = ()=>{
         console.log("logout");
@@ -113,4 +124,11 @@ export const AuthProvider = (props)=> {
         </AuthContext.Provider>
     );
 }
+
+
+export const useCart = ()=>{
+    const cart = useContext(AuthContext);
+    return cart;
+}
+
 
