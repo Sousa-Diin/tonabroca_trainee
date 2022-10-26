@@ -12,12 +12,8 @@ function Sidebar() {
 
   const [cart, setCart] = useState(false);
   const [menu, setMenu] = useState(false);
-  //const [addProdutoCar, setAddProdutoCar] = useState(false);
   const [entrega] = useState(6.9);
-  let total ;
-
-  const [qtdProduto, setQtdProduto] = useState(0);
-  const [pricePedido, setPricePedido] = useState (0);
+  
 
   const showCart = () => {
       setMenu(false);
@@ -46,7 +42,7 @@ function Sidebar() {
         if (qtdProduto > 0){
             setQtdProduto(decrementa);
         }
-    }*/
+    }
 
   function calcularSubtotal (price) {
       
@@ -56,11 +52,11 @@ function Sidebar() {
 
   function calcularTotal (){
       return total + entrega;
-  }
+  }*/
 
   const product = useCart();
 
-  const itemsCount = Object.keys(product.cart).length 
+  const itemsCount = Object.keys(product.cart).length;
   /*const itemsCount = Object.keys(product.cart).reduce((prev,curr) => {
     return prev + product.cart[curr].qtd;
     
@@ -91,12 +87,7 @@ function Sidebar() {
       cart={cart}
       setCart={setCart}
       showCart={showCart}
-      qtdProduto={qtdProduto}
-      pricePedido={pricePedido}
-      calcularTotal={calcularTotal}
-      calcularSubtotal={calcularSubtotal}
-      setPricePedido={setPricePedido}
-      setQtdProduto={setQtdProduto}
+      entrega={entrega}
       
       />
                     

@@ -17,6 +17,11 @@
 
  }
 
+ .child-cart-pedidos {
+    display: flex;
+    flex-flow: column;
+ }
+
 .aside-child-cart-info-ped {
 
     width: 26%;
@@ -24,6 +29,7 @@
     flex-flow: column;
     justify-content: space-around;
     flex: none;
+    /*background-color: aqua;*/
  }
     .cart-info-alt-ped {
         width: 90%;
@@ -35,23 +41,25 @@
         padding: .7%;
         flex-flow: row nowrap;
         justify-content: space-between;
+        /*background-color: blue;*/
         
     }
 
         .cont-child-qtd-ped {
             display: flex;
-          width: 95%; 
-          height: 89%;
+            width: 95%; 
+            height: 99%;
          
             
         }
-         #less-qtd-ped, #more-qtd-ped, #tot-qtd
+         #less-qtd-ped, #more-qtd-ped, #tot-qtd-ped
         {
             background-color: #d9d9d9;
+            
             font-size: 23px;
             color:  rgba(255,106,14,1);
             cursor: pointer;
-            height: 28%;
+            height: 50%;
             width: 28%; flex: 1;
         }
 
