@@ -11,36 +11,20 @@ import icon_2 from '../../assets/logo/Pedido de Comida/entrega-rapida.png';
 import logo_loja from '../../assets/logo/Pedido de Comida/loja-11.png';
 import Produto from "../../components/Produto/Produto";
 
-import p1 from '../../assets/logo/Pedido de Comida/p1.png';
-import fechar from '../../assets/logo/Pedido de Comida/img-fechar.png';
+//import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import { AuthContext } from "../../components/Providers/auth";
-import ViewAddProduto from "../../components/Produto/ViewAddProduto";
 //import Users from "../Register/Users/Users";
 
 
 function Cardapio () {
 
-   const { user, cart, setCart } = React.useContext(AuthContext);
+   const { user } = React.useContext(AuthContext);
    console.log({user});
 
-   const [addProdutoCar, setAddProdutoCar] = useState(false);
    const [entrega] = useState(6.9);
    const [horas] = useState(0);
    const [min] = useState(0);
-   const [qtdProduto, setQtdProduto] = useState(0);
 
-   const [apiProdutos, setApiProdutos] = useState(
-        {"titlePedido": "",
-         "imagaPedido": "",
-         "describePedido": "",
-         "pricePedido": 0.0,
-        }
-    )
-
-   const [titlePedido] = useState ("title-produto");
-   const [imagaPedido] = useState (p1);
-   const [describePedido] = useState ("alguma descricão");
-   const [pricePedido, setPricePedido] = useState (0);
 
     const produtos = ListaProdutos; 
 
@@ -48,21 +32,15 @@ function Cardapio () {
         api
         .get("createUser")
         .then(({data})=>{
-          setApiProdutos(data);
-          console.log(apiProdutos);
+          //console.log(apiProdutos);
         })
     
         //eslint-disable-next-line-react-hooks/exhaustive-deps
     }, []);
 
-    const showAddProduto = (produto) => {
-        setQtdProduto(0); // se tirar da erro (NaN)
-        setAddProdutoCar(!addProdutoCar);
-        setPricePedido(produto.price);
-       
-    }
     
-
+    
+/*
     const handleIncrementaQtd = () => {
         let incrementa = cart.qtd + 1;
         setCart({qtd:incrementa});
@@ -74,7 +52,8 @@ function Cardapio () {
             setCart({qtd:decrementa});
             setQtdProduto(decrementa);
         }
-    }
+    }*/
+
 
         return (
             <main className="ped-cont-prod-main">
@@ -100,26 +79,14 @@ function Cardapio () {
                 </div>
                
                 <div className="ped-cont-list-prod">  
-                    {produtos.map((produto) => (
-                        <Produto produto={produto} showAddProduto={showAddProduto}/>
+                    {produtos.map((produto, key) => {
+                       
+                        return(
+                        <Produto produto={produto} />
+                        )
                         
-                        ))
-                    }                         
-                </div>             
-                <ViewAddProduto 
-                    fechar={fechar}
-                    qtdProduto={qtdProduto}
-                    addProdutoCar={addProdutoCar}
-                    imagaPedido={imagaPedido}
-                    setAddProdutoCar={setAddProdutoCar}
-                    titlePedido={titlePedido}
-                    pricePedido={pricePedido}
-                    describePedido={describePedido}
-                    handleDecrementaQtd={handleDecrementaQtd}
-                    handleIncrementaQtd={handleIncrementaQtd}
-                    cart={cart}
-                    setCart={setCart}
-                /> 
+                    })}                         
+                </div>
                 
                 
             </main>

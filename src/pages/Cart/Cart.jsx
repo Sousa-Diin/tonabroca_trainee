@@ -12,6 +12,10 @@ export default function Cart (){
     let entrega = 6.9;
     const cart = useCart();
 
+    const remove = id => ()=>{
+        cart.removeCart(id)
+    }
+
     const { setTotal, setSubTotal } = React.useContext(AuthContext);
 
     let subtotal = 0;
@@ -28,6 +32,7 @@ export default function Cart (){
             <main className='body-cart'>
             <section className='child-cart-pedidos'>
                 <h2>Pedido</h2>
+                <div className='child-cart-pedidos'>
                 {Object.keys(cart.cart).map(key =>{
                         const product = cart.cart[key]
                         
@@ -42,12 +47,15 @@ export default function Cart (){
                                             <span className="price" >R$ {product.product.price}</span> 
                                             <pre style={{marginTop:'-12%', marginLeft:'21%'}}>{'UN  ' + product.qtd}</pre>
                                     </aside>
+
+                                    <img onClick={remove(key)} style={{width:'9%', height:'23%',}} src={lixeira} alt='btn-cancel' />
                                 </picture>
                                 <span className="container-descricao" >{product.product.describe}</span>
                             </div>
                             
                         )
                     })}
+                </div>
                     
             </section>
                 <aside className='aside-child-cart-info-ped'>

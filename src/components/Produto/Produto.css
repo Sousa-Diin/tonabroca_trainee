@@ -64,11 +64,12 @@
 .cont-abs-add-pro-show /*DISPLAY ESCONDINDO 01*/
 {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
 
     width:40vw;
     height:30vh;
+    right: 130%;
     
     background-color: #d9d9d9;
     margin: 0 auto;
@@ -81,19 +82,35 @@
 
 .cont-ped-add-prod-img
 {
-    width:40%;
-    height:70%;
+    width:30%;
+    height:55%;
     
 }
+.cont-alt-ped-body {
+    width:25%;
+    height:30%;
+    margin:1%;
+    display:flex; 
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #fff;
+    padding: .7%;
+}
+
+    .title {
+        margin-top: -15%;
+    }
 
 .cont-ped-info
 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width:56%;
-    height:70%;
-    /*background-color: rgba(0,0,0,.5); Teste*/
+    width:45%;
+    height:45%;
+
+    padding: 1%;
+    text-align: center;
 }
 
 
@@ -102,21 +119,26 @@
 {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    margin: 1%;
+    width: 40%;
+    height: 3vh;
+    margin-top: 12%;
+
 }
 
 .cont-son-qtd-ped
 {
-    width: 5vw;
-    height: 6vh;
+    width: 4.3vw;
+    height: 3vh;
     display: flex;
 
+    margin-left: 10%;
+    top: 1%;
     justify-content: space-between;
 
-    margin: 0 auto;
+    
     background-color: #FFFFFF;
     align-items: center;
+    text-align: center;
 }
 
 .cont-son-qtd-ped #less-qtd, #more-qtd
@@ -130,7 +152,7 @@
 #tot-qtd, #tot-qtd::placeholder
 {
     width: 2vw;
-    height: 5vh;
+    height: 4.3vh;
     text-align: center;
     background-color: #fff;
 }
@@ -150,6 +172,7 @@
     height: 3vh;
     background-color: #d9d9d9;
     cursor: pointer;
+    float: right;
 }
 
     .cont-abs-add-pro-hide

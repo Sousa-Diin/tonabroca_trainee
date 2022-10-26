@@ -19,7 +19,7 @@
 
  .child-cart-pedidos {
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
  }
 
 .aside-child-cart-info-ped {

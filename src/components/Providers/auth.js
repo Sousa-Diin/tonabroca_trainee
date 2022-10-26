@@ -87,7 +87,7 @@ export const AuthProvider = (props)=> {
     }*/
 
     const [cart, setCart] = useState({});
-    const [subTotal, setSubTotal] = useState(0.0);
+    const [subTotal, setSubTotal] = useState(0);
     const [total, setTotal] = useState(0.0);
 
     useEffect(()=>{
@@ -119,6 +119,40 @@ export const AuthProvider = (props)=> {
     }
 
 
+    const removeItem = product => {
+        setCart((old) => {
+            let qtd = 0;
+            if(old[product.id]){
+                qtd = old[product.id].qtd;
+            }
+            const newCart = {
+                ...old,
+                [product.id] : {
+                    qtd : qtd - 1,
+                    product,
+                },
+                
+            }
+
+            window.localStorage.setItem('cart', JSON.stringify(newCart));
+            return newCart;
+        })
+    }
+
+    const removeCart = (productId) => {
+        setCart((old) => {
+            const newCart = { }
+            Object.keys(old).forEach(id =>{
+                if(id !== productId){
+                    newCart[id] = old[id];
+                }
+            })
+            window.localStorage.setItem('cart', JSON.stringify(newCart));
+            return newCart;
+        })
+    }
+
+
     const logout = ()=>{
         console.log("logout");
     }
@@ -129,7 +163,8 @@ export const AuthProvider = (props)=> {
              user, setUser,handleFilterUser, 
              handleGravaUser, cart, addCart, 
              setCart, subTotal, total,
-            setTotal, setSubTotal}}
+            setTotal, setSubTotal, removeCart,
+            removeItem}}
         >
 
             {props.children}

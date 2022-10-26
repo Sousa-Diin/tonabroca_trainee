@@ -1,39 +1,46 @@
 import React from 'react'
-import Button from '../Button/Button'
 import '../../components/Produto/Produto.css'
 import { useCart } from '../Providers/auth'
+import close from '../../assets/logo/Pedido de Comida/img-fechar.png'
 
 export default function ViewAddProduto(props) {
 
     const cart = useCart();
 
-    const add =()=>{
-        cart.addCart({
-            desc:'Prato 95',
-            priceProduto:45.90,
-            qtdProduto:1,
-        })
+    const add = produto => () => {
+        cart.addCart(produto);
     }
+
+    const remove = produto => () => {
+        cart.removeItem(produto)
+    }
+
+
   return (
-    <div className={true ? 'cont-abs-add-pro-show': "cont-abs-add-pro-hide"} >
-        <img className="cont-ped-add-prod-img" src={props.imagaPedido} alt="imagem-produto" />
-        <aside className="cont-ped-info">
-            <div className="cont-ped-desc">
-                <h4>{props.titlePedido}</h4>
-                    <button onClick={() => props.setAddProdutoCar(false)} className="cont-img-btn-fech"><img src={props.fechar} alt="img-logout" className="cont-img-btn-fech"/></button>
-            </div>
-            <span>Descricão: {props.describePedido}</span>
-            <div className="cont-son-control-ped" >
-                <div className="cont-son-qtd-ped">
-                    <button id="less-qtd" onClick={props.handleDecrementaQtd}> - </button>
-                    <input id="tot-qtd" value={props.cart.qtd}  readOnly/>
-                    <button id="more-qtd" onClick={props.handleIncrementaQtd}> + </button>
+    <div className={props.ride ? 'cont-abs-add-pro-show': "cont-abs-add-pro-hide"} >
+        {Object.keys(cart.cart).map(key =>{
+            const product = cart.cart[key]                      
+                        
+            return(
+                <div className='cont-alt-ped-body'>
+                    <img className="cont-ped-add-prod-img" src={product.product.image} alt="imagem-produto" />
+                    <aside className="cont-ped-info">
+                        <h4 className='title'>{product.product.title}</h4>
+                            
+                        <div className="cont-son-control-ped" >
+                            <div className="cont-son-qtd-ped">
+                                <button id="less-qtd" onClick={remove(product.product)}> - </button>
+                                <input id="tot-qtd" value={product.qtd}  readOnly/>
+                                <button id="more-qtd" onClick={add(product.product)}> + </button>
+                            </div>
+                        </div>
+                                                
+                    </aside>
+                   
                 </div>
-                <Button onClick={add} name="button-default">Adicionar</Button>
-            </div>
-                                    
-        </aside>
-                                
+         )
+    })}
+        <button onClick={()=> props.setRide(false)} className="cont-img-btn-fech"><img src={close} alt="img-logout" className="cont-img-btn-fech"/></button>                         
     </div>
   )
 }

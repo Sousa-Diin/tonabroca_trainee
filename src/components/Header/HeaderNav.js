@@ -10,6 +10,7 @@ import { useCart } from '../Providers/auth';
 
 function Sidebar() {
 
+
   const [cart, setCart] = useState(false);
   const [menu, setMenu] = useState(false);
   const [entrega] = useState(6.9);
@@ -56,11 +57,11 @@ function Sidebar() {
 
   const product = useCart();
 
-  const itemsCount = Object.keys(product.cart).length;
-  /*const itemsCount = Object.keys(product.cart).reduce((prev,curr) => {
+  //const itemsCount = Object.keys(product.cart).length;
+  const itemsCount = Object.keys(product.cart).reduce((prev,curr) => {
     return prev + product.cart[curr].qtd;
     
-  }, 0)*/
+  }, 0)
 
   return (
     <main>

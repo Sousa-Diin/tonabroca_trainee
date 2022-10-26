@@ -2,7 +2,7 @@ import React  from 'react';
 import '../Produto/Produto.css'
 import { useCart } from '../Providers/auth';
 
-export default function Produto ({produto}, {showAddProduto}){
+export default function Produto ({produto}){
 
     const cart = useCart();
     const add = produto => () => {
