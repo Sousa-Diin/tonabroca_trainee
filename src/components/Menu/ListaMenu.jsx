@@ -23,7 +23,7 @@ let pedido = icon1,
         {
             icon: pedido,
             title: "Pedidos",
-            link: '/pedidos',
+            link: '/cart',
         },
         {
             icon: cupom,

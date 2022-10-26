@@ -22,6 +22,7 @@ function Sidebar() {
   const showCart = () => {
       setMenu(false);
       setCart(!cart);
+      
   }
 
   const showMenu = () => {
@@ -59,7 +60,11 @@ function Sidebar() {
 
   const product = useCart();
 
-  const itemsCount = Object.keys(product.cart).length
+  const itemsCount = Object.keys(product.cart).length 
+  /*const itemsCount = Object.keys(product.cart).reduce((prev,curr) => {
+    return prev + product.cart[curr].qtd;
+    
+  }, 0)*/
 
   return (
     <main>
@@ -69,7 +74,7 @@ function Sidebar() {
               display:'flex',
               flexDirection: 'row',
               width:'50%',
-              justifyContent:'flex-end'}}>
+              justifyContent:'flex-end',}}>
               <img src={logo} className="header-logo-img" alt="logo"/>
               <h2 className="header-logo-title">EmakersFood</h2>
             </div>

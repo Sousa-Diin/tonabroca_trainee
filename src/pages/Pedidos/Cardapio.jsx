@@ -1,5 +1,6 @@
 import React,{ useEffect, useState } from "react";
 import './Cardapio.css';
+//import Head from './next/head';
 
 import api from "../../services/api";
 import Sidebar from "../../components/Header/HeaderNav";

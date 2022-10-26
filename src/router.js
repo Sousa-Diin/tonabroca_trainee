@@ -15,7 +15,7 @@ import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 import Cardapio from "./pages/Pedidos/Cardapio";
 import Message from "./components/Status/Message";
-import AddProduto from "./pages/Pedidos/Carrinho/AddProduto";
+import Cart from "./pages/Cart/Cart";
 import { AuthContext } from "./components/Providers/auth";
 /* LINE 29*/
 
@@ -77,7 +77,11 @@ function Router(){
                     <Cardapio/>
                  </ClientRoute>}/>
 
-                 <Route path='/addProduto' element={<AddProduto/>}/>
+                 <Route path='/cart' element={
+                    
+                        <Cart/>
+                    
+                 }/>
                 
             </Routes>
         </BrowserRouter>

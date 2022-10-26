@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import api from '../../services/api'
 //import produto from './product'
 
@@ -87,6 +87,13 @@ export const AuthProvider = (props)=> {
     }*/
 
     const [cart, setCart] = useState({});
+
+    useEffect(()=>{
+        const cartStorage = window.localStorage.getItem('cart')
+        if(cartStorage){
+            setCart(JSON.parse(cartStorage))
+        }
+    },[])
     
 
     const addCart = product => {
@@ -95,7 +102,7 @@ export const AuthProvider = (props)=> {
             if(old[product.id]){
                 qtd = old[product.id].qtd;
             }
-            return{
+            const newCart = {
                 ...old,
                 [product.id] : {
                     qtd : qtd + 1,
@@ -103,6 +110,9 @@ export const AuthProvider = (props)=> {
                 },
                 
             }
+
+            window.localStorage.setItem('cart', JSON.stringify(newCart));
+            return newCart;
         })
     }
 
@@ -129,6 +139,11 @@ export const AuthProvider = (props)=> {
 export const useCart = ()=>{
     const cart = useContext(AuthContext);
     return cart;
+}
+
+export const useProduct = ()=>{
+    const product = useContext(AuthContext);
+    return product;
 }
 
 

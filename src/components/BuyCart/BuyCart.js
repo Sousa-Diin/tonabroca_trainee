@@ -1,10 +1,12 @@
 import React from 'react'
 import ViewPrice from '../Prices/ViewPrice'
 import Button from '../Button/Button'
-import { AuthContext } from '../Providers/auth'
+import { useCart } from '../Providers/auth'
 
 export default function BuyCart(props) {
-const product = React.useContext(AuthContext);
+
+const product = useCart();
+
   return (
         <main className={props.cart ? "sidebar active" : "sidebar"}>
           <section className="sep-pag-ped">
@@ -16,16 +18,16 @@ const product = React.useContext(AuthContext);
                   </div>
 
                   <section>
-                      <ViewPrice value={'R$ ' + props.calcularSubtotal(35.7)} name="black" type="text">Subtotal</ViewPrice>
+                      <ViewPrice value={'R$ ' + props.calcularSubtotal(product.cart.price)} name="black" type="text">Subtotal</ViewPrice>
                       <ViewPrice value={'R$ ' + props.entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
                       <ViewPrice value={'R$ ' + props.calcularTotal()} name="red" type="text">Total</ViewPrice>
                   </section>
-                  <pre>{JSON.stringify(product.cart,null,3)}</pre>
+                  
 
           </section>
                         
                   <footer className="sidebar-item-row">
-                    <Button onClick={() => props.showCart(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button name="button-sidebar2" >Finalizar<br/>Pedido</Button>
+                    <Button onClick={() => props.showCart(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button onClick={()=>{window.location.pathname = '/cart'}} name="button-sidebar2" >Finalizar<br/>Pedido</Button>
                   </footer>
         </main>
   )
