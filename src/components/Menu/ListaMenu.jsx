@@ -28,7 +28,7 @@ let pedido = icon1,
         {
             icon: cupom,
             title: "Cupons",
-            link: '/cupons',
+            link: '/store',
         },
         {
             icon: pagamentos,

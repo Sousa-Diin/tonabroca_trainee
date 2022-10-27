@@ -30,7 +30,7 @@ export default function AuthClient  (props) {
             props.setEmail('');
             props.setPassword('')
            // setPermissao(!permissao);
-            return false;
+            return false; 
                 
         }
             

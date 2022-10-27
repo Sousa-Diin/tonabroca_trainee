@@ -1,0 +1,188 @@
+/*Lista Lojas*/
+
+.ped-cont-list-prod-store {
+    width:100vw;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 3%;
+    align-items: center;
+    /*background-color: aquamarine; teste*/
+}
+.container-picture
+{
+    display: flex;
+    flex-flow: row nowrap;
+
+    background-color: rgba(255,106,14,1);
+    width:30.3vw;
+    height:17vh;
+}
+
+/*Teste */
+.lojas
+{
+
+    background-color: rgba(255,106,14,1);
+    width:32%;
+    height:7%;
+    margin: .6%;
+    display: flex;
+    flex-flow: row wrap;
+    transition: all ease .7s;
+    
+    
+    color: #fff;
+}
+
+lojas:hover
+{
+    cursor: pointer;
+    background-color: rgba(255,106,14,.6);
+    width:31vw;
+    height:16.9vh;
+}
+
+.container-aside-loja
+{
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    
+}
+
+.container-aside .avaliacao
+{
+    width: 33%;
+    margin-right: 97%;
+}
+
+.container-descricao
+{
+    width: 95%;
+    display: flex;
+    margin: 1%;
+    justify-content: space-between;
+}
+
+
+.cont-abs-add-pro-show /*DISPLAY ESCONDINDO 01*/
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    width:40vw;
+    height:30vh;
+    right: 130%;
+    
+    background-color: #d9d9d9;
+    margin: 0 auto;
+    padding: 1.6%;
+    color: #000;
+    font-weight: bold;
+    font-family: 30px;
+    position: absolute;
+}
+
+.cont-ped-add-prod-img
+{
+    width:30%;
+    height:55%;
+    
+}
+.cont-alt-ped-body {
+    width:25%;
+    height:30%;
+    margin:1%;
+    display:flex; 
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #fff;
+    padding: .7%;
+}
+
+    .title {
+        margin-top: -15%;
+    }
+
+.cont-ped-info
+{
+    display: flex;
+    flex-direction: column;
+    width:45%;
+    height:45%;
+
+    padding: 1%;
+    text-align: center;
+}
+
+
+
+.cont-ped-desc, .cont-son-control-ped
+{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 40%;
+    height: 3vh;
+    margin-top: 12%;
+
+}
+
+.cont-son-qtd-ped
+{
+    width: 4.3vw;
+    height: 3vh;
+    display: flex;
+
+    margin-left: 10%;
+    top: 1%;
+    justify-content: space-between;
+
+    
+    background-color: #FFFFFF;
+    align-items: center;
+    text-align: center;
+}
+
+.cont-son-qtd-ped #less-qtd, #more-qtd
+{
+    background-color: #fff;
+    font-size: 23px;
+    color:  rgba(255,106,14,1);
+    cursor: pointer;
+}
+
+#tot-qtd, #tot-qtd::placeholder
+{
+    width: 2vw;
+    height: 4.3vh;
+    text-align: center;
+    background-color: #fff;
+}
+
+.cont-ped-desc
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-left: 39%;
+    width: 95%;
+}
+
+.cont-img-btn-fech
+{
+    width: 1.4vw;
+    height: 3vh;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    float: right;
+}
+
+    .cont-abs-add-pro-hide
+    {
+        display: none;
+
+    }
