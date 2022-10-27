@@ -1,7 +1,7 @@
 import React   from 'react';
 import '../../pages/Cart/Cart.css'
 
-import { AuthContext, useCart } from '../../components/Providers/auth';
+import { useCart } from '../../components/Providers/auth';
 import HeaderNav from '../../components/Header/HeaderNav'
 import ViewPrice from '../../components/Prices/ViewPrice';
 import Button from '../../components/Button/Button';
@@ -16,12 +16,9 @@ export default function Cart (){
         cart.removeCart(id)
     }
 
-    const { setTotal, setSubTotal } = React.useContext(AuthContext);
 
     let subtotal = 0;
-    setSubTotal(subtotal);
     let total  = 0;
-    setTotal(total);
  
 
     
@@ -68,10 +65,10 @@ export default function Cart (){
                         </div>
                         <img style={{width:'35%', height:'43%',marginRight:'26%',}} src={lixeira} alt='btn-cancel' />
                         
-                        <pre >{'R$ ' + subtotal}</pre>
+                        <pre >{'R$ ' + subtotal} </pre>
                     </div>
                     <section className='section-child-price-ped'>
-                        <ViewPrice value={'R$ ' + subtotal} name="black" type="text">Subtotal</ViewPrice>
+                        <ViewPrice value={'R$ ' + Number(subtotal).toFixed(2)} name="black" type="text">Subtotal</ViewPrice>
                         <ViewPrice value={'R$ ' + entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
                         <ViewPrice value={'R$ ' + (total + entrega)} name="red" type="text">Total</ViewPrice>
                     </section>
@@ -89,26 +86,5 @@ export default function Cart (){
         <p>Entrou</p>
     )*/
 
-    /* ERRO
-                    {Object.keys(cart.cart).map(key =>{
-                        const product = cart.cart[key]
-                        
-                        subtotal += (product.qtd * product.product.price); 
-                        total = subtotal ;
-                        return(
-                            <div  style={{backgroundColor:'#fff', color:'#000'}} className="produtos">
-                                <picture style={{backgroundColor:'#fff'}} className="container-picture">
-                                    <img  alt="foto de comida" className="container-img" src={product.product.image}/>
-                                    <aside className="container-aside">
-                                        <h3 id="titleProduto"  >{product.product.title}</h3>
-                                            <span className="price" >R$ {product.product.price}</span> 
-                                            <pre style={{marginTop:'-12%', marginLeft:'21%'}}>{'UN  ' + product.qtd}</pre>
-                                    </aside>
-                                </picture>
-                                <span className="container-descricao" >{product.product.describe}</span>
-                            </div>
-                            
-                        )
-                    })}
-    */
+    
 }

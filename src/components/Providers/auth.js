@@ -87,8 +87,6 @@ export const AuthProvider = (props)=> {
     }*/
 
     const [cart, setCart] = useState({});
-    const [subTotal, setSubTotal] = useState(0);
-    const [total, setTotal] = useState(0.0);
 
     useEffect(()=>{
         const cartStorage = window.localStorage.getItem('cart')
@@ -162,9 +160,7 @@ export const AuthProvider = (props)=> {
             logado, setLogado, logout,
              user, setUser,handleFilterUser, 
              handleGravaUser, cart, addCart, 
-             setCart, subTotal, total,
-            setTotal, setSubTotal, removeCart,
-            removeItem}}
+             setCart, removeCart,removeItem, }}
         >
 
             {props.children}

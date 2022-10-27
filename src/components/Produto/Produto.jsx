@@ -5,9 +5,11 @@ import { useCart } from '../Providers/auth';
 export default function Produto ({produto}){
 
     const cart = useCart();
+
     const add = produto => () => {
         cart.addCart(produto);
     }
+
     return(
            <div onClick={add(produto)} className="produtos">
                 <picture className="container-picture">

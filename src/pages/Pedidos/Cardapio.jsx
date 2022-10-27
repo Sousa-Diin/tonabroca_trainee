@@ -91,5 +91,6 @@ function Cardapio () {
                 
             </main>
         );
+        /*return(<p>Pedidos</p>)*/
     }
 export default Cardapio;
