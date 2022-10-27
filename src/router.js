@@ -17,6 +17,7 @@ import Cardapio from "./pages/Pedidos/Cardapio";
 import Message from "./components/Status/Message";
 import Cart from "./pages/Cart/Cart";
 import { AuthContext } from "./components/Providers/auth";
+import Lojas from "./components/Lojas/Lojas";
 /* LINE 29*/
 
 function Router(){
@@ -82,6 +83,7 @@ function Router(){
                         <Cart/>
                     
                  }/>
+                 <Route path='/store' element={<Lojas/>}/>
                 
             </Routes>
         </BrowserRouter>

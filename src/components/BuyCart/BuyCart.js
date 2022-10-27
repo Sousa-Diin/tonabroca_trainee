@@ -20,6 +20,7 @@ let quatity = 0;
               const product = cart.cart[key]
               quatity += product.qtd;
               sub += (product.product.price * product.qtd)
+              return 0;
             })}
           </div>
          
