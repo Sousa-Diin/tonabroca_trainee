@@ -5,6 +5,8 @@ import Button from '../../components/Button/Button';
 //import { AuthContext } from "../../components/Providers/auth";
 
 export default function funcionarioDAO(props){
+
+    document.title = 'Emakers Food - date';
     //const [nomeBuscado, setNomeBuscado] = useState('')
     //const {produto} = React.useContext(AuthContext)
     return (

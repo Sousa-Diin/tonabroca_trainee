@@ -26,7 +26,7 @@ let quatity = 0;
          
           
           <section className="sep-pag-ped">
-          <h3> Óla  {cart.user.name}   seu pedido em Loja : </h3>
+          <h3> Seu pedido em </h3>
           <ViewPrice value={'UN  ' + quatity} name="black" type="numero">Restaurante <br/> Food & Drink</ViewPrice>
                   <div className="sidebar-item-row">
                     <div  className="nav-button"></div><Button name="button-default" onClick={()=> setRide(!ride)}>Editar</Button> <div className="nav-button"></div><Button name="button-default" >Remover</Button><div className="nav-button"></div>
@@ -34,9 +34,9 @@ let quatity = 0;
                   </div>
 
                   <section>
-                      <ViewPrice value={'R$ ' + Number(sub).toFixed(2)} name="black" type="text">Subtotal</ViewPrice>
-                      <ViewPrice value={'R$ ' + props.entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
-                      <ViewPrice value={'R$ ' + (sub + props.entrega)} name="red" type="text">Total</ViewPrice>
+                      <ViewPrice value={'R$ ' + Number(sub).toFixed(2).replace('.',',')} name="black" type="text">Subtotal</ViewPrice>
+                      <ViewPrice value={'R$ ' + Number(props.entrega).toFixed(2).replace('.',',')} name="black" type="text">Taxa de Entrega</ViewPrice>
+                      <ViewPrice value={'R$ ' + Number(sub + props.entrega).toFixed(2).replace('.',',')} name="red" type="text">Total</ViewPrice>
                      
                   </section>
 

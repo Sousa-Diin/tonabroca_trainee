@@ -8,6 +8,8 @@ import funcionarioDAO from "../DadosUsers/funcionarioDAO";
 
 export default function BuscarFuncionario(){
 
+    document.title = 'Emakers Food - search';
+
     const [show, setShow] = useState(true);
 
     const [busca, setBusca] = useState('');

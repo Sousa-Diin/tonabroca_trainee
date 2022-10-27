@@ -23,7 +23,7 @@ import Lojas from "./components/Lojas/Lojas";
 function Router(){
     const ClientRoute = ({children}) => {
         const { logado, user } = React.useContext(AuthContext)
-        if(!logado & user.typeUser ==='client'){
+        if(logado & user.typeUser ==='client'){
             return <Navigate to="/" />
         }
 

@@ -23,7 +23,7 @@ export default function AuthClient  (props) {
             e.preventDefault();
            // window.location.pathname = '/pedidos';
            setLogado(!logado);
-            navigate('/pedidos');   
+            navigate('/store');   
         }else{
             window.alert('Acesso negado!');
 

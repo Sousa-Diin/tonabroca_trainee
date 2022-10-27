@@ -88,6 +88,8 @@ export const AuthProvider = (props)=> {
 
     const [cart, setCart] = useState({});
 
+    const [store, setStore] = useState({});
+
     useEffect(()=>{
         const cartStorage = window.localStorage.getItem('cart')
         if(cartStorage){
@@ -155,17 +157,25 @@ export const AuthProvider = (props)=> {
         console.log("logout");
     }
 
-    const [store, setStore] = useState({});
+    
 
     const openStore = produto => () => {
         setStore((old) => {
-            const createListProduct = {
+            let qtd = 0;
+            if(old[produto.id]){
+                qtd = old[produto.id].qtd;
+            }
+            const newCart = {
                 ...old,
-                [produto] : {
+                [produto.id] : {
+                    qtd : qtd + 1,
                     produto,
                 },
+                
             }
-            return createListProduct;
+
+            window.localStorage.setItem('cart', JSON.stringify(newCart));
+            return newCart;
         })
         
     }

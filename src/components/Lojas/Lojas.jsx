@@ -16,6 +16,7 @@ import Promocao from "../Anuncios/Promocao";
 
 
 function Lojas () {
+    document.title = 'Emakers Food - lojas';
 
    const { user } = React.useContext(AuthContext);
    console.log({user});
@@ -34,7 +35,8 @@ function Lojas () {
                     <div className="ped-cont-list-prod-store" >
                     {lojas.map((loja) => {                       
                         return(                            
-                            <Store loja={loja} />                         
+                            <Store loja={loja} /> 
+                                                   
                         )   
                     })} 
                     </div> 

@@ -13,10 +13,11 @@ import Produto from "../../components/Produto/Produto";
 
 //import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 import { AuthContext } from "../../components/Providers/auth";
-//import Users from "../Register/Users/Users";
+//import { ListaLojas } from "../Register/Lojas/ListaLojas";
 
 
 function Cardapio () {
+    document.title = 'Emakers Food - Produtos';
 
    const { user } = React.useContext(AuthContext);
    console.log({user});
@@ -56,7 +57,7 @@ function Cardapio () {
 
 
         return (
-            <main className="ped-cont-prod-main">
+            <main className={ user.logado ? "ped-cont-prod-main": ""}>
                 <div className="ped-cont-nav-cab-div">
                 <Sidebar />
                 <Anuncios />
@@ -68,7 +69,7 @@ function Cardapio () {
 
                         <div className="container-info-pedido"> 
                             <figure className="figure-info-op">
-                                <img src={icon_1} className="img-pedido" alt="img-dinheiro"/> <span className="legenda-pedido">Pedido mínimo <br/> R$ {entrega}</span>
+                                <img src={icon_1} className="img-pedido" alt="img-dinheiro"/> <span className="legenda-pedido">Pedido mínimo <br/> R$ {(entrega.toFixed(2).replace('.',','))}</span>
                             </figure>
 
                             <figure className="figure-info-op">

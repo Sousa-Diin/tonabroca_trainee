@@ -9,6 +9,7 @@ import lixeira from '../../assets/logo/Pedido de Comida/lixeira_pedido.png'
 
 export default function Cart (){
 
+    document.title = 'Emakers Food - finalizar pedido';
     let entrega = 6.9;
     const cart = useCart();
 
@@ -68,9 +69,9 @@ export default function Cart (){
                         <pre >{'R$ ' + subtotal} </pre>
                     </div>
                     <section className='section-child-price-ped'>
-                        <ViewPrice value={'R$ ' + Number(subtotal).toFixed(2)} name="black" type="text">Subtotal</ViewPrice>
-                        <ViewPrice value={'R$ ' + entrega} name="black" type="text">Taxa de Entrega</ViewPrice>
-                        <ViewPrice value={'R$ ' + (total + entrega)} name="red" type="text">Total</ViewPrice>
+                        <ViewPrice value={'R$ ' + Number(subtotal).toFixed(2).replace('.',',')} name="black" type="text">Subtotal</ViewPrice>
+                        <ViewPrice value={'R$ ' + Number(entrega).toFixed(2).replace('.',',')} name="black" type="text">Taxa de Entrega</ViewPrice>
+                        <ViewPrice value={'R$ ' + Number(total + entrega).toFixed(2).replace('.',',')} name="red" type="text">Total</ViewPrice>
                     </section>
 
                 </aside>

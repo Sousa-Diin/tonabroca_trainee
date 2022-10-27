@@ -41,11 +41,11 @@ export  const ListaProdutos = [
     
     },
     {
-        id: 9,
+        id: 31,
         image: img5,
-        title: "Prato 9",
+        title: "Prato 31",
         price: 54.85,
-        describe: "arroz,feijão, bife e batata frita",
+        describe: "arroz,feijão, contra file e legumes",
     
     },
     {
@@ -73,18 +73,34 @@ export  const ListaProdutos = [
     
     },
     {
+        id: 3,
+        image: img2,
+        title: "Prato 3",
+        price: 29.25,
+        describe: " batata doce,file de peixe, beteraba e tomate",
+    
+    },
+    {
+        id: 4,
+        image: img3,
+        title: "Prato 4",
+        price: 31.45,
+        describe: "arroz,feijão, bife e batata frita",
+    
+    },
+    {
         id: 15,
         image: img9,
         title: "Prato 15",
         price: 29.35,
         describe: "arroz,tropeiro, bife e batata frita",
     
-    },/*
+    },
     {
-        id: 15,
+        id: 16,
         image: img9,
-        title: "Prato 15",
-        price: 29.35,
+        title: "Prato 16",
+        price: 27.65,
         describe: "arroz,tropeiro, bife e batata frita",
     
     },
@@ -103,7 +119,7 @@ export  const ListaProdutos = [
         price: 29.25,
         describe: " batata doce,file de peixe, beteraba e tomate",
     
-    },/*
+    },
     {
         id: 4,
         image: img3,
@@ -129,10 +145,10 @@ export  const ListaProdutos = [
     
     },
     {
-        id: 10,
+        id: 17,
         image: img6,
-        title: "Prato 10",
-        price: 10.25,
+        title: "Prato 17",
+        price: 20.25,
         describe: "arroz,feijão, bife e batata frita",
     
     },
@@ -151,6 +167,14 @@ export  const ListaProdutos = [
         price: 99.50,
         describe: "arroz,feijão, bife e batata frita",
     
-    },*/
+    },
+    {
+        id: 53,
+        image: img8,
+        title: "Prato 53",
+        price: 59.50,
+        describe: "arroz,aspargo, picanha e batata frita",
+    
+    },
     
 ]

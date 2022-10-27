@@ -8,6 +8,7 @@ import { AuthContext } from '../Providers/auth';
 
 export default function Login (){
 
+    document.title = 'Emakers Food - authenticação';
     const { user, authenticated } = React.useContext(AuthContext);
     console.log(user)
 

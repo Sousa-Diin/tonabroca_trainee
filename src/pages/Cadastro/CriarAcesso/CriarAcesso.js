@@ -9,6 +9,8 @@ import { AuthContext } from '../../../components/Providers/auth';
 
 export default function CriarAcesso () {
 
+  document.title = 'Emakers Food - Cadastro';
+
   useEffect(()=> {
     api
     .get("createUser")
