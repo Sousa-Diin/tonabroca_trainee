@@ -20,8 +20,8 @@ export default function CriarAcesso () {
 
   }, []);
 
-  const {user, setUser} = React.useContext(AuthContext);
-  console.log({user});
+  const {client, setClient} = React.useContext(AuthContext);
+  console.log({user: client});
 
   const [confirma, setConfirma] = useState("")
   //console.log(confirma)
@@ -29,23 +29,23 @@ export default function CriarAcesso () {
   const handleChangeForm = (e) => {
     
     if(e.target.getAttribute('name') === 'Femail'){
-      setUser({email: e.target.value, password:user.password, fullname:user.fullname, nasc:user.nasc, sexo:user.sexo, tell:user.tell })
+      setClient({email: e.target.value, password:client.password, fullname:client.fullname, nasc:client.nasc, sexo:client.sexo, tell:client.tell })
     }
     else if(e.target.getAttribute('name') === 'Fpassword' ){
-        setUser({email: user.email, password:e.target.value, fullname:user.fullname, nasc:user.nasc, sexo:user.sexo, tell:user.tell })
+        setClient({email: client.email, password:e.target.value, fullname:client.fullname, nasc:client.nasc, sexo:client.sexo, tell:client.tell })
       
     }
     else if(e.target.getAttribute('name') === 'Ffullname'){
-      setUser({email: user.email, password:user.password, fullname:e.target.value, nasc:user.nasc, sexo:user.sexo, tell:user.tell })
+      setClient({email: client.email, password:client.password, fullname:e.target.value, nasc:client.nasc, sexo:client.sexo, tell:client.tell })
     }
     else if(e.target.getAttribute('name') === 'Fnasc'){
-      setUser({email: user.email, password:user.password, fullname:user.fullname, nasc:e.target.value, sexo:user.sexo, tell:user.tell })
+      setClient({email: client.email, password:client.password, fullname:client.fullname, nasc:e.target.value, sexo:client.sexo, tell:client.tell })
     }
     else if(e.target.getAttribute('name') === 'Fsexo'){
-      setUser({email: user.email, password:user.password, fullname:user.fullname, nasc:user.nasc, sexo:e.target.value, tell:user.tell })
+      setClient({email: client.email, password:client.password, fullname:client.fullname, nasc:client.nasc, sexo:e.target.value, tell:client.tell })
     }
     else if(e.target.getAttribute('name') === 'Ftell'){
-      setUser({email: user.email, password:user.password, fullname:user.fullname, nasc:user.nasc, sexo:user.sexo, tell:e.target.value });
+      setClient({email: client.email, password:client.password, fullname:client.fullname, nasc:client.nasc, sexo:client.sexo, tell:e.target.value });
     }
     
   }
@@ -69,21 +69,21 @@ export default function CriarAcesso () {
 
           <div className="cria-login">
             <p className="App-intro">Vamos Criar seu Acesso!</p>
-            <input type="email" value={user.email} name="Femail" onChange={(e) => handleChangeForm(e)}className="email"placeholder="*Email completo:"/>
+            <input type="email" value={client.email} name="Femail" onChange={(e) => handleChangeForm(e)}className="email"placeholder="*Email completo:"/>
             <div className='campo-criar-senha'>
               <input type="password" name="confirma" value={confirma} onChange={(e) => setConfirma(e.target.value)} className="senha"placeholder="*Senha:"/>
-              <input type="password" name="Fpassword" value={user.password} onChange={(e) => handleChangeForm(e)}  className="confirma-senha"placeholder="*Confirmar senha:"/>
+              <input type="password" name="Fpassword" value={client.password} onChange={(e) => handleChangeForm(e)}  className="confirma-senha"placeholder="*Confirmar senha:"/>
             </div>
             
           </div>
 
           <div className="dados-pessoais"> 
             <p>Seus Dados Pessoais:</p>
-            <input type="text" value={user.fullname} name="Ffullname" onChange={(e) => handleChangeForm(e)} className="nome"placeholder="*Nome completo:"/>
+            <input type="text" value={client.fullname} name="Ffullname" onChange={(e) => handleChangeForm(e)} className="nome"placeholder="*Nome completo:"/>
             <div className='campo-dados-pessoais'>
-              <input type="date" value={user.nasc} name="Fnasc" onChange={(e) => handleChangeForm(e)} className="nascimento" placeholder="*Data de Nascimento:"/>
-              <input type="charset" value={user.sexo} name="Fsexo" onChange={(e) => handleChangeForm(e)} className="sexo" placeholder="*Sexo:"/>
-              <input type="text" value={user.tell} name="Ftell" onChange={(e) => handleChangeForm(e)} className="telefone"placeholder="*Telefone:"/>
+              <input type="date" value={client.nasc} name="Fnasc" onChange={(e) => handleChangeForm(e)} className="nascimento" placeholder="*Data de Nascimento:"/>
+              <input type="charset" value={client.sexo} name="Fsexo" onChange={(e) => handleChangeForm(e)} className="sexo" placeholder="*Sexo:"/>
+              <input type="text" value={client.tell} name="Ftell" onChange={(e) => handleChangeForm(e)} className="telefone"placeholder="*Telefone:"/>
             </div>
           </div> 
 

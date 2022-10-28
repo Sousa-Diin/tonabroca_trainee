@@ -9,7 +9,7 @@ export const AuthProvider = (props)=> {
 
 
     //const navigate = useNavigate();
-    /*const [user, setUser]  = useState(
+    const [client, setClient]  = useState(
         {
             id: '',
             name:'emakers',
@@ -29,7 +29,7 @@ export const AuthProvider = (props)=> {
             complemento:'',
 
         },
-    )*/
+    )
 
     const [user, setUser] = useState(null);
     console.log("user", user)
@@ -182,7 +182,8 @@ export const AuthProvider = (props)=> {
              setUser,handleFilterUser, 
              handleGravaUser, cart, addCart, 
              setCart, removeCart,removeItem, 
-             store, openStore, login,}}
+             store, openStore, login,
+            client, setClient}}
         >
 
             {props.children}
