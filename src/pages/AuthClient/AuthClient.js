@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+//import { useNavigate } from 'react-router-dom';
 
 import './AuthClient.css';
 import { Link } from 'react-router-dom';
@@ -9,21 +9,21 @@ import { AuthContext } from '../../components/Providers/auth';
 
 
 
-export default function AuthClient  (props) {
-
+export default function AuthClient  () {
+/*
     const { user, logado, setLogado} = React.useContext(AuthContext);
-    console.log({user});
+    //console.log({user});
 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
-   // const [permissao, setPermissao] = useState(false);
+  
 
     const signIn = (e) => {
         if(props.email === 'dinho@dev' & '3131' === props.password & user.typeUser === 'client'){
             e.preventDefault();
            // window.location.pathname = '/pedidos';
            setLogado(!logado);
-            navigate('/store');   
+           // navigate('/store');   
         }else{
             window.alert('Acesso negado!');
 
@@ -34,22 +34,37 @@ export default function AuthClient  (props) {
                 
         }
             
-    }
+    }*/
+    const { login, authenticated } = React.useContext(AuthContext);
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     
+    
+
+    const permision ='client';
+
+    const handleSubmit = (e) => {
+        
+        e.preventDefault();
+        console.log("sumbit", {email, password,permision});
+       
+        login(email, password, permision)
+    } 
+
     return(
          
-            <div className={props.show ? "container-autenticar" : " esconderDspC"}>
+            <div className={true? "container-autenticar" : " esconderDspC"}>
                 <Cabecalho/>
                     
-                <form className="flex-autenticar" onSubmit={(e) => props.handleGravaUser(e)}>
+                <form className="flex-autenticar" onSubmit={handleSubmit} >
                     <h1>Bem Vindo!</h1>
-                    <p>{String(logado)}</p>
-                    <input className='email-login'  name="login" value={props.email} onChange={(e) => props.setEmail( e.target.value)} type="email" placeholder="Email:"/>
-                    <input className='password-login' name="senha" value={props.password} onChange={(e) => props.setPassword( e.target.value)} type="password" placeholder="Senha:"/>
+                    <pre>{String(authenticated)}</pre>
+                    <input className='email-login'  name="login" value={email} onChange={(e) => setEmail( e.target.value)} type="email" placeholder="Email:"/>
+                    <input className='password-login' name="senha" value={password} onChange={(e) => setPassword( e.target.value)} type="password" placeholder="Senha:"/>
                     <h5><Link id="newpass" to="/recuperarSenha">Esqueci minha senha</Link></h5>
-                    <Button onClick={(e) => signIn(e)} name="button-default">Entrar</Button>
-                    <h5>Não tem uma conta? <Link id="newpass" name="cadastrar" to="/obterAcesso" className='link'>
-                    Cadastre-se</Link></h5>
+                    <Button  name="button-default">Entrar</Button>
+                    <h5>Não tem uma conta? <Link id="newpass" to="/obterAcesso" className='link'>Cadastre-se</Link></h5>
                 </form>
             </div>
     );

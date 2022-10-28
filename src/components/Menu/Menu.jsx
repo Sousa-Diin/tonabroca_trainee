@@ -6,7 +6,7 @@ export default function Menu(props) {
   const cart  = useCart();
   return (
     <div className={props.show ? "sidebar-menu" : "esconder"} >
-          <h3 className="name-client">  Óla  {cart.user.name }  </h3>  
+          <h3 className="name-client">  Óla  {'cart.user.name' }  </h3>  
             {listaMenu.map((menu) => {
               return(
                     <ul className='coluna-menu'>

@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+//import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 //import produto from './product'
 
@@ -7,7 +8,8 @@ export const AuthContext = React.createContext({})
 export const AuthProvider = (props)=> {
 
 
-    const [user, setUser]  = useState(
+    //const navigate = useNavigate();
+    /*const [user, setUser]  = useState(
         {
             id: '',
             name:'emakers',
@@ -27,41 +29,40 @@ export const AuthProvider = (props)=> {
             complemento:'',
 
         },
-        {
-            name:'',
-            email: '',
-            password:'',
-            typeUser:'coWork',
-            fullname:"",
-            nasc:"",
-            sexo:"",
-            tell:"99988-2134",
-            lougradouro:"",
-            bairro:'',
-            numero:'', 
-            cep:'', 
-            cidade:'',
-            estado:'',
-            complemento:'',
-        },
-        {
-            name:'emakers',
-            email: '',
-            password:'',
-            typeUser:'admin',
-            fullname:"",
-            nasc:"",
-            sexo:"",
-            tell:"99988-2134",
-            lougradouro:"",
-            bairro:'',
-            numero:'', 
-            cep:'', 
-            cidade:'',
-            estado:'',
-            complemento:'',
-        },
-    )
+    )*/
+
+    const [user, setUser] = useState(null);
+    console.log("user", user)
+
+    const login = (email, password, permision) =>{
+
+        if(password === "secret" & permision === "client"){
+            setUser({id: "123", name: email, email})
+            console.log("login client", {email, password, permision});
+            window.location.pathname = '/store'
+           // navigate('/store');
+        }
+        else if(password === "funcionario" & permision === "coWorck"){
+            setUser({id: "789", email})
+            console.log("login coWorck", {email, password, permision});
+            window.location.pathname = '/buscarFunc'
+        }
+        else if(password === "admin" & permision === "admin"){
+            setUser({id: "456", email})
+            console.log("login admin", {email, password, permision});
+            window.location.pathname = '/pagamentos'
+        }
+        else{
+            window.alert('Acesso Negado!')
+            window.location.pathname = '/'
+        }
+    }
+
+    const logout = ()=>{
+        console.log("logout");
+        setUser(null);
+    }
+
 
     function handleFilterUser(e){
         const userFiltered = user.filter ((usuario) =>{
@@ -82,9 +83,7 @@ export const AuthProvider = (props)=> {
 
     const [logado, setLogado] = useState(false)
 
-    /*const login = () =>{
-
-    }*/
+    
 
     const [cart, setCart] = useState({});
 
@@ -153,12 +152,6 @@ export const AuthProvider = (props)=> {
     }
 
 
-    const logout = ()=>{
-        console.log("logout");
-    }
-
-    
-
     const openStore = produto => () => {
         setStore((old) => {
             let qtd = 0;
@@ -185,10 +178,11 @@ export const AuthProvider = (props)=> {
     return(
         <AuthContext.Provider value={{ 
             logado, setLogado, logout,
-             user, setUser,handleFilterUser, 
+             authenticated: !!user,user,
+             setUser,handleFilterUser, 
              handleGravaUser, cart, addCart, 
              setCart, removeCart,removeItem, 
-             store, openStore}}
+             store, openStore, login,}}
         >
 
             {props.children}

@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
-
-import AuthAdmin from '../../pages/AuthAdmin/AuthAdmin';
-import AuthClient from '../../pages/AuthClient/AuthClient';
-import AuthFuncionario from '../../pages/AuthFunc/AuthFuncionario';
+import React from 'react';
 import '../login/Login.css';
-import { AuthContext } from '../Providers/auth';
+//import { AuthContext } from '../Providers/auth';
 
 export default function Login (){
 
     document.title = 'Emakers Food - authenticação';
-    const { user, authenticated } = React.useContext(AuthContext);
-    console.log(user)
+    //const { login } = React.useContext(AuthContext);
+    //console.log(user)
 
-
+/*
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("sumbit", {email, password});
+
+        login(email, password)
+    } 
 
     
     const [change, setChange] = useState(true);
@@ -44,18 +47,18 @@ export default function Login (){
         setChange(!change);
         setViewA(!viewA);
        // setUser({typeUser:'admin'});
-    }
+    }*/
     
         return(
             <section>
-                <div className={change ? "container-login" : "escondeLogin"}>
+                <div className={true ? "container-login" : "escondeLogin"}>
                     <div className="container-autenticacao">
                         
                         <h1>Deseja Logar Como?</h1>
                         <ul>
-                            <li onClick={handleClickCe} className='list-login' id="cliente" name="cliente">Cliente</li>
-                            <li onClick={handleClickFu} className='list-login'>Funcionário</li>
-                            <li onClick={handleClickAd} className='list-login'>Administrador</li> 
+                            <li onClick={()=>{window.location.pathname = '/autenticarCliente'}} className='list-login' id="cliente" name="cliente">Cliente</li>
+                            <li onClick={()=>{window.location.pathname = '/authFunc'}} className='list-login'>Funcionário</li>
+                            <li onClick={()=>{window.location.pathname = '/authAdmin'}} className='list-login'>Administrador</li> 
                         </ul>
                     </div>
 
@@ -65,13 +68,22 @@ export default function Login (){
                     </div>
                 </div>
 
-                <section className={ viewC ? 'showViewC' : 'hideViewC' }>
+             
+                
+            </section>
+           
+        );
+   
+}
+
+/*   <section className={ viewC ? 'showViewC' : 'hideViewC' }>
                     <AuthClient
                         show={viewC} 
                         email={email} password={password} 
                         setEmail={setEmail} setPassword={setPassword}
                         authenticated={authenticated}
-                        
+                        handleSubmit={handleSubmit}
+                    
                     />
                 </section>
 
@@ -90,10 +102,4 @@ export default function Login (){
                         setEmail={setEmail} setPassword={setPassword}
                     /> 
                 </section>
-                
-            </section>
-           
-        );
-   
-}
-
+                */

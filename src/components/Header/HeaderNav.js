@@ -26,34 +26,6 @@ function Sidebar() {
     setCart(false);
       setMenu(!menu);
   }
-  /*const showAddProduto = (produto) => {
-      setQtdProduto(0); // se tirar da erro (NaN)
-      setAddProdutoCar(!addProdutoCar);
-      setPricePedido(produto.price);
-    
-  }
-
-  /*const handleIncrementaQtd = () => {
-      let incrementa = qtdProduto + 1;
-      setQtdProduto(incrementa);
-    }
-
-  /* const handleDecrementaQtd = () =>{
-        var decrementa = qtdProduto - 1;
-        if (qtdProduto > 0){
-            setQtdProduto(decrementa);
-        }
-    }
-
-  function calcularSubtotal (price) {
-      
-      total = qtdProduto * price;
-      return total;
-  }
-
-  function calcularTotal (){
-      return total + entrega;
-  }*/
 
   const product = useCart();
 
@@ -82,7 +54,7 @@ function Sidebar() {
                   <span onClick={showCart} className="qtd-ped">{itemsCount > 0 && <span>{itemsCount}</span>}</span>                            
             </div>
       </header>
-        
+      
       <Menu show={menu}/>
       <BuyCart 
       cart={cart}
@@ -98,3 +70,13 @@ function Sidebar() {
 }
 
 export default Sidebar;
+/*
+ <Menu show={menu}/>
+ <BuyCart 
+      cart={cart}
+      setCart={setCart}
+      showCart={showCart}
+      entrega={entrega}
+      
+      />
+*/

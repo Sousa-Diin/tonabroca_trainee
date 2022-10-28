@@ -22,6 +22,7 @@ export default function ViewAddProduto(props) {
             const product = cart.cart[key]                      
                         
             return(
+                
                 <div className='cont-alt-ped-body'>
                     <img className="cont-ped-add-prod-img" src={product.product.image} alt="imagem-produto" />
                     <aside className="cont-ped-info">

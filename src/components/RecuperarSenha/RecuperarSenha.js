@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Header from '../Header/Header';
 
 export default function RecuperarSenha(){
+    document.title = 'Emakers Food - recuperar-senha';
     return (
         <main className="container-recuperar-senha">
 

@@ -2,7 +2,7 @@ import React from "react";
 import '../../pages/Pedidos/Cardapio.css';
 import '../Lojas/store.css'
 
-import Sidebar from "../../components/Header/HeaderNav";
+import Header from "../../components/Header/HeaderNav";
 import Anuncios from "../../components/Anuncios/Anuncios";
 /*import icon_1 from '../../assets/logo/Pedido de Comida/dinheiro.png';
 import icon_2 from '../../assets/logo/Pedido de Comida/entrega-rapida.png';
@@ -26,7 +26,7 @@ function Lojas () {
     return (
             <main className="ped-cont-prod-main">
                 <div className="ped-cont-nav-cab-div">
-                    <Sidebar />
+                    <Header />
                     <Anuncios />                
                 </div>
                 <Promocao />
@@ -44,6 +44,6 @@ function Lojas () {
                 </div>               
            </main>
         );
-        /*return(<p>Pedidos</p>)*/
+        /*Sidebar ante do Anuncios*/
     }
 export default Lojas;
