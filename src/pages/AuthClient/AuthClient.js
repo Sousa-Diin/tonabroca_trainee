@@ -10,31 +10,10 @@ import { AuthContext } from '../../components/Providers/auth';
 
 
 export default function AuthClient  () {
-/*
-    const { user, logado, setLogado} = React.useContext(AuthContext);
+
+    //const { user, logado, setLogado} = React.useContext(AuthContext);
     //console.log({user});
 
-    //const navigate = useNavigate();
-
-  
-
-    const signIn = (e) => {
-        if(props.email === 'dinho@dev' & '3131' === props.password & user.typeUser === 'client'){
-            e.preventDefault();
-           // window.location.pathname = '/pedidos';
-           setLogado(!logado);
-           // navigate('/store');   
-        }else{
-            window.alert('Acesso negado!');
-
-            props.setEmail('');
-            props.setPassword('')
-           // setPermissao(!permissao);
-            return false; 
-                
-        }
-            
-    }*/
     const { login, authenticated } = React.useContext(AuthContext);
 
     const [email, setEmail] = useState("");

@@ -1,12 +1,12 @@
 import React from 'react'
 import { listaMenu } from './ListaMenu';
-import { useCart } from '../Providers/auth'
+//import { useCart } from '../Providers/auth'
 
 export default function Menu(props) {
-  const cart  = useCart();
+  //const user  = useCart(); falta persistir no localStorage
   return (
     <div className={props.show ? "sidebar-menu" : "esconder"} >
-          <h3 className="name-client">  Óla  {'cart.user.name' }  </h3>  
+          <h3 className="name-client">  Óla  {'user.user.name' }  </h3>  
             {listaMenu.map((menu) => {
               return(
                     <ul className='coluna-menu'>

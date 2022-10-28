@@ -20,10 +20,9 @@ import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
 import Cardapio from "./pages/Pedidos/Cardapio";
 import Message from "./components/Status/Message";
-import Cart from "./pages/Cart/Cart";
+import ItemLoja from "./pages/ItemLoja/ItemLoja";
 //import { AuthContext, AuthProvider } from "./components/Providers/auth";
 import Lojas from "./components/Lojas/Lojas";
-import Menu from "./components/Menu/Menu";
 /* LINE 29*/
 
 const AppRouter =() => {
@@ -47,9 +46,8 @@ const AppRouter =() => {
                  <Route exact path='/buscarFunc' element={<BuscarFuncionario/>}/>
                  <Route exact path='/dadosFunc' element={<DadosFuncionario/>}/>
                  <Route exact path='/pedidos' element={<Cardapio/>}/>
-                 <Route exact path='/cart' element={<Cart/> }/>
+                 <Route exact path='/compras' element={<ItemLoja/> }/>
                  <Route exact path='/store' element={<Lojas/>}/>
-                 <Route exact path='/menu' element={<Menu/>}/>
                 
             </Routes>
         </Router>

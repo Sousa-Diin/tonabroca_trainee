@@ -12,15 +12,15 @@ import logo_loja from '../../assets/logo/Pedido de Comida/loja-11.png';
 import Produto from "../../components/Produto/Produto";
 
 //import p1 from '../../assets/logo/Pedido de Comida/p1.png';
-import { AuthContext } from "../../components/Providers/auth";
+//import { AuthContext } from "../../components/Providers/auth";
 //import { ListaLojas } from "../Register/Lojas/ListaLojas";
 
 
 function Cardapio () {
     document.title = 'Emakers Food - Produtos';
 
-   const { user } = React.useContext(AuthContext);
-   console.log({user});
+   //const { user } = React.useContext(AuthContext);
+   //console.log({user});
 
    const [entrega] = useState(6.9);
    const [horas] = useState(0);
@@ -57,7 +57,7 @@ function Cardapio () {
 
 
         return (
-            <main className={ user.logado ? "ped-cont-prod-main": ""}>
+            <main className="ped-cont-prod-main">
                 <div className="ped-cont-nav-cab-div">
                 <Sidebar />
                 <Anuncios />

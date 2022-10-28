@@ -70,13 +70,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-/*
- <Menu show={menu}/>
- <BuyCart 
-      cart={cart}
-      setCart={setCart}
-      showCart={showCart}
-      entrega={entrega}
-      
-      />
-*/

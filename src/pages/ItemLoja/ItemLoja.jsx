@@ -1,5 +1,5 @@
 import React   from 'react';
-import '../../pages/Cart/Cart.css'
+import './ItemLoja.css'
 
 import { useCart } from '../../components/Providers/auth';
 import HeaderNav from '../../components/Header/HeaderNav'

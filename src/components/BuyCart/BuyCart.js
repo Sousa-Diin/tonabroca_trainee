@@ -43,7 +43,7 @@ let quatity = 0;
           </section>
                         
                   <footer className="sidebar-item-row">
-                    <Button onClick={() => props.showCart(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button onClick={()=>{window.location.pathname = '/cart'}} name="button-sidebar2" >Finalizar<br/>Pedido</Button>
+                    <Button onClick={() => props.showCart(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button onClick={()=>{window.location.pathname = '/compras'}} name="button-sidebar2" >Finalizar<br/>Pedido</Button>
                   </footer>
         </main>
   )
