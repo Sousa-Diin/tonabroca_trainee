@@ -32,24 +32,57 @@ export const AuthProvider = (props)=> {
     )
 
     const [user, setUser] = useState(null);
+
+    const [loding, setLodig] = useState(true);
+
     console.log("user", user)
+// recuperacao de user
+    useEffect(() => {
+
+        const loggedUser = localStorage.getItem('user');
+
+        if(loggedUser){
+            setUser(JSON.parse(loggedUser))
+        }
+        setLodig(false);
+    },[])
 
     const login = (email, password, permision) =>{
 
+        // api criar session
+
+        const loggedClient = {
+            id:'123',
+            email,
+        };
+        const loggedAdmin = {
+            id:'789',
+            email,
+        };
+        const loggedCoWorck = {
+            id:'456',
+            email,
+        };
+
+
+
         if(password === "secret" & permision === "client"){
-            setUser({id: "123", name: email, email})
+            setUser(loggedClient)
             console.log("login client", {email, password, permision});
+            localStorage.setItem("user", JSON.stringify(loggedClient));
             window.location.pathname = '/store'
            // navigate('/store');
         }
         else if(password === "funcionario" & permision === "coWorck"){
-            setUser({id: "789", email})
+            setUser(loggedCoWorck)
             console.log("login coWorck", {email, password, permision});
+            localStorage.setItem("user", JSON.stringify(loggedCoWorck));
             window.location.pathname = '/buscarFunc'
         }
         else if(password === "admin" & permision === "admin"){
-            setUser({id: "456", email})
+            setUser(loggedAdmin)
             console.log("login admin", {email, password, permision});
+            localStorage.setItem("user", JSON.stringify(loggedAdmin));
             window.location.pathname = '/pagamentos'
         }
         else{
@@ -60,7 +93,9 @@ export const AuthProvider = (props)=> {
 
     const logout = ()=>{
         console.log("logout");
+        localStorage.removeItem('user')
         setUser(null);
+        window.location.pathname = '/'
     }
 
 
@@ -151,6 +186,11 @@ export const AuthProvider = (props)=> {
         })
     }
 
+    const removeAllCart = () => {
+        localStorage.removeItem('cart');
+        setCart({});
+    }
+
 
     const openStore = produto => () => {
         setStore((old) => {
@@ -183,7 +223,8 @@ export const AuthProvider = (props)=> {
              handleGravaUser, cart, addCart, 
              setCart, removeCart,removeItem, 
              store, openStore, login,
-            client, setClient}}
+            client, setClient, loding,
+            removeAllCart}}
         >
 
             {props.children}

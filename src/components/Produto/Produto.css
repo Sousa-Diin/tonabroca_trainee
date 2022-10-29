@@ -60,15 +60,17 @@
     justify-content: space-between;
 }
 
+/*DISPLAY ESCONDINDO 01*/
 
-.cont-abs-add-pro-show /*DISPLAY ESCONDINDO 01*/
+
+.cont-abs-add-pro-show
 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 
     width:40vw;
-    height:30vh;
+    height:80%;
     right: 130%;
     
     background-color: #d9d9d9;
@@ -80,6 +82,21 @@
     position: absolute;
 }
 
+    .container-produtos {
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .container-button {
+        width: 99%;
+        display: flex;
+        float: right;
+        flex-flow: row-reverse nowrap;
+        background-color: rgba(255,106,14,.6);
+
+    }
 .cont-ped-add-prod-img
 {
     width:30%;
@@ -87,11 +104,12 @@
     
 }
 .cont-alt-ped-body {
-    width:25%;
-    height:30%;
+    width:35%;
+    flex: 1;
+    flex-grow: 1;
     margin:1%;
     display:flex; 
-    flex-flow:row wrap;
+    flex-flow:row nowrap;
     justify-content: space-around;
     align-content: center;
     background-color: #fff;
@@ -172,7 +190,8 @@
     height: 3vh;
     background-color: #d9d9d9;
     cursor: pointer;
-    float: right;
+    display: flex;
+    flex-direction: row;
 }
 
     .cont-abs-add-pro-hide

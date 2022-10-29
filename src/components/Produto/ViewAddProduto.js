@@ -18,7 +18,12 @@ export default function ViewAddProduto(props) {
 
   return (
     <div className={props.ride ? 'cont-abs-add-pro-show': "cont-abs-add-pro-hide"} >
-        {Object.keys(cart.cart).map(key =>{
+        <aside className='container-button'>
+            <img  onClick={()=> props.setRide(false)}src={close} alt="img-logout" className="cont-img-btn-fech"/>
+        </aside>
+        <section className='container-produtos'>
+
+        {Object.keys(cart.cart).map(key =>{ 
             const product = cart.cart[key]                      
                         
             return(
@@ -41,7 +46,8 @@ export default function ViewAddProduto(props) {
                 </div>
          )
     })}
-        <button onClick={()=> props.setRide(false)} className="cont-img-btn-fech"><img src={close} alt="img-logout" className="cont-img-btn-fech"/></button>                         
+    </section>
+                                
     </div>
   )
 }

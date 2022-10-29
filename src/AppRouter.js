@@ -1,7 +1,8 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import {
      BrowserRouter as Router,
+     Navigate,
      Route, 
      Routes,
     } from "react-router-dom";
@@ -23,10 +24,22 @@ import Message from "./components/Status/Message";
 import ItemLoja from "./pages/ItemLoja/ItemLoja";
 //import { AuthContext, AuthProvider } from "./components/Providers/auth";
 import Lojas from "./components/Lojas/Lojas";
+import { AuthContext } from "./components/Providers/auth";
 /* LINE 29*/
 
 const AppRouter =() => {
-    
+    const Private = ({children}) => {
+        const { authenticated, loding } = useContext(AuthContext);
+
+        if(loding){
+            return <Message>Carregando...</Message>
+        }
+
+        if(!authenticated){
+            return <Navigate to='/' />
+        }
+        return children;
+    }
 
     return(
         <Router>
@@ -44,10 +57,10 @@ const AppRouter =() => {
                  <Route exact path='/authAdmin' element={<AuthAdmin/>}/>
                  <Route exact path='/authFunc' element={<AuthFuncionario/>}/>
                  <Route exact path='/buscarFunc' element={<BuscarFuncionario/>}/>
-                 <Route exact path='/dadosFunc' element={<DadosFuncionario/>}/>
-                 <Route exact path='/pedidos' element={<Cardapio/>}/>
-                 <Route exact path='/compras' element={<ItemLoja/> }/>
-                 <Route exact path='/store' element={<Lojas/>}/>
+                 <Route exact path='/dadosFunc' element={<Private><DadosFuncionario/></Private>}/>
+                 <Route exact path='/pedidos' element={<Private><Cardapio/></Private>}/>
+                 <Route exact path='/compras' element={<Private><ItemLoja/></Private> }/>
+                 <Route exact path='/store' element={<Private><Lojas/></Private>}/>
                 
             </Routes>
         </Router>

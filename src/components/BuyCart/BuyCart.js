@@ -1,16 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ViewPrice from '../Prices/ViewPrice'
 import Button from '../Button/Button'
-import { useCart } from '../Providers/auth'
+import { AuthContext, useCart } from '../Providers/auth'
 import ViewAddProduto from '../Produto/ViewAddProduto';
 
 export default function BuyCart(props) {
+
+const { removeAllCart } = useContext(AuthContext)
 
 const cart = useCart();
 
 const [ride, setRide] = useState(false);
 let sub = 0;
 let quatity = 0;
+
+const deletar = () => {
+  removeAllCart()
+}
 
   return (
     
@@ -29,7 +35,7 @@ let quatity = 0;
           <h3> Seu pedido em </h3>
           <ViewPrice value={'UN  ' + quatity} name="black" type="numero">Restaurante <br/> Food & Drink</ViewPrice>
                   <div className="sidebar-item-row">
-                    <div  className="nav-button"></div><Button name="button-default" onClick={()=> setRide(!ride)}>Editar</Button> <div className="nav-button"></div><Button name="button-default" >Remover</Button><div className="nav-button"></div>
+                    <div  className="nav-button"></div><Button name="button-default" onClick={()=> setRide(!ride)}>Editar</Button> <div className="nav-button"></div><Button name="button-default" onClick={deletar}>Remover</Button><div className="nav-button"></div>
                     <ViewAddProduto ride={ride} setRide={setRide} cart={cart}/>   
                   </div>
 
