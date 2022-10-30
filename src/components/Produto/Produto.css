@@ -94,7 +94,6 @@
         display: flex;
         float: right;
         flex-flow: row-reverse nowrap;
-        background-color: rgba(255,106,14,.6);
 
     }
 .cont-ped-add-prod-img
@@ -116,7 +115,7 @@
     padding: .7%;
 }
 
-    .title {
+    title {
         margin-top: -15%;
     }
 
@@ -138,7 +137,7 @@
     display: flex;
     flex-flow: row nowrap;
     width: 40%;
-    height: 3vh;
+    height: 4vh;
     margin-top: 12%;
 
 }

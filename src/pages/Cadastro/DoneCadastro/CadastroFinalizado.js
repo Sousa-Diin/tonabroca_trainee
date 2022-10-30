@@ -4,7 +4,7 @@ import Message from '../../../components/Status/Message';
 export default  function CadastroFinalizado (){
 
     return(
-        <Message name={true} onClick={() => {window.location.pathname = '/'}}>Cadastro Finalizado Com Sucesso!</Message>
+        <Message name='cont-comp-sts-mess' onClick={() => {window.location.pathname = '/'}}>Cadastro Finalizado Com Sucesso!</Message>
     );
 }
 

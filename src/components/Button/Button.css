@@ -60,3 +60,31 @@
 	color: rgb(255,57,14);
 	border: 2.7px solid rgb(255,57,14);
 }
+/*////////////////////////////////////*/
+.button-pag{
+	background-color: rgba(94,32,120,0.12);
+	width: 16vw;
+    height: 6vh;
+	padding: 0 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	transition: all 0.6s ease;
+}
+
+.button-pag-click{
+	background-color: rgba(94,32,120,1);
+	color: #eee;
+	width: 16vw;
+    height: 6vh;
+	padding: 0 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	transition: all 0.6s ease;
+}

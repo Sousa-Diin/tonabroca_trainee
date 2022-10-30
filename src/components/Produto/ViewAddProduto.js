@@ -31,7 +31,7 @@ export default function ViewAddProduto(props) {
                 <div className='cont-alt-ped-body'>
                     <img className="cont-ped-add-prod-img" src={product.product.image} alt="imagem-produto" />
                     <aside className="cont-ped-info">
-                        <h4 className='title'>{product.product.title}</h4>
+                        <h4 className='title-more-less'>{product.product.title}</h4>
                             
                         <div className="cont-son-control-ped" >
                             <div className="cont-son-qtd-ped">

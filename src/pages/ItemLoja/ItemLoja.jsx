@@ -78,7 +78,7 @@ export default function Cart (){
                 
             </main>   
             <footer className='footer-button-finalizar'>
-                <Button name='button-default'>Finalizar Pedido</Button>
+                <Button onClick={() => {window.location.pathname = '/pagamentos'}} name='button-default'>Finalizar Pedido</Button>
             </footer>
               
         </div>

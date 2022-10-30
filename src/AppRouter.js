@@ -24,7 +24,9 @@ import Message from "./components/Status/Message";
 import ItemLoja from "./pages/ItemLoja/ItemLoja";
 //import { AuthContext, AuthProvider } from "./components/Providers/auth";
 import Lojas from "./components/Lojas/Lojas";
+import Pagamento from './pages/Pedidos/Pagamento/Pagamento'
 import { AuthContext } from "./components/Providers/auth";
+import Pedidofinalizado from "./pages/Pedidos/Pagamento/PedidoFinalizado/Pedidofinalizado";
 /* LINE 29*/
 
 const AppRouter =() => {
@@ -61,6 +63,8 @@ const AppRouter =() => {
                  <Route exact path='/pedidos' element={<Private><Cardapio/></Private>}/>
                  <Route exact path='/compras' element={<Private><ItemLoja/></Private> }/>
                  <Route exact path='/store' element={<Private><Lojas/></Private>}/>
+                 <Route exact path='/pagamentos' element={<Private><Pagamento/></Private>}/>
+                 <Route exact path='/entrega' element={<Private><Pedidofinalizado/></Private>}/>
                 
             </Routes>
         </Router>

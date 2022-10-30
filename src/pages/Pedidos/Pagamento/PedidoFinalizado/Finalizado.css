@@ -1,0 +1,37 @@
+/*//////////PEDIDO FINALIZADO/////////*/
+
+.status-ped-finalizado {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #F5F5F5;
+    background-size: 59%;
+    background-image: url("../../../../assets/logo/pag/confete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section-back-ground {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 70%;
+    margin: 0 auto;
+    cursor: pointer;
+    
+}
+
+.title-pedido-finalizado {
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size:3rem;
+    text-align: center;
+    color: #5E2078;
+
+    margin-bottom: 10%;
+}
