@@ -21,8 +21,9 @@ export default function CriarAcesso () {
   }, []);
 
   const {client, setClient} = React.useContext(AuthContext);
-  console.log({user: client});
+  console.log({client});
 
+ 
   const [confirma, setConfirma] = useState("")
   //console.log(confirma)
   
@@ -49,16 +50,6 @@ export default function CriarAcesso () {
     }
     
   }
-
- /* const handleConfirmaSenha =(e)=>{
-    setConfirma(e.target.value);
-    if(confirma === user.password){
-      setUser({password:confirma})
-    }else{
-      setUser({password:'-1'});
-    }
-
-  }*/
 
     return (
       <div className="container-cadrastro">

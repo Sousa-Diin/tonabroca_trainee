@@ -33,6 +33,26 @@ export const AuthProvider = (props)=> {
 
     const [user, setUser] = useState(null);
 
+    const addUser = user => {
+        setUser((old) => {
+            let qtd = 0;
+            if(old[user.id]){
+                qtd = old[user.id].qtd;
+            }
+            const newUser = {
+                ...old,
+                [user.id] : {
+                    qtd : qtd + 1,
+                    user,
+                },
+                
+            }
+
+            window.localStorage.setItem('user-1', JSON.stringify(newUser));
+            return newUser;
+        })
+    }
+
     const [loding, setLodig] = useState(true);
 
     console.log("user", user)
@@ -162,7 +182,7 @@ export const AuthProvider = (props)=> {
             const newCart = {
                 ...old,
                 [product.id] : {
-                    qtd : qtd - 1,
+                    qtd : qtd > 0 ? qtd - 1: qtd,
                     product,
                 },
                 
@@ -213,6 +233,56 @@ export const AuthProvider = (props)=> {
         
     }
 
+    const [pedido, setPedido] = useState({});
+    const [historyPedido, setHistoryPedido] = useState(100);
+
+    useEffect(()=>{
+        const pedidoStorage = window.localStorage.getItem('pedido')
+        if(pedidoStorage){
+            setPedido(JSON.parse(pedidoStorage))
+        }
+    },[])
+    
+
+    const addPedido = pedido => {
+        setPedido((old) => {
+
+            let number = historyPedido;
+            const date = new Date().toLocaleDateString();
+            const hour = new Date().toLocaleTimeString();
+
+            if(old[pedido.id]){
+                number = old[pedido.id].number;
+            }
+            const newPedido = {
+                ...old,
+                [pedido.id] : {
+                    ...pedido,
+                    number : number + 10,
+                    date,
+                    hour,
+                  
+                },
+                
+            }
+
+            setHistoryPedido((old) => {
+                const newHistoryPedido = {
+                    ...old,
+                    [old.id] : {
+                        number : number,            
+                    },
+                    
+                }
+                return newHistoryPedido;
+            });
+            window.localStorage.setItem('pedido', JSON.stringify(newPedido));
+            return newPedido;
+        })
+        window.localStorage.removeItem('cart');
+    }
+
+
     
 
     return(
@@ -224,7 +294,8 @@ export const AuthProvider = (props)=> {
              setCart, removeCart,removeItem, 
              store, openStore, login,
             client, setClient, loding,
-            removeAllCart}}
+            removeAllCart, addUser, addPedido,
+        pedido}}
         >
 
             {props.children}

@@ -1,15 +1,15 @@
 import React,{ useEffect, useState } from "react";
-import './Cardapio.css';
+import '../Cardapio/Cardapio.css';
 //import Head from './next/head';
 
-import api from "../../services/api";
-import Sidebar from "../../components/Header/HeaderNav";
-import Anuncios from "../../components/Anuncios/Anuncios";
-import { ListaProdutos } from "../Register/Produtos/ListaProdutos";
-import icon_1 from '../../assets/logo/Pedido de Comida/dinheiro.png';
-import icon_2 from '../../assets/logo/Pedido de Comida/entrega-rapida.png';
-import logo_loja from '../../assets/logo/Pedido de Comida/loja-11.png';
-import Produto from "../../components/Produto/Produto";
+import api from "../../../services/api";
+import Sidebar from "../../../components/Header/HeaderNav";
+import Anuncios from "../../../components/Anuncios/Anuncios";
+import { ListaProdutos } from "../../Register/Produtos/ListaProdutos";
+import icon_1 from '../../../assets/logo/Pedido de Comida/dinheiro.png';
+import icon_2 from '../../../assets/logo/Pedido de Comida/entrega-rapida.png';
+import logo_loja from '../../../assets/logo/Pedido de Comida/loja-11.png';
+import Produto from "../../../components/Produto/Produto";
 
 //import p1 from '../../assets/logo/Pedido de Comida/p1.png';
 //import { AuthContext } from "../../components/Providers/auth";

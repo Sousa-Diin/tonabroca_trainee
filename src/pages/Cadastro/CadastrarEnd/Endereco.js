@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 const Endereco = () => {
 
  
-  const {client, setClient, handleGravarUser} = React.useContext(AuthContext);
-  console.log({user: client});
+  const {client, setClient, addUser} = React.useContext(AuthContext);
+  console.log({client});
   
   const handleChangeForm = (e) => {
     //setUser({email: user.email, password:user.password, fullname:user.fullname, nasc:user.nasc, sexo:user.sexo, tell:user.tell })
@@ -45,6 +45,19 @@ const Endereco = () => {
     window.location.pathname = '/finalizado';
   }*/
 
+  /*const create = user => () => {
+    addUser(user);
+  }*/
+
+  const handleSubmit = (e) => {
+        
+    e.preventDefault();
+    console.log("Create", {client});
+   
+    addUser(client);
+} 
+
+
     return (
       <div className="container-endereco">
         
@@ -53,7 +66,7 @@ const Endereco = () => {
           <h2 className="title-logo">EmakersFood</h2>
         </header>
 
-        <div  className="container-form">
+        <form  className="container-form" onSubmit={handleSubmit}>
 
           <div className="container-dados-pessoais">
             <p> Agora Nos Diga Seu Endereco </p>
@@ -74,9 +87,9 @@ const Endereco = () => {
           </div>
 
           <div id="finalizar">
-          <Link to="/finalizado"><Button name="button-default" onClick={()=> handleGravarUser()}> Finalizar Cadastro </Button></Link>
+          <Link to="/finalizado"><Button name="button-default" > Finalizar Cadastro </Button></Link>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

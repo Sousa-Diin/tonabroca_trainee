@@ -5,6 +5,7 @@ import '../login/Login.css';
 export default function Login (){
 
     document.title = 'Emakers Food - authenticação';
+    localStorage.removeItem("user");
  return(
             <section>
                 <div className={true ? "container-login" : "escondeLogin"}>

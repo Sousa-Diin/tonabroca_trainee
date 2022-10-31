@@ -49,7 +49,7 @@ const deletar = () => {
           </section>
                         
                   <footer className="sidebar-item-row">
-                    <Button onClick={() => props.showCart(false)} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button onClick={()=>{window.location.pathname = '/compras'}} name="button-sidebar2" >Finalizar<br/>Pedido</Button>
+                    <Button onClick={(e)  => { e.preventDefault();window.location.pathname= '/pedidos'}} name="button-sidebar" >Continuar <br/> Comprando</Button> <Button onClick={()=>{window.location.pathname = '/compras'}} name="button-sidebar2" >Finalizar<br/>Pedido</Button>
                   </footer>
         </main>
   )

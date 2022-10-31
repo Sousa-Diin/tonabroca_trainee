@@ -19,7 +19,7 @@ import AuthAdmin from "./pages/AuthAdmin/AuthAdmin";
 import AuthFuncionario from "./pages/AuthFunc/AuthFuncionario";
 import BuscarFuncionario from "./pages/BuscarFunc/BuscarFuncionario";
 import DadosFuncionario from "./pages/DadosUsers/funcionarioDAO";
-import Cardapio from "./pages/Pedidos/Cardapio";
+import Cardapio from "./pages/Pedidos/Cardapio/Cardapio";
 import Message from "./components/Status/Message";
 import ItemLoja from "./pages/ItemLoja/ItemLoja";
 //import { AuthContext, AuthProvider } from "./components/Providers/auth";
@@ -27,6 +27,7 @@ import Lojas from "./components/Lojas/Lojas";
 import Pagamento from './pages/Pedidos/Pagamento/Pagamento'
 import { AuthContext } from "./components/Providers/auth";
 import Pedidofinalizado from "./pages/Pedidos/Pagamento/PedidoFinalizado/Pedidofinalizado";
+import CancelarPedido from "./pages/Pedidos/Cancelar/CancelarPedido";
 /* LINE 29*/
 
 const AppRouter =() => {
@@ -65,6 +66,7 @@ const AppRouter =() => {
                  <Route exact path='/store' element={<Private><Lojas/></Private>}/>
                  <Route exact path='/pagamentos' element={<Private><Pagamento/></Private>}/>
                  <Route exact path='/entrega' element={<Private><Pedidofinalizado/></Private>}/>
+                 <Route exact path='/cancelar' element={<Private><CancelarPedido/></Private>}/>
                 
             </Routes>
         </Router>

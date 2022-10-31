@@ -13,6 +13,7 @@ export default function ViewAddProduto(props) {
 
     const remove = produto => () => {
         cart.removeItem(produto)
+
     }
 
 

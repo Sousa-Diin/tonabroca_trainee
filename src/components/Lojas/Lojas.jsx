@@ -1,5 +1,5 @@
 import React from "react";
-import '../../pages/Pedidos/Cardapio.css';
+import '../../pages/Pedidos/Cardapio/Cardapio.css';
 import '../Lojas/store.css'
 
 import Header from "../../components/Header/HeaderNav";
