@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import '../Pagamento/Pagamento.css'
 import Header from '../../../components/Header/HeaderNav';
 import Button from '../../../components/Button/Button';
-import { AuthContext } from '../../../components/Providers/auth';
+//import { AuthContext } from '../../../components/Providers/auth';
 
 export default function Pagamento() {
 
-  const { addPedido, pedido, cart } = useContext(AuthContext);
+  //const { pedido } = useContext(AuthContext);
 
   const [app, setApp] = useState(true);
   const [entrega, setEntrega] = useState(true)
@@ -14,10 +14,6 @@ export default function Pagamento() {
   const [pix, setPix] = useState(true);
   const [credit, setCredit] = useState(true)
 
-  const createPedido = cart => () => {
-      addPedido(cart)
-      window.location.pathname = '/cancelar'
-  }
 
   return (
     <main className='main-pagamentos'>
@@ -49,10 +45,9 @@ export default function Pagamento() {
         <div className={!credit ? "div-pag-pix" : "none"}>
           <input placeholder='Final do Cartão'/>
         </div>
-        <pre>{JSON.stringify(pedido,null,3)}</pre>
       </section>
       <footer style={{textAlign:"center", padding:"3%"}}>
-        <Button onClick={createPedido(cart)} name='button-default'>Finalizar</Button>
+        <Button name='button-default' onClick={() => {window.location.pathname = '/entrega'}}>Finalizar</Button>
       </footer>
     </main>
   )

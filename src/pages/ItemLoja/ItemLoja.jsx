@@ -1,20 +1,28 @@
-import React   from 'react';
+import React, { useContext }  from 'react';
 import './ItemLoja.css'
 
-import { useCart } from '../../components/Providers/auth';
+//import { useCart } from '../../components/Providers/auth';
 import HeaderNav from '../../components/Header/HeaderNav'
 import ViewPrice from '../../components/Prices/ViewPrice';
 import Button from '../../components/Button/Button';
 import lixeira from '../../assets/logo/Pedido de Comida/lixeira_pedido.png'
+import { AuthContext } from '../../components/Providers/auth';
 
 export default function Cart (){
 
     document.title = 'Emakers Food - finalizar pedido';
+    
+    const { addPedido, removeCart, cart } = useContext(AuthContext);
     let entrega = 6.9;
-    const cart = useCart();
+    //const cart = useCart();
 
     const remove = id => ()=>{
-        cart.removeCart(id)
+        removeCart(id)
+    }
+
+    const createPedido = cart => () => {
+        addPedido(cart)
+        window.location.pathname = '/status'
     }
 
 
@@ -31,8 +39,8 @@ export default function Cart (){
             <section className='child-cart-pedidos'>
                 <h2>Pedido</h2>
                 <div className='child-cart-pedidos'>
-                {Object.keys(cart.cart).map(key =>{
-                        const product = cart.cart[key]
+                {Object.keys(cart).map(key =>{
+                        const product = cart[key]
                         
                         subtotal += (product.qtd * product.product.price); 
                         total = subtotal ;
@@ -60,7 +68,7 @@ export default function Cart (){
                     <div className='cart-info-alt-ped'>
                         <div className="cont-child-qtd-ped">
                             <button id="less-qtd-ped" > - </button>
-                            <input id="tot-qtd-ped" value={cart.cart.qtd}  readOnly/>
+                            <input id="tot-qtd-ped" value={cart.qtd}  readOnly/>
                             <button id="more-qtd-ped" > + </button>
                            
                         </div>
@@ -78,7 +86,7 @@ export default function Cart (){
                 
             </main>   
             <footer className='footer-button-finalizar'>
-                <Button onClick={() => {window.location.pathname = '/pagamentos'}} name='button-default'>Finalizar Pedido</Button>
+                <Button onClick={createPedido(cart)} name='button-default'>Finalizar Pedido</Button>
             </footer>
               
         </div>

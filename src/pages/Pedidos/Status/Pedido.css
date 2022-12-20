@@ -1,0 +1,54 @@
+.section-status-pedido {
+    display:flex; 
+    width:100%; 
+    flex-Flow:column wrap
+}
+
+.h1-status-pedido {
+    margin:1.5%;
+}
+
+.div-status-cancelar-pedido {
+    display:flex;
+    width:100%;
+    flex-flow:row wrap;
+    align-content:center;
+}
+
+.div-status-detalhe-pedido {
+    display:flex; 
+    flex-flow:row nowrap;
+    margin-right:7%;
+    justify-content:space-around; 
+    width:90%;
+}
+
+.div-status-cont-button {
+    display:flex;
+    width:95%;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.div-status-button {
+    display:flex; 
+    width:65%;
+    flex-flow:row nowrap;
+    align-items:center;
+}
+
+    .show-detail { 
+        display: flex; 
+        width: 50%; 
+        height: 50%; 
+        border: 1px solid rgba(0,0,0,.6);
+        margin: 0 auto;
+        transition: all ease-in 1s;
+        background-color:  rgba(94, 32, 120, .3);
+        color: #5e5e5e;
+        position: relative;
+
+    }
+    .ride-detail { display:none }

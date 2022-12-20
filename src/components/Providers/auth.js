@@ -12,14 +12,14 @@ export const AuthProvider = (props)=> {
     const [client, setClient]  = useState(
         {
             id: '',
-            name:'emakers',
+            name:'',
             email: '',
-            password:'3131',
-            typeUser:'client',
+            password:'',
+            typeUser:'',
             fullname:"",
             nasc:"",
             sexo:"",
-            tell:"99988-2134",
+            tell:"",
             lougradouro:"",
             bairro:'',
             numero:'', 
@@ -31,27 +31,26 @@ export const AuthProvider = (props)=> {
         },
     )
 
+    console.log({client})
+
     const [user, setUser] = useState(null);
 
-    const addUser = user => {
-        setUser((old) => {
-            let qtd = 0;
-            if(old[user.id]){
-                qtd = old[user.id].qtd;
-            }
-            const newUser = {
-                ...old,
-                [user.id] : {
-                    qtd : qtd + 1,
-                    user,
-                },
-                
-            }
+    
+    useEffect(()=>{
+        const userStorage = window.localStorage.getItem('client')
+        if(userStorage){
+            setUser(JSON.parse(userStorage))
+        }
+    },[])
+    
 
-            window.localStorage.setItem('user-1', JSON.stringify(newUser));
-            return newUser;
-        })
+    const addUser = user => {
+        setClient(client);
+        window.localStorage.setItem('client', JSON.stringify(client));
+        return client;
+       
     }
+
 
     const [loding, setLodig] = useState(true);
 
@@ -59,7 +58,7 @@ export const AuthProvider = (props)=> {
 // recuperacao de user
     useEffect(() => {
 
-        const loggedUser = localStorage.getItem('user');
+        const loggedUser = localStorage.getItem('client');
 
         if(loggedUser){
             setUser(JSON.parse(loggedUser))
@@ -71,10 +70,10 @@ export const AuthProvider = (props)=> {
 
         // api criar session
 
-        const loggedClient = {
+        /*const loggedClient = {
             id:'123',
             email,
-        };
+        };*/
         const loggedAdmin = {
             id:'789',
             email,
@@ -84,37 +83,43 @@ export const AuthProvider = (props)=> {
             email,
         };
 
-
-
-        if(password === "secret" & permision === "client"){
-            setUser(loggedClient)
-            console.log("login client", {email, password, permision});
-            localStorage.setItem("user", JSON.stringify(loggedClient));
-            window.location.pathname = '/store'
-           // navigate('/store');
-        }
-        else if(password === "funcionario" & permision === "coWorck"){
-            setUser(loggedCoWorck)
-            console.log("login coWorck", {email, password, permision});
-            localStorage.setItem("user", JSON.stringify(loggedCoWorck));
-            window.location.pathname = '/buscarFunc'
-        }
-        else if(password === "admin" & permision === "admin"){
-            setUser(loggedAdmin)
-            console.log("login admin", {email, password, permision});
-            localStorage.setItem("user", JSON.stringify(loggedAdmin));
-            window.location.pathname = '/pagamentos'
+        if(user !== null){
+            if(password === user.password & permision === "client" ){
+                setUser(user)
+                console.log("login client", {email, password, permision});
+                localStorage.setItem("user", JSON.stringify(user));
+                window.location.pathname = '/store'
+               // navigate('/store');
+            }
+            else if(password === 'funcionario'  & permision === "coWorck"){
+                setUser(loggedCoWorck)
+                console.log("login coWorck", {email, password, permision});
+                localStorage.setItem("user", JSON.stringify(loggedCoWorck));
+                window.location.pathname = '/buscarFunc'
+            }
+            else if(password === 'admin'  & permision === "admin"){
+                setUser(loggedAdmin)
+                console.log("login admin", {email, password, permision});
+                localStorage.setItem("user", JSON.stringify(loggedAdmin));
+                window.location.pathname = '/pagamentos'
+            }
+            else{
+                window.alert('Acesso Negado!')
+                window.location.pathname = '/'
+            }
         }
         else{
-            window.alert('Acesso Negado!')
-            window.location.pathname = '/'
+            window.alert('email não consta na base de dados')
         }
+        
     }
 
     const logout = ()=>{
         console.log("logout");
         localStorage.removeItem('user')
+        localStorage.removeItem('client')
         setUser(null);
+        setClient(null)
         window.location.pathname = '/'
     }
 
@@ -251,25 +256,26 @@ export const AuthProvider = (props)=> {
             const date = new Date().toLocaleDateString();
             const hour = new Date().toLocaleTimeString();
 
+        
             if(old[pedido.id]){
-                number = old[pedido.id].number;
+                number = old[pedido.number].number;
             }
-            const newPedido = {
-                ...old,
-                [pedido.id] : {
-                    ...pedido,
-                    number : number + 10,
-                    date,
-                    hour,
-                  
-                },
-                
-            }
+                const newPedido = {
+                    ...old,
+                    [pedido.id] : {
+                        number : number + 10,
+                        date:date,
+                        hour:hour,
+                        pedido,
+                    },
+                    
+                }
+    
 
             setHistoryPedido((old) => {
                 const newHistoryPedido = {
                     ...old,
-                    [old.id] : {
+                    [old.number] : {
                         number : number,            
                     },
                     

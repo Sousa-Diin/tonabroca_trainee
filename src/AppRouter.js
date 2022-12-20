@@ -28,6 +28,7 @@ import Pagamento from './pages/Pedidos/Pagamento/Pagamento'
 import { AuthContext } from "./components/Providers/auth";
 import Pedidofinalizado from "./pages/Pedidos/Pagamento/PedidoFinalizado/Pedidofinalizado";
 import CancelarPedido from "./pages/Pedidos/Cancelar/CancelarPedido";
+import Pedido from "./pages/Pedidos/Status/Pedido";
 /* LINE 29*/
 
 const AppRouter =() => {
@@ -67,6 +68,7 @@ const AppRouter =() => {
                  <Route exact path='/pagamentos' element={<Private><Pagamento/></Private>}/>
                  <Route exact path='/entrega' element={<Private><Pedidofinalizado/></Private>}/>
                  <Route exact path='/cancelar' element={<Private><CancelarPedido/></Private>}/>
+                 <Route exact path='/status' element={<Private><Pedido /></Private>}/>
                 
             </Routes>
         </Router>

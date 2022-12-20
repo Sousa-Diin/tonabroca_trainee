@@ -4,7 +4,7 @@ import { AuthContext } from '../../../components/Providers/auth';
 
 import '../CadastrarEnd/Endereco.css';
 import Button from '../../../components/Button/Button'; 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const Endereco = () => {
 
@@ -38,7 +38,7 @@ const Endereco = () => {
       setClient({lougradouro: client.lougradouro, bairro:client.bairro, numero:client.numero, complemento:client.complemento, cidade:client.cidade, cep:client.cep, estado:e.target.value });
     }
     
-    setClient({typeUser:'client'})
+   // setClient({lougradouro: client.lougradouro, bairro:client.bairro, numero:client.numero, complemento:client.complemento, cidade:client.cidade, cep:client.cep, estado:client.estado, typeUser:'client'})
   }
 
   /*const handleFinalizar =()=> {
@@ -53,8 +53,8 @@ const Endereco = () => {
         
     e.preventDefault();
     console.log("Create", {client});
-   
     addUser(client);
+    window.location.pathname = '/finalizado'
 } 
 
 
@@ -87,7 +87,7 @@ const Endereco = () => {
           </div>
 
           <div id="finalizar">
-          <Link to="/finalizado"><Button name="button-default" > Finalizar Cadastro </Button></Link>
+          <Button name="button-default" > Finalizar Cadastro </Button>
           </div>
         </form>
       </div>
